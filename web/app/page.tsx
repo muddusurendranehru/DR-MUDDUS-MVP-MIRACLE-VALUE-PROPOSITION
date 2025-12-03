@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import ProgramHero from '@/components/ProgramHero';
 
 export default function HomePage() {
   const [isHovering, setIsHovering] = useState(false);
@@ -266,6 +267,9 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+      {/* Program Hero Section */}
+      <ProgramHero />
     </div>
   );
 }

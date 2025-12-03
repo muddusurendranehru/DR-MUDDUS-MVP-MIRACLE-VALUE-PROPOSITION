@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
 import { api } from '@/lib/api';
 import Link from 'next/link';
+import ProgramHero from '@/components/ProgramHero';
 
 interface Assessment {
   id: string;
@@ -454,6 +455,11 @@ export default function DashboardPage() {
             </Link>
           </div>
         )}
+
+        {/* Program Hero Section */}
+        <div className="mt-8">
+          <ProgramHero />
+        </div>
       </main>
     </div>
   );
