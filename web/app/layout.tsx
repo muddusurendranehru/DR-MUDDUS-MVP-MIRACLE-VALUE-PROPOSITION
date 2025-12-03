@@ -80,7 +80,8 @@ export default function RootLayout({
                     <Link href="/" className="text-gray-300 hover:text-white transition-colors">🏠 Home</Link>
                     <Link href="/auth" className="text-gray-300 hover:text-white transition-colors">🔐 Login / Sign Up</Link>
                     <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors">📊 Dashboard</Link>
-                    <Link href="/remission-program" className="text-gray-300 hover:text-white transition-colors">🎯 30-Day Program</Link>
+                    <Link href="/remission-program" className="text-gray-300 hover:text-white transition-colors">🎯 90-Day Program</Link>
+                    <Link href="/testimonials" className="text-gray-300 hover:text-yellow-400 transition-colors">🏆 Success Stories</Link>
                   </div>
                 </div>
 
