@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { AuthProvider } from '@/lib/auth-context'
 import Link from 'next/link'
+import MobileNav from '@/components/MobileNav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AuthProvider>
+          {/* Mobile Navigation */}
+          <MobileNav />
+          
           {/* Global Header */}
           <header className="bg-gradient-to-r from-blue-900 via-blue-800 to-teal-700 text-white py-2 px-4">
             <div className="max-w-7xl mx-auto">
