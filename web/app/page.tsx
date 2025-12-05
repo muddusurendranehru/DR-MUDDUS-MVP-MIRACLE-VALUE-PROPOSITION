@@ -22,6 +22,38 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
+      {/* 100 Tokens Free Badge - Left Side Circular */}
+      <div className="absolute top-20 left-3 z-20 md:top-4 md:left-4">
+        <div className="flex flex-col items-center">
+          {/* Circular Badge */}
+          <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-500 rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white animate-bounce">
+            <span className="text-lg md:text-xl">🎁</span>
+            <span className="text-xs md:text-sm font-bold text-white leading-none">100</span>
+            <span className="text-[8px] md:text-[10px] font-semibold text-white leading-none">FREE</span>
+          </div>
+          {/* Small text below */}
+          <span className="mt-1 text-[10px] md:text-xs text-white/90 font-medium bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm">
+            NutriBot App
+          </span>
+        </div>
+      </div>
+
+      {/* Auth Buttons - Right Side Below Hamburger Area */}
+      <div className="absolute top-20 right-3 z-20 md:top-4 md:right-4 flex flex-col gap-2">
+        <Link
+          href="/auth"
+          className="px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-lg shadow-lg hover:bg-green-700 transition duration-200 text-center"
+        >
+          Sign Up
+        </Link>
+        <Link
+          href="/auth"
+          className="px-3 py-1.5 bg-white/90 backdrop-blur-sm text-gray-800 text-sm font-medium rounded-lg shadow hover:bg-white transition duration-200 text-center"
+        >
+          Login
+        </Link>
+      </div>
+
       {/* Content Layer */}
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:py-16 max-w-7xl mx-auto min-h-screen">
         
@@ -30,11 +62,18 @@ export default function HomePage() {
           <span className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">
             🩺 Dr. Muddu's AI-Powered Health Platform
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Your Metabolic Dashboard.
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+            Remission in 90 Days!
           </h1>
-          <p className="text-xl md:text-2xl text-orange-100">
-            Track <span className="font-bold">HOMA-IR</span>, <span className="font-bold">BMI</span> & <span className="font-bold">TyG Index</span> daily. Get personalized nutrition, step goals, and real-time feedback.
+          <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+            {['HOMA-IR', 'HbA1c', 'TyG Index', 'Central Obesity', 'CAD', 'Hypertension', 'Diabetes'].map((item) => (
+              <span key={item} className="px-2 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs md:text-sm font-semibold">
+                ✓ {item}
+              </span>
+            ))}
+          </div>
+          <p className="text-base md:text-lg text-orange-100 leading-relaxed">
+            <span className="font-bold text-yellow-300">Evidence-Based Protocols!</span> Personalized nutrition, step goals, real-time feedback, dedicated health coaches, motivators, mental health caregivers & <span className="font-bold">Doctor treatment protocols</span>.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
             <Link
@@ -52,7 +91,7 @@ export default function HomePage() {
           </div>
           {/* Trust badges */}
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-6 text-sm text-orange-100">
-            <span>✅ 500+ Patients</span>
+            <span>✅ 5,00,000+ Patients</span>
             <span>✅ 85% Remission</span>
             <span>✅ 30+ Years Exp</span>
           </div>
@@ -223,7 +262,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
             <div>
-              <div className="text-3xl md:text-4xl font-bold">500+</div>
+              <div className="text-3xl md:text-4xl font-bold">5,00,000+</div>
               <div className="text-orange-100 text-sm">Patients Treated</div>
             </div>
             <div>

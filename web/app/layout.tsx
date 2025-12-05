@@ -62,7 +62,7 @@ export default function RootLayout({
           {/* Global Footer */}
           <footer className="bg-gray-900 text-white py-8 px-4">
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Doctor Info */}
                 <div>
                   <h3 className="text-lg font-bold text-teal-400 mb-3">🩺 HOMA Clinic</h3>
@@ -89,6 +89,33 @@ export default function RootLayout({
                     <Link href="/upgrade" className="text-gray-300 hover:text-green-400 transition-colors">💎 Premium Plans</Link>
                     <Link href="/enroll" className="text-gray-300 hover:text-yellow-400 transition-colors">🎯 Enroll Now</Link>
                     <Link href="/pricing" className="text-gray-300 hover:text-amber-400 transition-colors">💰 All Packages</Link>
+                    <Link href="/disclaimer" className="text-gray-300 hover:text-red-400 transition-colors">⚖️ Legal / Disclaimer</Link>
+                  </div>
+                </div>
+
+                {/* Doctor Training Program */}
+                <div>
+                  <h3 className="text-lg font-bold text-yellow-400 mb-3">🎓 Doctor Training</h3>
+                  <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded-lg p-3 border border-yellow-600/30">
+                    <p className="text-sm font-semibold text-yellow-300 mb-2">
+                      Become a Certified Metabolism Specialist!
+                    </p>
+                    <p className="text-xs text-gray-300 mb-2">
+                      🌍 Training Available Across the World
+                    </p>
+                    <div className="flex flex-col gap-1 text-xs text-gray-400 mb-3">
+                      <span>✓ Online Training Programs</span>
+                      <span>✓ Offline Workshops</span>
+                      <span>✓ Certification Course</span>
+                      <span>✓ Evidence-Based Protocols</span>
+                    </div>
+                    <a 
+                      href="https://wa.me/919963721999?text=I am a doctor interested in Metabolism Specialist Training Program" 
+                      target="_blank" 
+                      className="inline-block w-full text-center bg-yellow-600 hover:bg-yellow-700 text-white text-xs font-bold py-2 px-3 rounded transition-colors"
+                    >
+                      📩 Enquire Now
+                    </a>
                   </div>
                 </div>
 
