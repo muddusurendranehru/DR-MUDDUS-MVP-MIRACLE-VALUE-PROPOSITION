@@ -142,6 +142,49 @@ export default function RootLayout({
                 </div>
               </div>
 
+              {/* Demo: 90-Day Onboarding Journey Preview */}
+              <div className="border-t border-gray-700 mt-8 pt-6">
+                <div className="text-center mb-6">
+                  <h3 className="text-lg font-bold text-blue-400 mb-2">📧 Your 90-Day Onboarding Journey (Demo)</h3>
+                  <p className="text-xs text-gray-400">After enrollment & approval, you'll receive personalized guidance at each milestone</p>
+                </div>
+                <div className="grid grid-cols-5 gap-2 md:gap-4 max-w-3xl mx-auto">
+                  {/* Day 1 */}
+                  <div className="bg-gradient-to-b from-blue-900/50 to-blue-800/30 rounded-lg p-2 md:p-3 border border-blue-600/30 text-center hover:border-blue-400 transition-colors">
+                    <div className="text-lg md:text-2xl mb-1">📋</div>
+                    <div className="text-xs font-bold text-blue-300">Day 1</div>
+                    <div className="text-[10px] text-gray-400 hidden md:block mt-1">Welcome & Setup</div>
+                  </div>
+                  {/* Day 3 */}
+                  <div className="bg-gradient-to-b from-green-900/50 to-green-800/30 rounded-lg p-2 md:p-3 border border-green-600/30 text-center hover:border-green-400 transition-colors">
+                    <div className="text-lg md:text-2xl mb-1">🥗</div>
+                    <div className="text-xs font-bold text-green-300">Day 3</div>
+                    <div className="text-[10px] text-gray-400 hidden md:block mt-1">Nutrition Guide</div>
+                  </div>
+                  {/* Day 7 */}
+                  <div className="bg-gradient-to-b from-yellow-900/50 to-yellow-800/30 rounded-lg p-2 md:p-3 border border-yellow-600/30 text-center hover:border-yellow-400 transition-colors">
+                    <div className="text-lg md:text-2xl mb-1">📊</div>
+                    <div className="text-xs font-bold text-yellow-300">Day 7</div>
+                    <div className="text-[10px] text-gray-400 hidden md:block mt-1">Week 1 Check</div>
+                  </div>
+                  {/* Day 30 */}
+                  <div className="bg-gradient-to-b from-orange-900/50 to-orange-800/30 rounded-lg p-2 md:p-3 border border-orange-600/30 text-center hover:border-orange-400 transition-colors">
+                    <div className="text-lg md:text-2xl mb-1">🏆</div>
+                    <div className="text-xs font-bold text-orange-300">Day 30</div>
+                    <div className="text-[10px] text-gray-400 hidden md:block mt-1">Month Review</div>
+                  </div>
+                  {/* Day 90 */}
+                  <div className="bg-gradient-to-b from-purple-900/50 to-purple-800/30 rounded-lg p-2 md:p-3 border border-purple-600/30 text-center hover:border-purple-400 transition-colors">
+                    <div className="text-lg md:text-2xl mb-1">🎯</div>
+                    <div className="text-xs font-bold text-purple-300">Day 90</div>
+                    <div className="text-[10px] text-gray-400 hidden md:block mt-1">Final Report</div>
+                  </div>
+                </div>
+                <p className="text-center text-xs text-gray-500 mt-4">
+                  ✨ Approved patients receive direct access link via WhatsApp/Email
+                </p>
+              </div>
+
               {/* Bottom Bar */}
               <div className="border-t border-gray-700 mt-8 pt-4 text-center">
                 <p className="text-xs text-gray-400">
