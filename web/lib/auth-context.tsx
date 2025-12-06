@@ -8,6 +8,8 @@ interface User {
   name: string;
   email: string;
   phone?: string;
+  planTier?: string;
+  packageName?: string;
 }
 
 interface AuthContextType {

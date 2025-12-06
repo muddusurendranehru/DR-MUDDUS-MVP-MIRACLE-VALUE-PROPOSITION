@@ -123,7 +123,7 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: 'payment',
-      success_url: `${origin}/enroll/success?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${origin}/diet?day=1&tier=remission-pro&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/enroll`,
       customer_email: userEmail,
       metadata: {

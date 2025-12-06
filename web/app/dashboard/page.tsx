@@ -136,6 +136,12 @@ export default function DashboardPage() {
               >
                 New Assessment
               </Link>
+            <Link
+              href="/diet?day=1"
+              className="text-sm font-medium text-green-700 bg-green-50 border border-green-200 px-3 py-1.5 rounded-md hover:bg-green-100 transition"
+            >
+              View My Diet
+            </Link>
               <button
                 onClick={logout}
                 className="text-sm text-red-600 hover:text-red-700 font-medium"
