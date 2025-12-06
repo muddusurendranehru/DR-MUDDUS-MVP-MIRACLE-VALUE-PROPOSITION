@@ -284,9 +284,16 @@ export default function HomePage() {
       {/* Quick Links Section */}
       <div className="relative z-10 bg-gray-900 py-12 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-white text-center mb-8">
+          <h2 className="text-2xl font-bold text-white text-center mb-4">
             Start Your Metabolic Journey
           </h2>
+          
+          {/* Watch Demo Pointer - Right under heading */}
+          <div className="text-center mb-6 animate-bounce">
+            <div className="text-2xl">👇</div>
+            <p className="text-gray-400 text-xs">See demo below</p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/testimonials" className="bg-gray-800 hover:bg-gray-700 rounded-2xl p-6 text-center transition-all group">
               <div className="text-4xl mb-3">🏆</div>
