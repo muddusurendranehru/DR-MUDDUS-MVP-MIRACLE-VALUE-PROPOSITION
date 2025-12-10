@@ -1,11 +1,24 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProgramHero from '@/components/ProgramHero';
 
 export default function HomePage() {
   const [isHovering, setIsHovering] = useState(false);
+  const [user, setUser] = useState<any>(null);
+
+  // Check if user is logged in
+  useEffect(() => {
+    const userStr = localStorage.getItem('user');
+    if (userStr) {
+      try {
+        setUser(JSON.parse(userStr));
+      } catch (e) {
+        setUser(null);
+      }
+    }
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -22,20 +35,37 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
-      {/* 100 Tokens Free Badge - Left Side Circular */}
+      {/* 10 Tokens Free Badge - Left Side Circular */}
       <div className="absolute top-20 left-3 z-20 md:top-4 md:left-4">
-        <div className="flex flex-col items-center">
-          {/* Circular Badge */}
-          <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-500 rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white animate-bounce">
-            <span className="text-lg md:text-xl">🎁</span>
-            <span className="text-xs md:text-sm font-bold text-white leading-none">100</span>
-            <span className="text-[8px] md:text-[10px] font-semibold text-white leading-none">FREE</span>
-          </div>
-          {/* Small text below */}
-          <span className="mt-1 text-[10px] md:text-xs text-white/90 font-medium bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm">
-            NutriBot App
-          </span>
-        </div>
+        {user ? (
+          // Logged in - Clickable badge linking to internal NutriBot
+          <Link href="/nutri-bot" className="flex flex-col items-center group cursor-pointer">
+            {/* Circular Badge */}
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-500 rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white animate-bounce group-hover:scale-110 transition-transform">
+              <span className="text-lg md:text-xl">🎁</span>
+              <span className="text-xs md:text-sm font-bold text-white leading-none">10</span>
+              <span className="text-[8px] md:text-[10px] font-semibold text-white leading-none">FREE</span>
+            </div>
+            {/* Small text below */}
+            <span className="mt-1 text-[10px] md:text-xs text-white/90 font-medium bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm group-hover:bg-green-600 transition-colors">
+              NutriBot App →
+            </span>
+          </Link>
+        ) : (
+          // Not logged in - Badge links to login
+          <Link href="/auth" className="flex flex-col items-center group cursor-pointer">
+            {/* Circular Badge */}
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-500 rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white animate-bounce group-hover:scale-110 transition-transform">
+              <span className="text-lg md:text-xl">🎁</span>
+              <span className="text-xs md:text-sm font-bold text-white leading-none">10</span>
+              <span className="text-[8px] md:text-[10px] font-semibold text-white leading-none">FREE</span>
+            </div>
+            {/* Small text below */}
+            <span className="mt-1 text-[10px] md:text-xs text-white/90 font-medium bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm group-hover:bg-green-600 transition-colors">
+              Login to Use →
+            </span>
+          </Link>
+        )}
       </div>
 
       {/* Auth Buttons - Right Side Below Hamburger Area */}

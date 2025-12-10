@@ -5,6 +5,7 @@ require('dotenv').config();
 // Import routes
 const authRoutes = require('./routes/auth');
 const assessmentRoutes = require('./routes/assessments');
+const nutribotRoutes = require('./routes/nutribot');
 
 // Initialize Express app
 const app = express();
@@ -34,6 +35,7 @@ app.get('/api/health', (req, res) => {
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/assessments', assessmentRoutes);
+app.use('/api/nutribot', nutribotRoutes);
 
 // 404 handler
 app.use((req, res) => {
@@ -69,6 +71,10 @@ app.listen(PORT, () => {
   console.log(`   POST http://localhost:${PORT}/api/assessments`);
   console.log(`   GET  http://localhost:${PORT}/api/assessments/latest`);
   console.log(`   GET  http://localhost:${PORT}/api/assessments/history`);
+  console.log(`🤖 NutriBot endpoints:`);
+  console.log(`   GET  http://localhost:${PORT}/api/nutribot/tokens`);
+  console.log(`   POST http://localhost:${PORT}/api/nutribot/use-token`);
+  console.log(`   POST http://localhost:${PORT}/api/nutribot/recharge`);
   console.log('');
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log('==========================================');
