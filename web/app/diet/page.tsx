@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
 
@@ -261,7 +261,7 @@ const tierWhitelist = [
 
 const dayOptions = Array.from({ length: 30 }, (_, index) => index + 1);
 
-export default function DietPage() {
+function DietContent() {
   const { user, isAuthenticated, loading: authLoading } = useAuth();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -595,4 +595,18 @@ export default function DietPage() {
   );
 }
 
-
+// Wrapper with Suspense for useSearchParams
+export default function DietPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-teal-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading Diet Plan...</p>
+        </div>
+      </div>
+    }>
+      <DietContent />
+    </Suspense>
+  );
+}
