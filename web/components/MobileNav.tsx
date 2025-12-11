@@ -41,7 +41,7 @@ export default function MobileNav() {
       {/* Hamburger Button - Only visible on mobile */}
       <button
         onClick={toggleMenu}
-        className="md:hidden fixed top-16 right-4 z-[60] p-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg shadow-lg transition-all"
+        className="fixed top-16 right-4 z-[60] p-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg shadow-lg transition-all"
         aria-label="Toggle menu"
       >
         {isOpen ? (
@@ -60,14 +60,14 @@ export default function MobileNav() {
       {/* Overlay */}
       {isOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-black/50 z-[50]"
+          className="fixed inset-0 bg-black/50 z-[50]"
           onClick={closeMenu}
         />
       )}
 
       {/* Slide-out Menu */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-gray-900 to-gray-800 z-[55] transform transition-transform duration-300 ease-in-out overflow-y-auto ${
+        className={`fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-gray-900 to-gray-800 z-[55] transform transition-transform duration-300 ease-in-out overflow-y-auto ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
