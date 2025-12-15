@@ -5,6 +5,7 @@ import { AuthProvider } from '@/lib/auth-context'
 import Link from 'next/link'
 import MobileNav from '@/components/MobileNav'
 import OnboardingDemo from '@/components/OnboardingDemo'
+import WelcomeBot from '@/components/WelcomeBot'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -169,6 +170,9 @@ export default function RootLayout({
               </div>
             </div>
           </footer>
+
+          {/* Welcome Bot */}
+          <WelcomeBot />
         </AuthProvider>
       </body>
     </html>
