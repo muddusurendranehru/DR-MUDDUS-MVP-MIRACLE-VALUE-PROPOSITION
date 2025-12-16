@@ -153,6 +153,23 @@ export default function RootLayout({
               {/* Interactive Onboarding Demo */}
               <OnboardingDemo />
 
+              {/* Dr. Muddu + Chiranjeevi Section */}
+              <div className="mt-8 text-center">
+                <div className="inline-block">
+                  <img
+                    src="/images/dr-muddu-chiranjeevi.jpg"
+                    alt="Dr. Muddu Surendra Nehru with Chiranjeevi"
+                    className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover mx-auto border-4 border-yellow-400 shadow-xl"
+                  />
+                  <p className="mt-3 text-sm text-gray-300 font-medium">
+                    🌟 Dr. Muddu with Megastar Chiranjeevi
+                  </p>
+                  <p className="text-xs text-gray-400 mt-1">
+                    Professor of Medicine • 30+ Years Experience • World's First AI Health App Pioneer
+                  </p>
+                </div>
+              </div>
+
               {/* Bottom Bar */}
               <div className="border-t border-gray-700 mt-8 pt-4 text-center">
                 <p className="text-xs text-gray-400">
