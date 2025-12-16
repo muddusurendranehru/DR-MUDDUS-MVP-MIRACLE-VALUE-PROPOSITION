@@ -132,8 +132,8 @@ export default function RootLayout({
                     <a href="https://wa.me/919963721999" target="_blank" className="text-gray-300 hover:text-green-400 transition-colors">
                       💬 WhatsApp
                     </a>
-                    <a href="https://www.homahealthcarecenter.in" target="_blank" className="text-gray-300 hover:text-white transition-colors">
-                      🌐 www.homahealthcarecenter.in
+                    <a href="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com" target="_blank" className="text-gray-300 hover:text-white transition-colors">
+                      🌐 HOMA Clinic Website
                     </a>
                     <a 
                       href="https://www.youtube.com/channel/UCf8avHrw6K07POXSIoKgHwg" 
