@@ -135,16 +135,13 @@ export default function RootLayout({
                     <a href="https://www.homahealthcarecenter.in" target="_blank" className="text-gray-300 hover:text-white transition-colors">
                       🌐 www.homahealthcarecenter.in
                     </a>
-                    <a href="https://youtube.com/@homasurendranehru" target="_blank" className="text-gray-300 hover:text-red-400 transition-colors">
-                      📺 YouTube: homasurendranehru
-                    </a>
                     <a 
                       href="https://www.youtube.com/channel/UCf8avHrw6K07POXSIoKgHwg" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-gray-300 hover:text-red-400 transition-colors"
                     >
-                      🎬 YouTube Channel
+                      📺 YouTube
                     </a>
                     <a href="https://instagram.com/homahealthcarecenter" target="_blank" className="text-gray-300 hover:text-pink-400 transition-colors">
                       📷 Instagram/FB: homahealthcarecenter

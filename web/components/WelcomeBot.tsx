@@ -64,7 +64,7 @@ export default function WelcomeBot() {
           </Link>
           
           <a
-            href="https://youtube.com/@homasurendranehru"
+            href="https://www.youtube.com/channel/UCf8avHrw6K07POXSIoKgHwg"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleLinkClick}
