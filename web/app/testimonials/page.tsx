@@ -69,9 +69,27 @@ const testimonials = [
     gender: 'female',
     avatar_gradient: 'from-orange-400 to-amber-500',
     avatar_emoji: '👩‍🦰',
+    photo_url: null,
+    video_url: null,
     quote: 'Being post-menopausal, I thought weight gain was inevitable. Wrong! The metabolic remission program helped me lose 12kg and my energy levels are incredible now.',
     metrics_before: { HOMA_IR: 7.1, BMI: 30.8, HbA1c: 6.9, waist_cm: 94 },
     metrics_after: { HOMA_IR: 1.9, BMI: 26.1, HbA1c: 5.6, waist_cm: 80 },
+    completed_program: true,
+    program_days: 90,
+  },
+  {
+    id: '6',
+    name: 'Sunita P.',
+    location: 'Kolkata',
+    age: 50,
+    gender: 'female',
+    avatar_gradient: 'from-emerald-400 to-teal-500',
+    avatar_emoji: '👩',
+    photo_url: '/images/waist-measurement.jpg',
+    video_url: 'https://www.youtube.com/channel/UCf8avHrw6K07POXSIoKgHwg',
+    quote: 'I was told I\'d never lose weight after menopause. Dr. Muddu\'s program changed everything. My waist dropped from 96cm to 80cm — I finally feel confident in my own skin.',
+    metrics_before: { HOMA_IR: 7.8, BMI: 31.5, HbA1c: 7.0, waist_cm: 96 },
+    metrics_after: { HOMA_IR: 2.0, BMI: 25.8, HbA1c: 5.5, waist_cm: 80 },
     completed_program: true,
     program_days: 90,
   },
@@ -134,10 +152,18 @@ export default function TestimonialsPage() {
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* Avatar & Info */}
                   <div className="flex items-start gap-4 md:w-1/3">
-                    {/* Stylized Avatar with Emoji */}
-                    <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${t.avatar_gradient} flex items-center justify-center text-3xl flex-shrink-0 shadow-lg ring-2 ring-white`}>
-                      {t.avatar_emoji}
-                    </div>
+                    {/* Photo or Stylized Avatar */}
+                    {t.photo_url ? (
+                      <img
+                        src={t.photo_url}
+                        alt={`${t.name}'s transformation`}
+                        className="w-16 h-16 rounded-full object-cover flex-shrink-0 shadow-lg ring-2 ring-teal-400"
+                      />
+                    ) : (
+                      <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${t.avatar_gradient} flex items-center justify-center text-3xl flex-shrink-0 shadow-lg ring-2 ring-white`}>
+                        {t.avatar_emoji}
+                      </div>
+                    )}
                     <div>
                       <h2 className="text-xl font-bold text-gray-800">{t.name}</h2>
                       <p className="text-sm text-gray-500">{t.age} yrs • {t.location}</p>
@@ -145,6 +171,17 @@ export default function TestimonialsPage() {
                         <span className="inline-flex items-center mt-2 px-3 py-1 bg-gradient-to-r from-green-100 to-teal-100 text-green-800 text-xs font-medium rounded-full border border-green-200">
                           🎯 90-Day Remission Graduate
                         </span>
+                      )}
+                      {/* Video Link */}
+                      {t.video_url && (
+                        <a
+                          href={t.video_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center mt-2 ml-2 px-3 py-1 bg-red-100 text-red-600 text-xs font-medium rounded-full hover:bg-red-200 transition-colors"
+                        >
+                          ▶️ Watch Story
+                        </a>
                       )}
                     </div>
                   </div>
