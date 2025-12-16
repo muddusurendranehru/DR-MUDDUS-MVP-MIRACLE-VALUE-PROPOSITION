@@ -10,7 +10,9 @@ const testimonials = [
     name: 'Lakshmi R.',
     location: 'Hyderabad',
     age: 52,
-    photo_url: null,
+    gender: 'female',
+    avatar_gradient: 'from-pink-400 to-rose-500',
+    avatar_emoji: '👩',
     quote: 'After 3 months with Dr. Muddu\'s program, my HOMA-IR dropped from 8.5 to 2.1! I never thought I could reverse my prediabetes without heavy medications. The daily tracking kept me accountable.',
     metrics_before: { HOMA_IR: 8.5, BMI: 32.4, HbA1c: 7.2, waist_cm: 98 },
     metrics_after: { HOMA_IR: 2.1, BMI: 27.8, HbA1c: 5.8, waist_cm: 84 },
@@ -22,7 +24,9 @@ const testimonials = [
     name: 'Rajesh K.',
     location: 'Bangalore',
     age: 45,
-    photo_url: null,
+    gender: 'male',
+    avatar_gradient: 'from-blue-400 to-indigo-500',
+    avatar_emoji: '👨',
     quote: 'My triglycerides were 380 and TyG index was dangerously high. Dr. Muddu\'s metabolic approach helped me understand the science behind insulin resistance. Now I feel 10 years younger!',
     metrics_before: { HOMA_IR: 6.2, BMI: 29.1, HbA1c: 6.8, TyG: 9.8 },
     metrics_after: { HOMA_IR: 1.8, BMI: 25.5, HbA1c: 5.4, TyG: 8.2 },
@@ -34,7 +38,9 @@ const testimonials = [
     name: 'Priya S.',
     location: 'Chennai',
     age: 38,
-    photo_url: null,
+    gender: 'female',
+    avatar_gradient: 'from-purple-400 to-pink-500',
+    avatar_emoji: '👩',
     quote: 'Post-pregnancy weight and PCOD made my life difficult. The 90-day program was life-changing. My waist reduced from 96cm to 82cm and I finally feel confident again!',
     metrics_before: { HOMA_IR: 5.8, BMI: 31.2, HbA1c: 6.5, waist_cm: 96 },
     metrics_after: { HOMA_IR: 1.6, BMI: 24.8, HbA1c: 5.2, waist_cm: 82 },
@@ -46,7 +52,9 @@ const testimonials = [
     name: 'Suresh M.',
     location: 'Mumbai',
     age: 58,
-    photo_url: null,
+    gender: 'male',
+    avatar_gradient: 'from-teal-400 to-cyan-500',
+    avatar_emoji: '👨‍💼',
     quote: 'As a businessman, I ignored my health for years. My fasting insulin was through the roof. Dr. Muddu\'s scientific approach and the daily habit tracking changed everything.',
     metrics_before: { HOMA_IR: 9.2, BMI: 33.5, HbA1c: 8.1, BP: '150/95' },
     metrics_after: { HOMA_IR: 2.4, BMI: 28.2, HbA1c: 6.2, BP: '128/82' },
@@ -58,7 +66,9 @@ const testimonials = [
     name: 'Anita G.',
     location: 'Delhi',
     age: 48,
-    photo_url: null,
+    gender: 'female',
+    avatar_gradient: 'from-orange-400 to-amber-500',
+    avatar_emoji: '👩‍🦰',
     quote: 'Being post-menopausal, I thought weight gain was inevitable. Wrong! The metabolic remission program helped me lose 12kg and my energy levels are incredible now.',
     metrics_before: { HOMA_IR: 7.1, BMI: 30.8, HbA1c: 6.9, waist_cm: 94 },
     metrics_after: { HOMA_IR: 1.9, BMI: 26.1, HbA1c: 5.6, waist_cm: 80 },
@@ -124,17 +134,10 @@ export default function TestimonialsPage() {
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* Avatar & Info */}
                   <div className="flex items-start gap-4 md:w-1/3">
-                    {t.photo_url ? (
-                      <img
-                        src={t.photo_url}
-                        alt={t.name}
-                        className="w-16 h-16 rounded-full object-cover border-2 border-teal-400"
-                      />
-                    ) : (
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-white text-xl font-bold flex-shrink-0">
-                        {getInitials(t.name)}
-                      </div>
-                    )}
+                    {/* Stylized Avatar with Emoji */}
+                    <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${t.avatar_gradient} flex items-center justify-center text-3xl flex-shrink-0 shadow-lg ring-2 ring-white`}>
+                      {t.avatar_emoji}
+                    </div>
                     <div>
                       <h2 className="text-xl font-bold text-gray-800">{t.name}</h2>
                       <p className="text-sm text-gray-500">{t.age} yrs • {t.location}</p>
@@ -275,6 +278,14 @@ export default function TestimonialsPage() {
           </div>
         </div>
 
+        {/* Patient Photo Disclaimer */}
+        <div className="mt-8 text-center">
+          <p className="text-xs text-gray-400 italic flex items-center justify-center gap-2">
+            <span>🔒</span>
+            <span>Patient identities protected. Avatars used for privacy. Testimonials shared with patient consent.</span>
+          </p>
+        </div>
+
         {/* Doctor Section */}
         <div className="mt-12 bg-white rounded-2xl shadow-lg p-8 border">
           <div className="flex flex-col md:flex-row items-center gap-6">
@@ -291,15 +302,17 @@ export default function TestimonialsPage() {
               </p>
               <div className="flex flex-wrap gap-3 mt-4 justify-center md:justify-start">
                 <a 
-                  href="https://youtube.com/@homasurendranehru" 
+                  href="https://www.youtube.com/channel/UCf8avHrw6K07POXSIoKgHwg" 
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-xs bg-red-100 text-red-600 px-3 py-1 rounded-full hover:bg-red-200 transition-colors"
                 >
                   📺 YouTube
                 </a>
                 <a 
-                  href="https://www.homahealthcarecenter.in" 
+                  href="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com" 
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-xs bg-blue-100 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-200 transition-colors"
                 >
                   🌐 Website
