@@ -157,7 +157,7 @@ export default function RootLayout({
               <div className="mt-8 text-center">
                 <div className="inline-block">
                   <img
-                    src="/images/dr-muddu-chiranjeevi.jpg"
+                    src="/images/dr-muddu-chiranjeevi.jpg.jpg"
                     alt="Dr. Muddu Surendra Nehru with Chiranjeevi"
                     className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover mx-auto border-4 border-yellow-400 shadow-xl"
                   />
