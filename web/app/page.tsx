@@ -93,7 +93,7 @@ export default function HomePage() {
             🩺 Dr. Muddu's AI-Powered Health Platform
           </span>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            Remission in 90 Days!
+            DR MUDDU METABOLISM MANTHRA - METHOD!
           </h1>
           <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
             {['HOMA-IR', 'HbA1c', 'TyG Index', 'Central Obesity', 'CAD', 'Hypertension', 'Diabetes'].map((item) => (
