@@ -5,6 +5,16 @@ import Link from 'next/link';
 export default function BlogPage() {
   const posts = [
     {
+      id: 7,
+      slug: "can-prediabetes-be-reversed-in-90-days",
+      title: "Can Prediabetes Be Reversed in 90 Days?",
+      excerpt: "Yes—prediabetes can be reversed in 90 days with the right science-backed plan. Discover Dr. Muddu's metabolic remission protocol for Indian patients.",
+      date: "Dec 12, 2025",
+      readTime: "12 min read",
+      category: "Science",
+      icon: "🔬"
+    },
+    {
       id: 1,
       title: "What Is HOMA-IR and Why It Matters for Diabetes Reversal",
       excerpt: "Understand the science behind insulin resistance and how Dr. Muddu's protocol targets it directly.",
@@ -142,7 +152,7 @@ export default function BlogPage() {
                   
                   {/* Read More */}
                   <Link
-                    href={`/blog/post-${post.id}`}
+                    href={post.slug ? `/blog/${post.slug}` : `/blog/post-${post.id}`}
                     className="inline-flex items-center text-green-600 font-medium hover:text-green-700 transition"
                   >
                     Read more
