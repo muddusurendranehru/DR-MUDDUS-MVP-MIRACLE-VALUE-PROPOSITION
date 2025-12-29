@@ -1,6 +1,11 @@
 // app/sitemap.ts
 import { MetadataRoute } from 'next';
 
+const BLOG_POSTS = [
+  'can-prediabetes-be-reversed-in-90-days',
+  'insulin-resistance-kidney-link',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com';
   const now = new Date();
@@ -10,13 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/`,
       lastModified: now,
     },
-    {
-      url: `${baseUrl}/blog/can-prediabetes-be-reversed-in-90-days`,
+    ...BLOG_POSTS.map((slug) => ({
+      url: `${baseUrl}/blog/${slug}`,
       lastModified: now,
-    },
-    {
-      url: `${baseUrl}/blog/insulin-resistance-kidney-link`,
-      lastModified: now,
-    },
+    })),
   ];
 }

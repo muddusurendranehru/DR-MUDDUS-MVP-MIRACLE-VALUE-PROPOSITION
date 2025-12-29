@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import BlogLayout from '@/components/BlogLayout'
 
 const CTA_URL =
@@ -97,9 +98,23 @@ export default function InsulinResistanceKidneyBlog() {
               <li>Glomerular filtration rate (GFR)</li>
               <li>Tubuloglomerular feedback mechanisms</li>
             </ul>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed mb-6">
               In states of <strong>insulin resistance</strong>, the body compensates with <strong>hyperinsulinemia</strong>—flooding the kidneys with excess insulin that triggers harmful signaling.
             </p>
+            {/* Pathways Image */}
+            <div className="my-8 p-4 bg-gray-50 rounded-lg">
+              <Image
+                src="/images/Metabolic Syndrome and Chronic Kidney Disease_ A Pathophysiologic Cascade.jpg"
+                alt="Hyperinsulinemia, Insulin Resistance, and Kidney Damage"
+                width={1200}
+                height={800}
+                className="w-full h-auto rounded-md shadow-sm"
+                priority={false}
+              />
+              <p className="text-xs text-gray-600 mt-2">
+                Illustration showing how insulin resistance and hyperinsulinemia accelerate kidney damage through renal cell proliferation, AT1R upregulation, endothelin-1 stimulation, and endothelial dysfunction.
+              </p>
+            </div>
           </section>
 
           {/* Section 2 */}
