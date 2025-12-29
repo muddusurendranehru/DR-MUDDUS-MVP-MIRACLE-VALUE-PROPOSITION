@@ -403,13 +403,13 @@ export default function CanPrediabetesBeReversedBlog() {
         <div className="mt-12 px-6 pb-6">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h3>
           <div className="grid md:grid-cols-2 gap-6">
-            <Link href="/blog/homa-ir-india-diabetes-risk" className="bg-gradient-to-br from-green-50 to-white rounded-xl p-6 shadow-md hover:shadow-xl transition border border-green-100">
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">What Is HOMA-IR and Why It Matters</h4>
-              <p className="text-gray-600">Understand the science behind insulin resistance...</p>
+            <Link href="/blog/insulin-resistance-kidney-link" className="bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 shadow-md hover:shadow-xl transition border border-blue-100">
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">How Insulin Resistance Silently Damages Kidneys</h4>
+              <p className="text-gray-600">Discover the hidden metabolic-renal link and how hyperinsulinemia drives kidney damage...</p>
             </Link>
-            <Link href="/blog/indian-diet-insulin-resistance" className="bg-gradient-to-br from-teal-50 to-white rounded-xl p-6 shadow-md hover:shadow-xl transition border border-teal-100">
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">5 Indian Foods That Lower Your TyG Index</h4>
-              <p className="text-gray-600">Simple dietary swaps to improve metabolic health...</p>
+            <Link href="/blog" className="bg-gradient-to-br from-teal-50 to-white rounded-xl p-6 shadow-md hover:shadow-xl transition border border-teal-100">
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">View All Blog Posts</h4>
+              <p className="text-gray-600">Explore more articles on metabolic health and remission...</p>
             </Link>
           </div>
         </div>

@@ -6,6 +6,16 @@ import BlogLayout from '@/components/BlogLayout';
 export default function BlogPage() {
   const posts = [
     {
+      id: 8,
+      slug: "insulin-resistance-kidney-link",
+      title: "How Insulin Resistance Silently Damages Kidneys",
+      excerpt: "Discover how insulin resistance and hyperinsulinemia directly damage kidneys—increasing risk of proteinuria, hypertension, and diabetic nephropathy in Indians.",
+      date: "Dec 12, 2025",
+      readTime: "8 min read",
+      category: "Science",
+      icon: "🔬"
+    },
+    {
       id: 7,
       slug: "can-prediabetes-be-reversed-in-90-days",
       title: "Can Prediabetes Be Reversed in 90 Days?",
