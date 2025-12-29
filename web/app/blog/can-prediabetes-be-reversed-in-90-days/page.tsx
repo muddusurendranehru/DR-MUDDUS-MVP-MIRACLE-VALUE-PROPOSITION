@@ -1,47 +1,40 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import BlogLayout from '@/components/BlogLayout'
 
-export const metadata: Metadata = {
-  title: 'Can Prediabetes Be Reversed in 90 Days? | HOMA Clinic India',
-  description: 'Yes—prediabetes can be reversed in 90 days with the right science-backed plan. Discover Dr. Muddu\'s metabolic remission protocol for Indian patients.',
-  keywords: 'prediabetes reversal, reverse prediabetes, prediabetes 90 days, HOMA-IR, HbA1c, metabolic health India, diabetes prevention',
-  openGraph: {
+const CTA_URL =
+  'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com'
+
+export const dynamic = 'force-static'
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
     title: 'Can Prediabetes Be Reversed in 90 Days? | HOMA Clinic India',
-    description: 'Yes—prediabetes can be reversed in 90 days with the right science-backed plan. Discover Dr. Muddu\'s metabolic remission protocol for Indian patients.',
-    type: 'article',
-  },
-};
+    description:
+      'Yes—prediabetes can be reversed in 90 days with the right science-backed plan. Discover Dr. Muddu\'s metabolic remission protocol for Indian patients.',
+    keywords: 'prediabetes reversal, reverse prediabetes, prediabetes 90 days, HOMA-IR, HbA1c, metabolic health India, diabetes prevention',
+    openGraph: {
+      title: 'Can Prediabetes Be Reversed in 90 Days? | HOMA Clinic India',
+      description:
+        'Yes—prediabetes can be reversed in 90 days with the right science-backed plan. Discover Dr. Muddu\'s metabolic remission protocol for Indian patients.',
+      type: 'article',
+    },
+  }
+}
 
 export default function CanPrediabetesBeReversedBlog() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-green-700">
-            🏥 HOMA Clinic
-          </Link>
-          <nav className="flex gap-4">
-            <Link href="/blog" className="text-gray-600 hover:text-green-600 transition">
-              Blog
-            </Link>
-            <Link href="/pricing" className="text-gray-600 hover:text-green-600 transition">
-              Packages
-            </Link>
-            <Link href="/dashboard" className="text-gray-600 hover:text-green-600 transition">
-              Dashboard
-            </Link>
-          </nav>
-        </div>
-      </header>
-
-      {/* Article Content */}
-      <article className="max-w-4xl mx-auto px-4 py-12">
+    <BlogLayout>
+      <article className="min-h-screen bg-white text-gray-800">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-600 mb-6">
-          <Link href="/" className="hover:text-green-600">Home</Link>
+          <Link href="/" className="hover:text-green-600">
+            Home
+          </Link>
           <span className="mx-2">/</span>
-          <Link href="/blog" className="hover:text-green-600">Blog</Link>
+          <Link href="/blog" className="hover:text-green-600">
+            Blog
+          </Link>
           <span className="mx-2">/</span>
           <span className="text-gray-900">Can Prediabetes Be Reversed in 90 Days?</span>
         </nav>
@@ -313,7 +306,16 @@ export default function CanPrediabetesBeReversedBlog() {
               <li>You want structured, evidence-based protocols with measurable outcomes</li>
             </ul>
             <p className="text-gray-700 leading-relaxed">
-              Our 90-Day Remission Program combines medical oversight with personalized nutrition, exercise plans, and real-time monitoring—ensuring you&apos;re not navigating this journey alone.
+              Our{' '}
+              <a
+                href={CTA_URL}
+                className="font-medium text-blue-600 underline decoration-2 underline-offset-4 hover:text-blue-700"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                90-Day Remission Program
+              </a>{' '}
+              combines medical oversight with personalized nutrition, exercise plans, and real-time monitoring—ensuring you&apos;re not navigating this journey alone.
             </p>
           </section>
 
@@ -335,12 +337,14 @@ export default function CanPrediabetesBeReversedBlog() {
                 Join thousands of Indian patients who reversed prediabetes with Dr. Muddu&apos;s Metabolic Manthra Method. Get personalized nutrition plans, biomarker tracking, health coach support, and evidence-based protocols—all in one platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/enroll"
+                <a
+                  href={CTA_URL}
                   className="px-6 py-3 bg-white text-green-600 font-semibold rounded-lg hover:bg-green-50 transition text-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Enroll in 90-Day Program →
-                </Link>
+                </a>
                 <Link
                   href="/pricing"
                   className="px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-green-600 transition text-center"
@@ -399,11 +403,11 @@ export default function CanPrediabetesBeReversedBlog() {
         <div className="mt-12">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h3>
           <div className="grid md:grid-cols-2 gap-6">
-            <Link href="/blog" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <Link href="/blog/homa-ir-india-diabetes-risk" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">What Is HOMA-IR and Why It Matters</h4>
               <p className="text-gray-600">Understand the science behind insulin resistance...</p>
             </Link>
-            <Link href="/blog" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <Link href="/blog/indian-diet-insulin-resistance" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">5 Indian Foods That Lower Your TyG Index</h4>
               <p className="text-gray-600">Simple dietary swaps to improve metabolic health...</p>
             </Link>
@@ -420,26 +424,6 @@ export default function CanPrediabetesBeReversedBlog() {
           </Link>
         </div>
       </article>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 px-4 mt-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gray-400 mb-2">
-            © {new Date().getFullYear()} HOMA Clinics Private Limited. All Rights Reserved.
-          </p>
-          <div className="flex justify-center gap-4 text-sm">
-            <Link href="/disclaimer" className="text-gray-400 hover:text-white transition">
-              Disclaimer
-            </Link>
-            <Link href="/pricing" className="text-gray-400 hover:text-white transition">
-              Pricing
-            </Link>
-            <Link href="/" className="text-gray-400 hover:text-white transition">
-              Home
-            </Link>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+    </BlogLayout>
+  )
 }
