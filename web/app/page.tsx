@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import HomePageClient from '@/components/HomePageClient';
+import HomePageClient from '@/web/components/HomePageClient';
 
 // 🔑 Force static HTML generation for SEO & Google verification
 export const dynamic = 'force-static';
