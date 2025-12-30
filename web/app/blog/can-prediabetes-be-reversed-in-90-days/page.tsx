@@ -1,85 +1,78 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import BlogLayout from '@/components/BlogLayout'
 
-export const metadata: Metadata = {
-  title: 'Can Prediabetes Be Reversed in 90 Days? | HOMA Clinic India',
-  description: 'Yes—prediabetes can be reversed in 90 days with the right science-backed plan. Discover Dr. Muddu\'s metabolic remission protocol for Indian patients.',
-  keywords: 'prediabetes reversal, reverse prediabetes, prediabetes 90 days, HOMA-IR, HbA1c, metabolic health India, diabetes prevention',
-  openGraph: {
+const CTA_URL =
+  'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com'
+
+export const dynamic = 'force-static'
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
     title: 'Can Prediabetes Be Reversed in 90 Days? | HOMA Clinic India',
-    description: 'Yes—prediabetes can be reversed in 90 days with the right science-backed plan. Discover Dr. Muddu\'s metabolic remission protocol for Indian patients.',
-    type: 'article',
-  },
-};
+    description:
+      'Yes—prediabetes can be reversed in 90 days with the right science-backed plan. Discover Dr. Muddu\'s metabolic remission protocol for Indian patients.',
+    keywords: 'prediabetes reversal, reverse prediabetes, prediabetes 90 days, HOMA-IR, HbA1c, metabolic health India, diabetes prevention',
+    openGraph: {
+      title: 'Can Prediabetes Be Reversed in 90 Days? | HOMA Clinic India',
+      description:
+        'Yes—prediabetes can be reversed in 90 days with the right science-backed plan. Discover Dr. Muddu\'s metabolic remission protocol for Indian patients.',
+      type: 'article',
+    },
+  }
+}
 
 export default function CanPrediabetesBeReversedBlog() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-green-700">
-            🏥 HOMA Clinic
-          </Link>
-          <nav className="flex gap-4">
-            <Link href="/blog" className="text-gray-600 hover:text-green-600 transition">
-              Blog
-            </Link>
-            <Link href="/pricing" className="text-gray-600 hover:text-green-600 transition">
-              Packages
-            </Link>
-            <Link href="/dashboard" className="text-gray-600 hover:text-green-600 transition">
-              Dashboard
-            </Link>
-          </nav>
-        </div>
-      </header>
-
-      {/* Article Content */}
-      <article className="max-w-4xl mx-auto px-4 py-12">
+    <BlogLayout>
+      <article className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden my-8">
         {/* Breadcrumb */}
-        <nav className="text-sm text-gray-600 mb-6">
-          <Link href="/" className="hover:text-green-600">Home</Link>
+        <nav className="text-sm text-gray-600 mb-6 px-6 pt-6">
+          <Link href="/" className="hover:text-green-600 transition">
+            Home
+          </Link>
           <span className="mx-2">/</span>
-          <Link href="/blog" className="hover:text-green-600">Blog</Link>
+          <Link href="/blog" className="hover:text-green-600 transition">
+            Blog
+          </Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">Can Prediabetes Be Reversed in 90 Days?</span>
+          <span className="text-gray-900 font-medium">Can Prediabetes Be Reversed in 90 Days?</span>
         </nav>
 
         {/* Meta Info */}
-        <div className="mb-8">
-          <div className="flex flex-wrap items-center gap-3 mb-4">
-            <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
-              Science
+        <div className="mb-8 px-6">
+          <div className="flex flex-wrap items-center gap-3 mb-6">
+            <span className="bg-gradient-to-r from-green-100 to-teal-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
+              🔬 Science
             </span>
             <span className="text-gray-500 text-sm">Dec 12, 2025</span>
-            <span className="text-gray-500">•</span>
+            <span className="text-gray-400">•</span>
             <span className="text-gray-500 text-sm">12 min read</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight bg-gradient-to-r from-green-700 to-teal-700 bg-clip-text text-transparent">
             Can Prediabetes Be Reversed in 90 Days?
           </h1>
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-xl text-gray-700 leading-relaxed font-medium">
             Yes—prediabetes can be reversed in 90 days with the right science-backed plan. Discover Dr. Muddu&apos;s metabolic remission protocol for Indian patients.
           </p>
         </div>
 
         {/* Author Info */}
-        <div className="bg-white rounded-xl p-6 shadow-sm mb-8 border-l-4 border-green-600">
+        <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 shadow-md mb-8 mx-6 border-l-4 border-green-600">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+            <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
               DM
             </div>
             <div>
-              <h3 className="font-bold text-gray-900">Dr. Muddu Surendra Nehru M.D.</h3>
-              <p className="text-gray-600 text-sm">Professor of Medicine, Senior Physician | 30+ Years Experience</p>
-              <p className="text-gray-500 text-xs mt-1">5,00,000+ Patients Treated | 85% Remission Rate</p>
+              <h3 className="font-bold text-gray-900 text-lg">Dr. Muddu Surendra Nehru M.D.</h3>
+              <p className="text-gray-700 text-sm font-medium">Professor of Medicine, Senior Physician | 30+ Years Experience</p>
+              <p className="text-gray-600 text-xs mt-1">5,00,000+ Patients Treated | 85% Remission Rate</p>
             </div>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 prose prose-lg max-w-none">
+        <div className="px-6 pb-8 md:px-8 md:pb-12 prose prose-lg max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-green-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-ul:text-gray-700 prose-li:text-gray-700">
           
           {/* Introduction */}
           <div className="mb-10">
@@ -313,7 +306,16 @@ export default function CanPrediabetesBeReversedBlog() {
               <li>You want structured, evidence-based protocols with measurable outcomes</li>
             </ul>
             <p className="text-gray-700 leading-relaxed">
-              Our 90-Day Remission Program combines medical oversight with personalized nutrition, exercise plans, and real-time monitoring—ensuring you&apos;re not navigating this journey alone.
+              Our{' '}
+              <a
+                href={CTA_URL}
+                className="font-medium text-blue-600 underline decoration-2 underline-offset-4 hover:text-blue-700"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                90-Day Remission Program
+              </a>{' '}
+              combines medical oversight with personalized nutrition, exercise plans, and real-time monitoring—ensuring you&apos;re not navigating this journey alone.
             </p>
           </section>
 
@@ -335,12 +337,14 @@ export default function CanPrediabetesBeReversedBlog() {
                 Join thousands of Indian patients who reversed prediabetes with Dr. Muddu&apos;s Metabolic Manthra Method. Get personalized nutrition plans, biomarker tracking, health coach support, and evidence-based protocols—all in one platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/enroll"
+                <a
+                  href={CTA_URL}
                   className="px-6 py-3 bg-white text-green-600 font-semibold rounded-lg hover:bg-green-50 transition text-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Enroll in 90-Day Program →
-                </Link>
+                </a>
                 <Link
                   href="/pricing"
                   className="px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-green-600 transition text-center"
@@ -396,50 +400,30 @@ export default function CanPrediabetesBeReversedBlog() {
         </div>
 
         {/* Related Posts */}
-        <div className="mt-12">
+        <div className="mt-12 px-6 pb-6">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h3>
           <div className="grid md:grid-cols-2 gap-6">
-            <Link href="/blog" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">What Is HOMA-IR and Why It Matters</h4>
-              <p className="text-gray-600">Understand the science behind insulin resistance...</p>
+            <Link href="/blog/insulin-resistance-kidney-link" className="bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 shadow-md hover:shadow-xl transition border border-blue-100">
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">How Insulin Resistance Silently Damages Kidneys</h4>
+              <p className="text-gray-600">Discover the hidden metabolic-renal link and how hyperinsulinemia drives kidney damage...</p>
             </Link>
-            <Link href="/blog" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">5 Indian Foods That Lower Your TyG Index</h4>
-              <p className="text-gray-600">Simple dietary swaps to improve metabolic health...</p>
+            <Link href="/blog" className="bg-gradient-to-br from-teal-50 to-white rounded-xl p-6 shadow-md hover:shadow-xl transition border border-teal-100">
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">View All Blog Posts</h4>
+              <p className="text-gray-600">Explore more articles on metabolic health and remission...</p>
             </Link>
           </div>
         </div>
 
         {/* Back to Blog */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 pb-8 text-center px-6">
           <Link
             href="/blog"
-            className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition"
+            className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition text-lg"
           >
             ← Back to All Articles
           </Link>
         </div>
       </article>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 px-4 mt-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gray-400 mb-2">
-            © {new Date().getFullYear()} HOMA Clinics Private Limited. All Rights Reserved.
-          </p>
-          <div className="flex justify-center gap-4 text-sm">
-            <Link href="/disclaimer" className="text-gray-400 hover:text-white transition">
-              Disclaimer
-            </Link>
-            <Link href="/pricing" className="text-gray-400 hover:text-white transition">
-              Pricing
-            </Link>
-            <Link href="/" className="text-gray-400 hover:text-white transition">
-              Home
-            </Link>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+    </BlogLayout>
+  )
 }

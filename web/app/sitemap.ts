@@ -27,4 +27,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Add future blogs here
   ];
 }
-

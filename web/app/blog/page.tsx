@@ -1,9 +1,20 @@
 'use client';
 
 import Link from 'next/link';
+import BlogLayout from '@/components/BlogLayout';
 
 export default function BlogPage() {
   const posts = [
+    {
+      id: 8,
+      slug: "insulin-resistance-kidney-link",
+      title: "How Insulin Resistance Silently Damages Kidneys",
+      excerpt: "Discover how insulin resistance and hyperinsulinemia directly damage kidneys—increasing risk of proteinuria, hypertension, and diabetic nephropathy in Indians.",
+      date: "Dec 12, 2025",
+      readTime: "8 min read",
+      category: "Science",
+      icon: "🔬"
+    },
     {
       id: 7,
       slug: "can-prediabetes-be-reversed-in-90-days",
@@ -71,26 +82,9 @@ export default function BlogPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-green-700">
-            🏥 HOMA Clinic
-          </Link>
-          <nav className="flex gap-4">
-            <Link href="/pricing" className="text-gray-600 hover:text-green-600 transition">
-              Packages
-            </Link>
-            <Link href="/dashboard" className="text-gray-600 hover:text-green-600 transition">
-              Dashboard
-            </Link>
-          </nav>
-        </div>
-      </header>
-
+    <BlogLayout>
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white py-16 px-4">
+      <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white py-16 px-4 -mx-4 sm:-mx-6 lg:-mx-8 mb-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             HOMA Clinic Health Insights
@@ -102,7 +96,7 @@ export default function BlogPage() {
       </div>
 
       {/* Blog Posts */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto">
         {/* Category Filter (Visual Only) */}
         <div className="flex flex-wrap gap-2 mb-8 justify-center">
           {['All', 'Science', 'Nutrition', 'Success Story', 'Exercise', 'Mental Health'].map((cat) => (
@@ -177,7 +171,7 @@ export default function BlogPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl p-8 text-center text-white">
+        <div className="mt-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl p-8 text-center text-white shadow-xl">
           <h3 className="text-2xl font-bold mb-3">
             Ready to Start Your Remission Journey?
           </h3>
@@ -187,7 +181,7 @@ export default function BlogPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/pricing"
-              className="px-6 py-3 bg-white text-green-600 font-semibold rounded-lg hover:bg-green-50 transition"
+              className="px-6 py-3 bg-white text-green-600 font-semibold rounded-lg hover:bg-green-50 transition shadow-lg"
             >
               Explore Packages →
             </Link>
@@ -201,7 +195,7 @@ export default function BlogPage() {
         </div>
 
         {/* Newsletter (Visual Only) */}
-        <div className="mt-12 bg-white rounded-xl shadow-md p-8 text-center">
+        <div className="mt-12 bg-white rounded-xl shadow-md p-8 text-center border border-gray-100">
           <h3 className="text-xl font-bold text-gray-800 mb-2">
             📬 Subscribe to Health Insights
           </h3>
@@ -220,27 +214,7 @@ export default function BlogPage() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gray-400 mb-2">
-            © {new Date().getFullYear()} HOMA Clinics Private Limited. All Rights Reserved.
-          </p>
-          <div className="flex justify-center gap-4 text-sm">
-            <Link href="/disclaimer" className="text-gray-400 hover:text-white transition">
-              Disclaimer
-            </Link>
-            <Link href="/pricing" className="text-gray-400 hover:text-white transition">
-              Pricing
-            </Link>
-            <Link href="/" className="text-gray-400 hover:text-white transition">
-              Home
-            </Link>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </BlogLayout>
   );
 }
 
