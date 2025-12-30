@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/sitemap.xml
+

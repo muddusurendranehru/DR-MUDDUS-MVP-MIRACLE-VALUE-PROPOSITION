@@ -10,8 +10,11 @@ import WelcomeBot from '@/components/WelcomeBot'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'HOMA Clinic - Metabolic Remission in 90 Days | Dr. Muddu Surendra Nehru',
-  description: 'Achieve metabolic disease remission in 90 days with Dr. Muddu Surendra Nehru M.D., Professor of Medicine, Senior Physician with 30+ years experience',
+  title: 'HOMA Clinic – Achieve Metabolic Remission in 90 Days',
+  description: 'Evidence-based protocols for reversing insulin resistance, high triglycerides, and early metabolic dysfunction — not just managing it.',
+  verification: {
+    google: 'KR-S5Yw9tbmd22VH8sY4wkwGxD3jv_UiIGHYgeHAlRM',
+  },
 }
 
 export default function RootLayout({
