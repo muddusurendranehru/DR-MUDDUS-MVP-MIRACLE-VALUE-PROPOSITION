@@ -24,6 +24,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="KR-S5Yw9tbmd22VH8sY4wkwGxD3jv_UiIGHYgeHAlRM" />
+        <title>HOMA Clinic – Achieve Metabolic Remission in 90 Days</title>
+        <meta name="description" content="Evidence-based protocols for reversing insulin resistance, high triglycerides, and early metabolic dysfunction — not just managing it." />
+      </head>
       <body className={inter.className}>
         <AuthProvider>
           {/* Mobile Navigation */}
