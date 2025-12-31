@@ -289,24 +289,35 @@ export default function LeadScoringForm() {
         <div className="video-hero mb-8 rounded-2xl overflow-hidden shadow-2xl bg-white">
           <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
             <iframe
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              src="https://www.youtube.com/embed/m3x-eAWeZdk"
               className="absolute top-0 left-0 w-full h-full"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              title="How the 90‑Day HOMA Remission Program Works"
+              title="Dr Muddu Nehru | 90 Day Triglycerides Protocol"
             />
           </div>
           <div className="p-4">
             <h3 className="text-center text-lg md:text-xl font-semibold text-indigo-700 mb-2">
-              How the 90‑Day HOMA Remission Program Works
+              Dr Muddu Nehru | 90 Day Triglycerides Protocol
             </h3>
             <a
               href="#calculator"
-              className="block text-center text-sm text-indigo-600 hover:text-indigo-800 underline mt-2"
+              className="block text-center text-sm text-indigo-600 hover:text-indigo-800 underline mt-2 mb-4"
             >
               Prefer to read? Scroll to see how it works.
             </a>
+            {/* YouTube Channel Subscribe Button */}
+            <div className="yt-channel mt-4 text-center">
+              <a
+                href="https://www.youtube.com/channel/UCf8avHrw6K07POXSIoKgHwg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors shadow-lg"
+              >
+                📺 Subscribe Dr Muddu Channel (100+ Doctor Mentor)
+              </a>
+            </div>
           </div>
         </div>
 
