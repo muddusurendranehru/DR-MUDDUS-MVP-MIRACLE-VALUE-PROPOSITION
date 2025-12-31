@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import LeadScoringForm from '@/components/LeadScoringForm';
 import HomePageClient from '@/components/HomePageClient';
 
 // 🔑 Force static HTML generation for SEO & Google verification
@@ -14,5 +15,10 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <HomePageClient />;
+  return (
+    <>
+      <LeadScoringForm />
+      <HomePageClient />
+    </>
+  );
 }
