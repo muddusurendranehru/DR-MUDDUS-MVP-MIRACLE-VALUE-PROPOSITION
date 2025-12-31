@@ -265,11 +265,16 @@ export default function LeadScoringForm() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-50 py-8 px-4">
       <div className="max-w-3xl mx-auto">
+        {/* SEO H1 - Above Calculator/Form */}
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-6 px-4">
+          Diabetologist Gachibowli | Dr. Muddu Nehru MD | 90 Day Diabetes Remission
+        </h1>
+        
         <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
           <div className="text-center mb-8">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
               🎯 90-Day Metabolic Freedom Evaluation
-            </h1>
+            </h2>
             <p className="text-gray-600">
               Complete this 15-question assessment to get your personalized metabolic risk score
             </p>

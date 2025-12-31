@@ -44,6 +44,23 @@ export default function RootLayout({
             })
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [{
+                "@type": "Question",
+                "name": "Diabetes reversal cost Gachibowli?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "₹999 Metabolic Risk Calculator + 90 Day Program"
+                }
+              }]
+            })
+          }}
+        />
       </head>
       <body className={inter.className}>
         <AuthProvider>
