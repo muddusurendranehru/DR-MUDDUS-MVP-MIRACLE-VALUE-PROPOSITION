@@ -272,6 +272,88 @@ export default function GalleryPage() {
             </div>
           </div>
         )}
+
+        {/* Instagram/FB Post Cards Section */}
+        <div className="mt-12 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+            📱 Ready-to-Post Social Cards
+          </h2>
+          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+            Share these pre-filled posts on Instagram and Facebook to spread awareness about HOMA Clinic and diabetes reversal.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Chiranjeevi Post Card */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 shadow-lg border border-purple-200">
+              <div className="mb-4">
+                <Image
+                  src="/images/dr-muddu-chiranjeevi.jpg.jpg"
+                  alt="Dr Nehru + Chiranjeevi VIP patient"
+                  width={400}
+                  height={300}
+                  className="rounded-xl object-cover w-full h-48"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                📸 Dr Nehru + Chiranjeevi VIP patient
+              </h3>
+              <p className="text-gray-700 mb-4 text-sm">
+                Caption: "🌟 Honored to have Megastar Chiranjeevi as a VIP patient at HOMA Clinic Gachibowli! 30+ years of metabolic health excellence. 90-day diabetes remission program with 85% success rate. 📍 Gachibowli, Hyderabad | 📱 09963721999"
+              </p>
+              <div className="flex gap-3">
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/gallery')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-semibold transition-colors text-sm"
+                >
+                  📘 Share on Facebook
+                </a>
+                <a
+                  href={`https://www.instagram.com/create/story/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-center py-2 px-4 rounded-lg font-semibold transition-colors text-sm"
+                >
+                  📷 Share on Instagram
+                </a>
+              </div>
+            </div>
+
+            {/* HOMA-IR Test Post Card */}
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 shadow-lg border border-blue-200">
+              <div className="mb-4 bg-white rounded-xl p-4 text-center">
+                <div className="text-6xl mb-2">🔬</div>
+                <h4 className="text-2xl font-bold text-blue-900">HOMA-IR Test</h4>
+                <p className="text-blue-700 text-sm mt-2">Insulin Resistance Assessment</p>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                🔥 HOMA-IR Test Explained
+              </h3>
+              <p className="text-gray-700 mb-4 text-sm">
+                Caption: "🔬 HOMA-IR Test Explained 🔥 Understand your insulin resistance with the HOMA blood test. Available at HOMA Clinic Gachibowli. 90-day diabetes remission program. 📍 Gachibowli, Hyderabad | 📱 09963721999 | 🔗 Link in bio"
+              </p>
+              <div className="flex gap-3">
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-semibold transition-colors text-sm"
+                >
+                  📘 Share on Facebook
+                </a>
+                <a
+                  href={`https://www.instagram.com/create/story/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-center py-2 px-4 rounded-lg font-semibold transition-colors text-sm"
+                >
+                  📷 Share on Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

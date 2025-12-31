@@ -322,6 +322,18 @@ export default function RootLayout({
                 </p>
               </div>
 
+              {/* WhatsApp Share Button - Footer */}
+              <div className="text-center mt-6 mb-4">
+                <a
+                  href="https://wa.me/919963721999?text=Best%20diabetologist%20Gachibowli%20Dr%20Muddu%20Nehru%2090%20day%20remission"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="whatsapp-share inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all transform hover:scale-105"
+                >
+                  💬 Share on WhatsApp
+                </a>
+              </div>
+
               {/* Bottom Bar */}
               <div className="border-t border-gray-700 mt-4 pt-4 text-center">
                 <p className="text-xs text-gray-400">

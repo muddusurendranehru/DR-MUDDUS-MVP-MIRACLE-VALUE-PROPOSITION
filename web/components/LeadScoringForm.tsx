@@ -347,6 +347,18 @@ export default function LeadScoringForm() {
             Free Risk Assessment → WhatsApp 09963721999
           </a>
         </div>
+
+        {/* WhatsApp Share Button */}
+        <div className="text-center mb-6">
+          <a
+            href="https://wa.me/919963721999?text=Best%20diabetologist%20Gachibowli%20Dr%20Muddu%20Nehru%2090%20day%20remission"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsapp-share inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all transform hover:scale-105"
+          >
+            💬 Share on WhatsApp
+          </a>
+        </div>
         
         <div id="calculator" className="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
           <div className="text-center mb-8">

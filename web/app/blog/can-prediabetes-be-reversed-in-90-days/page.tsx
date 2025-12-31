@@ -397,6 +397,44 @@ export default function CanPrediabetesBeReversedBlog() {
             </div>
           </section>
 
+          {/* Instagram/FB Post Cards */}
+          <section className="mb-10 border-t pt-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">📱 Share This Article</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Facebook Post Card */}
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 shadow-md border border-blue-200">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">📘 Facebook Post</h3>
+                <p className="text-gray-700 mb-4 text-sm">
+                  <strong>Caption:</strong> "🔥 Can Prediabetes Be Reversed in 90 Days? YES! Discover Dr. Muddu Nehru's evidence-based metabolic remission protocol. 85% success rate. 500,000+ patients treated. 📍 HOMA Clinic Gachibowli | 📱 09963721999"
+                </p>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/blog/can-prediabetes-be-reversed-in-90-days')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-4 rounded-lg font-semibold transition-colors"
+                >
+                  📘 Share on Facebook
+                </a>
+              </div>
+
+              {/* Instagram Post Card */}
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 shadow-md border border-purple-200">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">📷 Instagram Post</h3>
+                <p className="text-gray-700 mb-4 text-sm">
+                  <strong>Caption:</strong> "🔥 Can Prediabetes Be Reversed in 90 Days? YES! 💪 Dr. Muddu Nehru MD | 30+ years experience | 85% remission rate | HOMA Clinic Gachibowli 📍 Link in bio for full article 👆 #DiabetesReversal #Prediabetes #HOMAClinic #Gachibowli #Hyderabad"
+                </p>
+                <a
+                  href={`https://www.instagram.com/create/story/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-center py-3 px-4 rounded-lg font-semibold transition-colors"
+                >
+                  📷 Share on Instagram
+                </a>
+              </div>
+            </div>
+          </section>
+
         </div>
 
         {/* Related Posts */}
