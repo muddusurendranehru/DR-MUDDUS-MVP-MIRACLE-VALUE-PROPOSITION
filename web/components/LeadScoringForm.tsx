@@ -265,6 +265,41 @@ export default function LeadScoringForm() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-50 py-8 px-4">
       <div className="max-w-3xl mx-auto">
+        {/* FRUSTRATION → SOLUTION - Above Calculator */}
+        <div className="frustration bg-red-50 border-l-8 border-red-400 p-6 md:p-8 rounded-xl mb-8 shadow-lg">
+          <h2 className="text-2xl md:text-3xl font-bold text-red-800 mb-4">
+            56M Diabetics → 85% Fail Pills
+          </h2>
+          <p className="text-lg md:text-xl text-red-700 mb-6">
+            Endless tablets, no results, doctor frustration
+          </p>
+          <div className="bg-green-50 p-4 md:p-6 rounded-xl border-l-4 border-green-400">
+            <h3 className="text-xl md:text-2xl font-bold text-green-800 mb-2">
+              HOMA Solution: 85% Remission
+            </h3>
+            <p className="text-base md:text-lg text-green-700">
+              90 Days → Calculator below proves it works
+            </p>
+          </div>
+        </div>
+
+        {/* VIDEO HERO - Above Calculator */}
+        <div className="video-hero mb-8 rounded-2xl overflow-hidden shadow-2xl bg-white">
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              className="absolute top-0 left-0 w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="90 Day Program Explained"
+            />
+          </div>
+          <p className="text-center text-indigo-700 font-semibold mt-4 pb-4 px-4">
+            90 Day Program Explained
+          </p>
+        </div>
+
         {/* SEO H1 - Above Calculator/Form */}
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-4 px-4">
           Diabetologist Gachibowli | Dr. Muddu Nehru MD | 90 Day Diabetes Remission
@@ -664,6 +699,45 @@ export default function LeadScoringForm() {
                 </button>
               )}
             </div>
+          </form>
+        </div>
+
+        {/* SUBSCRIBE SECTION - Below Calculator */}
+        <div className="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 md:p-8 rounded-2xl text-center shadow-lg">
+          <h3 className="text-2xl md:text-3xl font-bold text-indigo-900 mb-4">
+            Join 500K+ Patients
+          </h3>
+          <p className="text-lg text-gray-700 mb-6">
+            Early access + Free metabolic tips
+          </p>
+          <form 
+            onSubmit={(e) => {
+              e.preventDefault();
+              const email = (e.target as HTMLFormElement).email.value;
+              if (email) {
+                // TODO: Connect to your email service/API
+                // For now, open WhatsApp with pre-filled message
+                window.open(
+                  `https://wa.me/919963721999?text=I want to join the waitlist. Email: ${encodeURIComponent(email)}`,
+                  '_blank'
+                );
+              }
+            }}
+            className="flex flex-col items-center"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              className="w-full max-w-md p-4 border-2 border-indigo-200 rounded-xl mb-4 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200"
+            />
+            <button
+              type="submit"
+              className="bg-indigo-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              Join Waitlist
+            </button>
           </form>
         </div>
       </div>

@@ -255,8 +255,27 @@ export default function RootLayout({
                 </div>
               </div>
 
+              {/* Payments Section */}
+              <div className="payments flex flex-wrap gap-4 md:gap-6 justify-center py-6 md:py-8 border-t border-gray-200 mt-8">
+                <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg">
+                  <img src="/upi.svg" alt="UPI" className="h-8 w-auto" />
+                  <span className="text-gray-700 font-medium">UPI</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg">
+                  <img src="/visa.svg" alt="Visa" className="h-8 w-auto" />
+                  <span className="text-gray-700 font-medium">Visa</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg">
+                  <img src="/paypal.svg" alt="PayPal" className="h-8 w-auto" />
+                  <span className="text-gray-700 font-medium">PayPal</span>
+                </div>
+                <p className="text-center text-sm text-gray-600 mt-4 w-full">
+                  100% Secure Payments
+                </p>
+              </div>
+
               {/* Bottom Bar */}
-              <div className="border-t border-gray-700 mt-8 pt-4 text-center">
+              <div className="border-t border-gray-700 mt-4 pt-4 text-center">
                 <p className="text-xs text-gray-400">
                   © 2025 HOMA Clinic | Dr. Muddu Surendra Nehru M.D. | All Rights Reserved
                 </p>
