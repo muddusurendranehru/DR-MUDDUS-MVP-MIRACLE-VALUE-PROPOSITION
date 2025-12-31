@@ -28,6 +28,20 @@ export default function RootLayout({
         <meta name="google-site-verification" content="KR-S5Yw9tbmd22VH8sY4wkwGxD3jv_UiIGHYgeHAlRM" />
         <title>HOMA Clinic – Achieve Metabolic Remission in 90 Days</title>
         <meta name="description" content="Evidence-based protocols for reversing insulin resistance, high triglycerides, and early metabolic dysfunction — not just managing it." />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com" />
+        <meta property="og:title" content="Dr Muddu Nehru | Diabetologist Gachibowli" />
+        <meta property="og:description" content="90 Day Diabetes Remission | 85% Success" />
+        <meta property="og:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/og-chiranjeevi.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com" />
+        <meta name="twitter:title" content="Dr Muddu Nehru | Diabetologist Gachibowli" />
+        <meta name="twitter:description" content="90 Day Diabetes Remission | 85% Success" />
+        <meta name="twitter:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/og-chiranjeevi.jpg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -50,14 +64,40 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": [{
-                "@type": "Question",
-                "name": "Diabetes reversal cost Gachibowli?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "₹999 Metabolic Risk Calculator + 90 Day Program"
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Best diabetologist Gachibowli?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Dr. Muddu Surendra Nehru MD is the best diabetologist in Gachibowli, Hyderabad. With 30+ years of experience, 500,000+ patients treated, and 85% remission rate using the evidence-based 90-day HOMA protocol. Professor of Medicine specializing in diabetes reversal, insulin resistance, and metabolic health."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Diabetes reversal cost Gachibowli?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "₹999 Metabolic Risk Calculator + 90 Day Program. The program includes personalized treatment plans, HOMA-IR testing, nutrition tracking, and continuous monitoring for metabolic remission."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Diabetes reversal cost Hyderabad?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "₹999 Metabolic Risk Calculator + 90 Day Program at HOMA Clinic Gachibowli. Dr. Muddu Nehru MD offers evidence-based diabetes reversal protocols with 85% success rate. Located in Gachibowli, Hyderabad. Call 09963721999 for consultation."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "HOMA IR test near me?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "HOMA-IR test available at HOMA Clinic Gachibowli, Hyderabad. Dr. Muddu Nehru MD offers comprehensive metabolic testing including HOMA-IR (Homeostatic Model Assessment for Insulin Resistance), fasting glucose, triglycerides, and TyG Index. Address: Diabetes Reversal Center Health care center Gachibowli. Phone: 09963721999."
+                  }
                 }
-              }]
+              ]
             })
           }}
         />
