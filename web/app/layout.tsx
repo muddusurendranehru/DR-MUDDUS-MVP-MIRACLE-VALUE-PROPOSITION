@@ -28,6 +28,22 @@ export default function RootLayout({
         <meta name="google-site-verification" content="KR-S5Yw9tbmd22VH8sY4wkwGxD3jv_UiIGHYgeHAlRM" />
         <title>HOMA Clinic – Achieve Metabolic Remission in 90 Days</title>
         <meta name="description" content="Evidence-based protocols for reversing insulin resistance, high triglycerides, and early metabolic dysfunction — not just managing it." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MedicalClinic",
+              "name": "Diabetes Reversal Center Health care center Gachibowli",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Gachibowli, Hyderabad"
+              },
+              "telephone": "09963721999",
+              "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com"
+            })
+          }}
+        />
       </head>
       <body className={inter.className}>
         <AuthProvider>
@@ -175,6 +191,49 @@ export default function RootLayout({
                   <p className="text-xs text-gray-400 mt-1">
                     Professor of Medicine • 30+ Years Experience • World's First AI Health App Pioneer
                   </p>
+                </div>
+              </div>
+
+              {/* GBP Widget - Above Copyright */}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-indigo-200 mb-8 mt-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="text-xl font-bold text-indigo-900 mb-2">
+                      ⭐ HOMA Clinic Gachibowli
+                    </h3>
+                    <p className="text-indigo-700 mb-4">
+                      Diabetes Reversal Center | Dr. Muddu Nehru MD
+                    </p>
+                    <div className="flex gap-2 mb-4 flex-wrap">
+                      <a 
+                        href="https://www.google.com/maps/search/?api=1&query=Diabetes+Reversal+Center+Health+care+center+Gachibowli" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-700 transition-colors"
+                      >
+                        📍 Directions
+                      </a>
+                      <a 
+                        href="tel:09963721999" 
+                        className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors"
+                      >
+                        📱 Call Now
+                      </a>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1234567890123!2d78.3489!3d17.4227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI1JzIyLjAiTiA3OMKwMjAnNTYuMSJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                      width="100%" 
+                      height="120" 
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="rounded-lg"
+                      title="Diabetes Reversal Center Health care center Gachibowli Location"
+                    />
+                  </div>
                 </div>
               </div>
 
