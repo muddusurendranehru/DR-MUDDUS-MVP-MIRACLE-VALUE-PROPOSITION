@@ -265,25 +265,27 @@ export default function LeadScoringForm() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-50 py-8 px-4">
       <div className="max-w-3xl mx-auto">
-        {/* FRUSTRATION → SOLUTION - Above Calculator */}
-        <div className="frustration bg-red-50 border-l-8 border-red-400 p-6 md:p-8 rounded-xl mb-8 shadow-lg">
-          <h2 className="text-2xl md:text-3xl font-bold text-red-800 mb-4">
-            56M Diabetics → 85% Fail Pills
-          </h2>
-          <p className="text-lg md:text-xl text-red-700 mb-6">
-            Endless tablets, no results, doctor frustration
-          </p>
-          <div className="bg-green-50 p-4 md:p-6 rounded-xl border-l-4 border-green-400">
-            <h3 className="text-xl md:text-2xl font-bold text-green-800 mb-2">
-              HOMA Solution: 85% Remission
+        {/* FRUSTRATION → SOLUTION Band - Above Calculator */}
+        <div className="frustration grid md:grid-cols-2 gap-4 mb-8">
+          <div className="bg-red-50 border-l-4 border-red-400 p-4 md:p-6 rounded-lg">
+            <h3 className="text-lg md:text-xl font-bold text-red-800 mb-2">
+              Common Frustrations
             </h3>
-            <p className="text-base md:text-lg text-green-700">
-              90 Days → Calculator below proves it works
+            <p className="text-sm md:text-base text-red-700">
+              Endless pills, side effects, no reversal. Many patients struggle with tablets that only manage symptoms without addressing root causes.
+            </p>
+          </div>
+          <div className="bg-green-50 border-l-4 border-green-400 p-4 md:p-6 rounded-lg">
+            <h3 className="text-lg md:text-xl font-bold text-green-800 mb-2">
+              HOMA Solution
+            </h3>
+            <p className="text-sm md:text-base text-green-700">
+              Evidence‑based 90‑day protocol with 85% remission rate. Focuses on metabolic root causes, not just symptom management.
             </p>
           </div>
         </div>
 
-        {/* VIDEO HERO - Above Calculator */}
+        {/* Explainer Video Block */}
         <div className="video-hero mb-8 rounded-2xl overflow-hidden shadow-2xl bg-white">
           <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
             <iframe
@@ -292,18 +294,47 @@ export default function LeadScoringForm() {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              title="90 Day Program Explained"
+              title="How the 90‑Day HOMA Remission Program Works"
             />
           </div>
-          <p className="text-center text-indigo-700 font-semibold mt-4 pb-4 px-4">
-            90 Day Program Explained
-          </p>
+          <div className="p-4">
+            <h3 className="text-center text-lg md:text-xl font-semibold text-indigo-700 mb-2">
+              How the 90‑Day HOMA Remission Program Works
+            </h3>
+            <a
+              href="#calculator"
+              className="block text-center text-sm text-indigo-600 hover:text-indigo-800 underline mt-2"
+            >
+              Prefer to read? Scroll to see how it works.
+            </a>
+          </div>
         </div>
 
         {/* SEO H1 - Above Calculator/Form */}
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-4 px-4">
-          Diabetologist Gachibowli | Dr. Muddu Nehru MD | 90 Day Diabetes Remission
+          Diabetologist in Gachibowli | 90‑Day Diabetes & Heart Risk Reversal – Dr. Muddu Nehru MD
         </h1>
+
+        {/* Who This Is For - Below Hero */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 md:p-6 mb-6 border-l-4 border-teal-500 shadow-md">
+          <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-3 text-center md:text-left">
+            Who this is for:
+          </h2>
+          <ul className="space-y-2 text-gray-700">
+            <li className="flex items-start gap-2">
+              <span className="text-teal-600 font-bold mt-1">•</span>
+              <span>New diabetics or pre‑diabetics</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-teal-600 font-bold mt-1">•</span>
+              <span>Long‑term on tablets with poor control</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-teal-600 font-bold mt-1">•</span>
+              <span>Heart disease or obesity with high sugars</span>
+            </li>
+          </ul>
+        </div>
         
         {/* Hero CTA */}
         <div className="text-center mb-6">
@@ -317,7 +348,7 @@ export default function LeadScoringForm() {
           </a>
         </div>
         
-        <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+        <div id="calculator" className="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
               🎯 90-Day Metabolic Freedom Evaluation
@@ -700,6 +731,57 @@ export default function LeadScoringForm() {
               )}
             </div>
           </form>
+        </div>
+
+        {/* Benefits Section - After Calculator */}
+        <div className="mt-12 mb-8 bg-gradient-to-br from-teal-50 to-green-50 rounded-2xl p-6 md:p-8 shadow-lg border border-teal-100">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-6">
+            Why Choose HOMA Clinic?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div className="flex items-start gap-3 bg-white rounded-lg p-4 shadow-sm">
+              <span className="text-2xl">👥</span>
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">500,000+ Patients</h3>
+                <p className="text-sm text-gray-600">Trusted by thousands across India</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-white rounded-lg p-4 shadow-sm">
+              <span className="text-2xl">🎯</span>
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">85% Remission Rate</h3>
+                <p className="text-sm text-gray-600">Proven results in 90 days</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-white rounded-lg p-4 shadow-sm">
+              <span className="text-2xl">👨‍⚕️</span>
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">30+ Years Experience</h3>
+                <p className="text-sm text-gray-600">Dr. Muddu Nehru MD, Professor</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-white rounded-lg p-4 shadow-sm">
+              <span className="text-2xl">❤️</span>
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">Heart Risk Focus</h3>
+                <p className="text-sm text-gray-600">Addresses cardiovascular health</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-white rounded-lg p-4 shadow-sm">
+              <span className="text-2xl">📊</span>
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">Central Obesity Focus</h3>
+                <p className="text-sm text-gray-600">Targets belly fat & metabolic health</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-white rounded-lg p-4 shadow-sm">
+              <span className="text-2xl">🔬</span>
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">Evidence-Based Protocol</h3>
+                <p className="text-sm text-gray-600">Science-backed treatment approach</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* SUBSCRIBE SECTION - Below Calculator */}

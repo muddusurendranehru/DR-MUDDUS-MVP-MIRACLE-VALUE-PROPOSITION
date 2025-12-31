@@ -256,20 +256,28 @@ export default function RootLayout({
               </div>
 
               {/* Payments Section */}
-              <div className="payments flex flex-wrap gap-4 md:gap-6 justify-center py-6 md:py-8 border-t border-gray-200 mt-8">
-                <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg">
-                  <img src="/upi.svg" alt="UPI" className="h-8 w-auto" />
-                  <span className="text-gray-700 font-medium">UPI</span>
+              <div className="payments flex flex-wrap gap-3 md:gap-4 justify-center py-4 md:py-6 border-t border-gray-200 mt-8">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-lg">
+                  <img src="/upi.svg" alt="UPI" className="h-6 w-auto" />
+                  <span className="text-gray-700 font-medium text-xs md:text-sm">UPI</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg">
-                  <img src="/visa.svg" alt="Visa" className="h-8 w-auto" />
-                  <span className="text-gray-700 font-medium">Visa</span>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-lg">
+                  <img src="/visa.svg" alt="Visa" className="h-6 w-auto" />
+                  <span className="text-gray-700 font-medium text-xs md:text-sm">Visa</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg">
-                  <img src="/paypal.svg" alt="PayPal" className="h-8 w-auto" />
-                  <span className="text-gray-700 font-medium">PayPal</span>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-lg">
+                  <img src="/mastercard.svg" alt="Mastercard" className="h-6 w-auto" />
+                  <span className="text-gray-700 font-medium text-xs md:text-sm">Mastercard</span>
                 </div>
-                <p className="text-center text-sm text-gray-600 mt-4 w-full">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-lg">
+                  <img src="/rupay.svg" alt="RuPay" className="h-6 w-auto" />
+                  <span className="text-gray-700 font-medium text-xs md:text-sm">RuPay</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-lg">
+                  <img src="/paypal.svg" alt="PayPal" className="h-6 w-auto" />
+                  <span className="text-gray-700 font-medium text-xs md:text-sm">PayPal</span>
+                </div>
+                <p className="text-center text-xs text-gray-500 mt-3 w-full">
                   100% Secure Payments
                 </p>
               </div>
