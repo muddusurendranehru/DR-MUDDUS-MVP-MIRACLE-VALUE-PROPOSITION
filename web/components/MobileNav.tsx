@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
   { href: '/', label: 'Home', icon: '🏠' },
   { href: '/pricing', label: 'Packages', icon: '💰' },
+  { href: '/gallery', label: 'Gallery', icon: '📸' },
   { href: '/blog', label: 'Blog', icon: '📝' },
   { href: '/dashboard', label: 'Dashboard', icon: '📊' },
   { href: '/nutri-bot', label: 'NutriBot AI', icon: '🤖' },

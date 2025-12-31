@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import ProgramHero from '@/components/ProgramHero';
+import HOMAWebApps from '@/components/HOMAWebApps';
 
 export default function HomePageClient() {
   const [isHovering, setIsHovering] = useState(false);
@@ -341,6 +342,13 @@ export default function HomePageClient() {
               <p className="text-gray-400 text-sm">Access your dashboard</p>
             </Link>
           </div>
+        </div>
+      </div>
+
+      {/* HOMA Web Apps Section */}
+      <div className="relative z-10 bg-white py-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <HOMAWebApps />
         </div>
       </div>
 

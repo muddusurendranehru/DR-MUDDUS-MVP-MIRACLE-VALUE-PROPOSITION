@@ -266,9 +266,21 @@ export default function LeadScoringForm() {
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-50 py-8 px-4">
       <div className="max-w-3xl mx-auto">
         {/* SEO H1 - Above Calculator/Form */}
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-6 px-4">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-4 px-4">
           Diabetologist Gachibowli | Dr. Muddu Nehru MD | 90 Day Diabetes Remission
         </h1>
+        
+        {/* Hero CTA */}
+        <div className="text-center mb-6">
+          <a
+            href="https://wa.me/919963721999?text=I want a Free Risk Assessment"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-xl text-lg md:text-xl shadow-xl transition-all transform hover:scale-105"
+          >
+            Free Risk Assessment → WhatsApp 09963721999
+          </a>
+        </div>
         
         <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
           <div className="text-center mb-8">
