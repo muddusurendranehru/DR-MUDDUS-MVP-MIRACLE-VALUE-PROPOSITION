@@ -295,33 +295,6 @@ export default function RootLayout({
                 </div>
               </div>
 
-              {/* Payments Section */}
-              <div className="payments flex flex-wrap gap-3 md:gap-4 justify-center py-4 md:py-6 border-t border-gray-200 mt-8">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-lg">
-                  <img src="/upi.svg" alt="UPI" className="h-6 w-auto" />
-                  <span className="text-gray-700 font-medium text-xs md:text-sm">UPI</span>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-lg">
-                  <img src="/visa.svg" alt="Visa" className="h-6 w-auto" />
-                  <span className="text-gray-700 font-medium text-xs md:text-sm">Visa</span>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-lg">
-                  <img src="/mastercard.svg" alt="Mastercard" className="h-6 w-auto" />
-                  <span className="text-gray-700 font-medium text-xs md:text-sm">Mastercard</span>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-lg">
-                  <img src="/rupay.svg" alt="RuPay" className="h-6 w-auto" />
-                  <span className="text-gray-700 font-medium text-xs md:text-sm">RuPay</span>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-lg">
-                  <img src="/paypal.svg" alt="PayPal" className="h-6 w-auto" />
-                  <span className="text-gray-700 font-medium text-xs md:text-sm">PayPal</span>
-                </div>
-                <p className="text-center text-xs text-gray-500 mt-3 w-full">
-                  100% Secure Payments
-                </p>
-              </div>
-
               {/* WhatsApp Share Button - Footer */}
               <div className="text-center mt-6 mb-4">
                 <a
@@ -332,6 +305,104 @@ export default function RootLayout({
                 >
                   💬 Share on WhatsApp
                 </a>
+              </div>
+
+              {/* NEXT STEPS Section */}
+              <div className="footer-next-steps grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 bg-gradient-to-r from-blue-500 to-indigo-600 p-6 rounded-xl text-white">
+                <div className="flex flex-col items-center text-center">
+                  <img 
+                    src="https://cdn-icons-png.flaticon.com/512/1045/1045618.png" 
+                    alt="GBP Photos" 
+                    className="w-12 h-12 mb-2"
+                    loading="lazy"
+                  />
+                  <span className="font-bold text-sm">1. GBP 6 Photos</span>
+                  <span className="text-xs">(CHIRU1 logo)</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <img 
+                    src="https://cdn-icons-png.flaticon.com/512/2272/2272810.png" 
+                    alt="Reviews" 
+                    className="w-12 h-12 mb-2"
+                    loading="lazy"
+                  />
+                  <span className="font-bold text-sm">2. 5 Staff Reviews</span>
+                  <span className="text-xs">(₹100 Amazon)</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <img 
+                    src="https://cdn-icons-png.flaticon.com/512/10825/10825123.png" 
+                    alt="Reel" 
+                    className="w-12 h-12 mb-2"
+                    loading="lazy"
+                  />
+                  <span className="font-bold text-sm">3. Insta Reel</span>
+                  <span className="text-xs">(Lady doctor iPad)</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <img 
+                    src="https://cdn-icons-png.flaticon.com/512/484/484662.png" 
+                    alt="Blog" 
+                    className="w-12 h-12 mb-2"
+                    loading="lazy"
+                  />
+                  <span className="font-bold text-sm">4. Blog #1</span>
+                  <span className="text-xs">HOMA-IR Explained</span>
+                </div>
+              </div>
+
+              {/* GIVE/DONATE Section */}
+              <div className="footer-give bg-gradient-to-r from-green-500 to-emerald-600 p-6 rounded-xl text-white text-center mb-6">
+                <h3 className="text-xl font-bold mb-2">❤️ GIVE - Support Metabolic Remission</h3>
+                <img 
+                  src="https://cdn-icons-png.flaticon.com/512/10709/10709095.png" 
+                  alt="Donate Heart" 
+                  className="w-16 h-16 mx-auto mb-4"
+                  loading="lazy"
+                />
+                <p className="text-sm mb-4">Help 500K+ patients achieve 85% remission</p>
+                <a
+                  href="https://wa.me/919963721999?text=I want to DONATE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-white text-green-600 px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition"
+                >
+                  Donate Now (UPI)
+                </a>
+              </div>
+
+              {/* PAYMENTS Section */}
+              <div className="footer-payments bg-gray-50 p-6 rounded-xl mb-6">
+                <h3 className="text-center font-bold text-lg mb-4 text-gray-800">100% Secure Payments</h3>
+                <div className="flex flex-wrap justify-center items-center gap-4">
+                  <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
+                    <img 
+                      src="https://cdn-icons-png.flaticon.com/512/11645/11645614.png" 
+                      alt="UPI" 
+                      className="h-8"
+                      loading="lazy"
+                    />
+                    <span className="font-bold text-sm">UPI</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
+                    <img 
+                      src="https://seeklogo.com/images/V/visa-logo-E7DA9E050D-seeklogo.com.png" 
+                      alt="Visa" 
+                      className="h-8 w-20"
+                      loading="lazy"
+                    />
+                    <span className="font-bold text-sm">Visa</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
+                    <img 
+                      src="https://cdn-icons-png.flaticon.com/512/5968/5968898.png" 
+                      alt="PayPal" 
+                      className="h-8"
+                      loading="lazy"
+                    />
+                    <span className="font-bold text-sm">PayPal</span>
+                  </div>
+                </div>
               </div>
 
               {/* Bottom Bar */}
