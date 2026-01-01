@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db, pool } from '@/lib/db';
-import { sql } from 'drizzle-orm';
+import { db } from '@/lib/db';
+import { galleryImages } from '@/lib/schema';
+import { eq } from 'drizzle-orm';
 import { unlink } from 'fs/promises';
 import { join } from 'path';
 
@@ -32,53 +33,57 @@ export async function PATCH(
     const body = await request.json();
     const { alt, caption, order, is_cover } = body;
 
-    // Build update query dynamically
-    const updates: string[] = [];
-    const values: any[] = [];
+    // Build update object dynamically
+    const updateData: any = {};
 
     if (alt !== undefined) {
-      updates.push(`alt = $${values.length + 1}`);
-      values.push(alt);
+      updateData.alt = alt;
     }
     if (caption !== undefined) {
-      updates.push(`caption = $${values.length + 1}`);
-      values.push(caption);
+      updateData.caption = caption;
     }
     if (order !== undefined) {
-      updates.push(`"order" = $${values.length + 1}`);
-      values.push(order);
+      updateData.order = order;
     }
     if (is_cover !== undefined) {
-      updates.push(`is_cover = $${values.length + 1}`);
-      values.push(is_cover);
+      updateData.isCover = is_cover;
     }
 
-    if (updates.length === 0) {
+    if (Object.keys(updateData).length === 0) {
       return NextResponse.json(
         { error: 'No fields to update' },
         { status: 400 }
       );
     }
 
-    values.push(id);
-    const query = `
-      UPDATE gallery_images 
-      SET ${updates.join(', ')}
-      WHERE id = $${values.length}
-      RETURNING *
-    `;
-    
-    // Use pool directly for dynamic parameterized query
-    const result = await pool.query(query, values);
+    // Use Drizzle to update
+    const result = await db
+      .update(galleryImages)
+      .set(updateData)
+      .where(eq(galleryImages.id, id))
+      .returning();
 
-    if (result.rows.length === 0) {
+    if (result.length === 0) {
       return NextResponse.json(
         { error: 'Gallery image not found' },
         { status: 404 }
       );
     }
 
-    return NextResponse.json({ image: result.rows[0] });
+    // Convert to snake_case for API response
+    const image = result[0];
+    return NextResponse.json({
+      image: {
+        id: image.id,
+        filename: image.filename,
+        alt: image.alt,
+        caption: image.caption,
+        order: image.order,
+        is_cover: image.isCover,
+        active: image.active,
+        created_at: image.createdAt,
+      },
+    });
   } catch (error: any) {
     console.error('Error updating gallery image:', error);
     return NextResponse.json(
@@ -103,24 +108,24 @@ export async function DELETE(
   try {
     const { id } = params;
 
-    // Get image info first
-    const result = await db.execute(sql`
-      SELECT filename FROM gallery_images WHERE id = ${id}
-    `);
+    // Get image info first using Drizzle
+    const image = await db
+      .select({ filename: galleryImages.filename })
+      .from(galleryImages)
+      .where(eq(galleryImages.id, id))
+      .limit(1);
 
-    if (result.rows.length === 0) {
+    if (image.length === 0) {
       return NextResponse.json(
         { error: 'Gallery image not found' },
         { status: 404 }
       );
     }
 
-    const filename = result.rows[0].filename as string;
+    const filename = image[0].filename;
 
-    // Delete from database
-    await db.execute(sql`
-      DELETE FROM gallery_images WHERE id = ${id}
-    `);
+    // Delete from database using Drizzle
+    await db.delete(galleryImages).where(eq(galleryImages.id, id));
 
     // Delete file
     try {
