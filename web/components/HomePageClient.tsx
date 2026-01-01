@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import ProgramHero from '@/components/ProgramHero';
 import HOMAWebApps from '@/components/HOMAWebApps';
+import AppEcosystemCarousel from '@/components/AppEcosystemCarousel';
 
 export default function HomePageClient() {
   const [isHovering, setIsHovering] = useState(false);
@@ -83,6 +84,11 @@ export default function HomePageClient() {
         >
           Login
         </Link>
+      </div>
+
+      {/* App Ecosystem Carousel - Top Section */}
+      <div className="relative z-10 pt-20 md:pt-24">
+        <AppEcosystemCarousel />
       </div>
 
       {/* Content Layer */}

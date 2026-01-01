@@ -101,6 +101,84 @@ export default function RootLayout({
             })
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "Dr Muddu's Health Apps Ecosystem",
+              "description": "Comprehensive suite of AI-powered health applications by Dr. Muddu Surendra Nehru MD",
+              "itemListElement": [
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "Drug Trials Tracker",
+                  "description": "Track and manage clinical drug trials",
+                  "url": "https://drug-trials-frontend.onrender.com",
+                  "applicationCategory": "HealthApplication",
+                  "operatingSystem": "Web",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "INR"
+                  }
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "OCR Report Analyzer",
+                  "description": "AI-powered medical report analysis using OCR technology",
+                  "url": "https://ai-image-ocr-1.onrender.com",
+                  "applicationCategory": "HealthApplication",
+                  "operatingSystem": "Web",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "INR"
+                  }
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "PCOS HOMA Score",
+                  "description": "Calculate PCOS HOMA-IR score for metabolic assessment",
+                  "url": "https://pcos-homaiq-score-frontend.onrender.com",
+                  "applicationCategory": "HealthApplication",
+                  "operatingSystem": "Web",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "INR"
+                  }
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "90-Day Metrics",
+                  "description": "Track your 90-day health journey and metabolic metrics",
+                  "url": "https://healthmetrics-render1.onrender.com",
+                  "applicationCategory": "HealthApplication",
+                  "operatingSystem": "Web",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "INR"
+                  }
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "Nutrition Bot",
+                  "description": "AI nutrition guidance powered by HOMA Foods - Get personalized nutrition recommendations",
+                  "url": "https://homa-foods-nutrition.onrender.com",
+                  "applicationCategory": "HealthApplication",
+                  "operatingSystem": "Web",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "INR"
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={inter.className}>
         <AuthProvider>
@@ -229,6 +307,85 @@ export default function RootLayout({
                       📷 Instagram/FB: homahealthcarecenter
                     </a>
                   </div>
+                </div>
+              </div>
+
+              {/* App Ecosystem Section */}
+              <div className="mt-8 pt-8 border-t border-gray-700">
+                <h3 className="text-xl font-bold text-teal-400 mb-4 text-center">🩺 Dr Muddu's App Ecosystem</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                  {/* Nutrition Bot - Highlighted */}
+                  <a
+                    href="https://homa-foods-nutrition.onrender.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-br from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 rounded-xl p-4 text-white transition-all transform hover:scale-105 shadow-lg border-2 border-green-400"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-3xl">🍎</span>
+                      <div>
+                        <div className="text-xs bg-yellow-400 text-gray-900 px-2 py-0.5 rounded-full font-bold inline-block mb-1">
+                          #1 NUTRITION FOCUS
+                        </div>
+                        <h4 className="font-bold text-lg">Nutrition Bot</h4>
+                      </div>
+                    </div>
+                    <p className="text-sm text-green-100">AI nutrition guidance powered by HOMA Foods</p>
+                    <div className="mt-2 text-xs text-green-200">Visit App →</div>
+                  </a>
+
+                  {/* Other Apps */}
+                  <a
+                    href="https://drug-trials-frontend.onrender.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 hover:bg-gray-700 rounded-xl p-4 text-white transition-all transform hover:scale-105 border border-gray-600"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-2xl">💊</span>
+                      <h4 className="font-bold">Drug Trials Tracker</h4>
+                    </div>
+                    <p className="text-sm text-gray-400">Track and manage clinical drug trials</p>
+                  </a>
+
+                  <a
+                    href="https://ai-image-ocr-1.onrender.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 hover:bg-gray-700 rounded-xl p-4 text-white transition-all transform hover:scale-105 border border-gray-600"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-2xl">📄</span>
+                      <h4 className="font-bold">OCR Report Analyzer</h4>
+                    </div>
+                    <p className="text-sm text-gray-400">AI-powered medical report analysis</p>
+                  </a>
+
+                  <a
+                    href="https://pcos-homaiq-score-frontend.onrender.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 hover:bg-gray-700 rounded-xl p-4 text-white transition-all transform hover:scale-105 border border-gray-600"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-2xl">🎯</span>
+                      <h4 className="font-bold">PCOS HOMA Score</h4>
+                    </div>
+                    <p className="text-sm text-gray-400">Calculate PCOS HOMA-IR score</p>
+                  </a>
+
+                  <a
+                    href="https://healthmetrics-render1.onrender.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 hover:bg-gray-700 rounded-xl p-4 text-white transition-all transform hover:scale-105 border border-gray-600"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-2xl">📊</span>
+                      <h4 className="font-bold">90-Day Metrics</h4>
+                    </div>
+                    <p className="text-sm text-gray-400">Track your 90-day health journey</p>
+                  </a>
                 </div>
               </div>
 
