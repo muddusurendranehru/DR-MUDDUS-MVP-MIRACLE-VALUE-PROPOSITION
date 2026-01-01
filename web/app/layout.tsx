@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { AuthProvider } from '@/lib/auth-context'
 import Link from 'next/link'
+import Image from 'next/image'
 import MobileNav from '@/components/MobileNav'
 import OnboardingDemo from '@/components/OnboardingDemo'
 import WelcomeBot from '@/components/WelcomeBot'
@@ -552,30 +553,42 @@ export default function RootLayout({
               <div className="footer-payments bg-gray-50 p-6 rounded-xl mb-6">
                 <h3 className="text-center font-bold text-lg mb-4 text-gray-800">100% Secure Payments</h3>
                 <div className="flex flex-wrap justify-center items-center gap-4">
-                  <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
-                    <img 
-                      src="https://cdn-icons-png.flaticon.com/512/11645/11645614.png" 
-                      alt="UPI" 
-                      className="h-8"
-                      loading="lazy"
+                  <a
+                    href="whatsapp://send?phone=919963721999&text=UPI HOMA Basic"
+                    className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow hover:shadow-lg transition-all"
+                  >
+                    <Image
+                      src="https://cdn-icons-png.flaticon.com/512/11645/11645614.png"
+                      alt="UPI"
+                      width={40}
+                      height={40}
+                      sizes="(max-width: 768px) 40px, 60px"
+                      className="h-8 w-auto"
+                      unoptimized
                     />
-                    <span className="font-bold text-sm">UPI</span>
-                  </div>
+                    <span className="font-bold text-sm">Pay ₹999</span>
+                  </a>
                   <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
-                    <img 
-                      src="https://seeklogo.com/images/V/visa-logo-E7DA9E050D-seeklogo.com.png" 
-                      alt="Visa" 
-                      className="h-8 w-20"
-                      loading="lazy"
+                    <Image
+                      src="https://seeklogo.com/images/V/visa-logo-E7DA9E050D-seeklogo.com.png"
+                      alt="Visa"
+                      width={60}
+                      height={40}
+                      sizes="(max-width: 768px) 40px, 60px"
+                      className="h-8 w-auto"
+                      unoptimized
                     />
                     <span className="font-bold text-sm">Visa</span>
                   </div>
                   <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
-                    <img 
-                      src="https://cdn-icons-png.flaticon.com/512/5968/5968898.png" 
-                      alt="PayPal" 
-                      className="h-8"
-                      loading="lazy"
+                    <Image
+                      src="https://cdn-icons-png.flaticon.com/512/5968/5968898.png"
+                      alt="PayPal"
+                      width={40}
+                      height={40}
+                      sizes="(max-width: 768px) 40px, 60px"
+                      className="h-8 w-auto"
+                      unoptimized
                     />
                     <span className="font-bold text-sm">PayPal</span>
                   </div>
