@@ -10,8 +10,8 @@ import WelcomeBot from '@/components/WelcomeBot'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'HOMA Clinic – Achieve Metabolic Remission in 90 Days',
-  description: 'Evidence-based protocols for reversing insulin resistance, high triglycerides, and early metabolic dysfunction — not just managing it.',
+  title: 'Dr Muddu\'s HOMA Clinic Gachibowli Hyderabad India - Diabetes Cardio Obesity REMISSION',
+  description: 'Years struggling? We test FASTING INSULIN (not glucose) + HOMA-IR. 32yrs ethics-guided care, 35L patients, India #1 5K+ HOMA tests, pioneer cardio-obesity-metabolism. 25 apps built. Pioneer close monitoring → REMISSION.',
   verification: {
     google: 'KR-S5Yw9tbmd22VH8sY4wkwGxD3jv_UiIGHYgeHAlRM',
   },
@@ -26,8 +26,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="KR-S5Yw9tbmd22VH8sY4wkwGxD3jv_UiIGHYgeHAlRM" />
-        <title>HOMA Clinic – Achieve Metabolic Remission in 90 Days</title>
-        <meta name="description" content="Evidence-based protocols for reversing insulin resistance, high triglycerides, and early metabolic dysfunction — not just managing it." />
+        <title>Dr Muddu's HOMA Clinic Gachibowli Hyderabad India - Diabetes Cardio Obesity REMISSION</title>
+        <meta name="description" content="Years struggling? We test FASTING INSULIN (not glucose) + HOMA-IR. 32yrs ethics-guided care, 35L patients, India #1 5K+ HOMA tests, pioneer cardio-obesity-metabolism. 25 apps built. Pioneer close monitoring → REMISSION." />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -48,13 +48,32 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "MedicalClinic",
-              "name": "Diabetes Reversal Center Health care center Gachibowli",
+              "name": "Dr Muddu's HOMA Clinic Gachibowli Hyderabad India - Diabetes Cardio Obesity REMISSION",
+              "alternateName": "Diabetes Reversal Center Health care center Gachibowli",
+              "description": "Years struggling? We test FASTING INSULIN (not glucose) + HOMA-IR. 32yrs ethics-guided care, 35L patients, India #1 5K+ HOMA tests, pioneer cardio-obesity-metabolism. 25 apps built. Pioneer close monitoring → REMISSION.",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Gachibowli, Hyderabad"
+                "addressLocality": "Gachibowli",
+                "addressRegion": "Telangana",
+                "addressCountry": "IN",
+                "streetAddress": "Diabetes Reversal Center Health care center Gachibowli"
               },
               "telephone": "09963721999",
-              "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com"
+              "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "350",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "priceRange": "₹₹",
+              "medicalSpecialty": ["Endocrinology", "Cardiology", "Metabolic Medicine"],
+              "founder": {
+                "@type": "Person",
+                "name": "Dr. Muddu Surendra Nehru",
+                "jobTitle": "Professor of Medicine"
+              }
             })
           }}
         />
@@ -250,6 +269,7 @@ export default function RootLayout({
                     <Link href="/upgrade" className="text-gray-300 hover:text-green-400 transition-colors">💎 Premium Plans</Link>
                     <Link href="/enroll" className="text-gray-300 hover:text-yellow-400 transition-colors">🎯 Enroll Now</Link>
                     <Link href="/pricing" className="text-gray-300 hover:text-amber-400 transition-colors">💰 All Packages</Link>
+                    <Link href="/zoom" className="text-gray-300 hover:text-purple-400 transition-colors">📹 Zoom Sundays</Link>
                     <Link href="/gallery" className="text-gray-300 hover:text-purple-400 transition-colors">📸 Gallery</Link>
                     <Link href="/blog" className="text-gray-300 hover:text-green-400 transition-colors">📝 Blog / Health Insights</Link>
                     <Link href="/disclaimer" className="text-gray-300 hover:text-red-400 transition-colors">⚖️ Legal / Disclaimer</Link>

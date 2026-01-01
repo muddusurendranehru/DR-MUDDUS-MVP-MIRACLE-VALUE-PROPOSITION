@@ -5,6 +5,11 @@ import { useState, useEffect } from 'react';
 import ProgramHero from '@/components/ProgramHero';
 import HOMAWebApps from '@/components/HOMAWebApps';
 import AppEcosystemCarousel from '@/components/AppEcosystemCarousel';
+import TrustBadges from '@/components/TrustBadges';
+import MembershipCards from '@/components/MembershipCards';
+import UniqueHook from '@/components/UniqueHook';
+import SpectrumSections from '@/components/SpectrumSections';
+import PioneerSection from '@/components/PioneerSection';
 
 export default function HomePageClient() {
   const [isHovering, setIsHovering] = useState(false);
@@ -86,8 +91,13 @@ export default function HomePageClient() {
         </Link>
       </div>
 
+      {/* Trust Badges - Top */}
+      <div className="relative z-10 pt-16 md:pt-20">
+        <TrustBadges />
+      </div>
+
       {/* App Ecosystem Carousel - Top Section */}
-      <div className="relative z-10 pt-20 md:pt-24">
+      <div className="relative z-10 pt-6">
         <AppEcosystemCarousel />
       </div>
 
@@ -99,8 +109,8 @@ export default function HomePageClient() {
           <span className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">
             🩺 Dr. Muddu's AI-Powered Health Platform
           </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            DR MUDDU METABOLISM MANTHRA - METHOD!
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
+            Diabetes REMISSION Gachibowli Hyderabad | Dr Muddu Nehru MD 09963721999 | 85% Success | Insulin Testing Pioneer
           </h1>
           <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
             {['HOMA-IR', 'HbA1c', 'TyG Index', 'Central Obesity', 'CAD', 'Hypertension', 'Diabetes'].map((item) => (
@@ -113,12 +123,14 @@ export default function HomePageClient() {
             <span className="font-bold text-yellow-300">Evidence-Based Protocols!</span> Personalized nutrition, step goals, real-time feedback, dedicated health coaches, motivators, mental health caregivers & <span className="font-bold">Doctor treatment protocols</span>.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
-            <Link
-              href="/enroll"
+            <a
+              href="https://wa.me/919963721999?text=I'm interested in HOMA test - Free Insulin Risk Discovery Call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg transition duration-200 text-center text-lg"
             >
-              🚀 Enroll Now →
-            </Link>
+              📞 Free Insulin Risk Discovery Call →
+            </a>
             <Link
               href="/pricing"
               className="px-8 py-4 border-2 border-white hover:bg-white hover:text-orange-600 text-white font-bold rounded-xl transition duration-200 text-center text-lg"
@@ -351,11 +363,31 @@ export default function HomePageClient() {
         </div>
       </div>
 
+      {/* Unique Hook Section */}
+      <div className="relative z-10">
+        <UniqueHook />
+      </div>
+
       {/* HOMA Web Apps Section */}
       <div className="relative z-10 bg-white py-12 px-6">
         <div className="max-w-7xl mx-auto">
           <HOMAWebApps />
         </div>
+      </div>
+
+      {/* Membership Cards Section */}
+      <div className="relative z-10">
+        <MembershipCards />
+      </div>
+
+      {/* Spectrum Sections */}
+      <div className="relative z-10">
+        <SpectrumSections />
+      </div>
+
+      {/* Pioneer Section */}
+      <div className="relative z-10">
+        <PioneerSection />
       </div>
 
       {/* Program Hero Section */}

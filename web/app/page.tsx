@@ -9,9 +9,9 @@ export const dynamic = 'force-static';
 // export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: 'HOMA Clinic | Achieve Metabolic Remission in 90 Days — Not Just Manage It',
-  description: 'India\'s first AI-powered metabolic clinic. Reverse insulin resistance, prediabetes & kidney risk with the HOMA blood test. Free metabolic self-assessment.',
-  keywords: 'HOMA test India, insulin resistance clinic, prediabetes reversal, metabolic remission, Dr Muddu Surendra Nehru',
+  title: 'Dr Muddu\'s HOMA Clinic Gachibowli Hyderabad India - Diabetes Cardio Obesity REMISSION',
+  description: 'Years struggling? We test FASTING INSULIN (not glucose) + HOMA-IR. 32yrs ethics-guided care, 35L patients, India #1 5K+ HOMA tests, pioneer cardio-obesity-metabolism. 25 apps built. Pioneer close monitoring → REMISSION.',
+  keywords: 'diabetes remission Gachibowli, HOMA test Hyderabad, fasting insulin test, Dr Muddu Nehru, diabetes reversal, insulin resistance, HOMA-IR test India',
   openGraph: {
     title: 'Dr Muddu Nehru | Diabetologist Gachibowli',
     description: '90 Day Diabetes Remission | 85% Success',
