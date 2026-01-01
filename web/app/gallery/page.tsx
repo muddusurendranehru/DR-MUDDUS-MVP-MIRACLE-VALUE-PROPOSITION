@@ -1,111 +1,147 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-// Gallery images data
+// Gallery images data with SEO-optimized alt tags
 const galleryImages = [
   {
     id: 1,
     src: '/images/dr-muddu-chiranjeevi.jpg.jpg',
-    caption: 'Dr. Muddu Nehru MD with Chiranjeevi',
-    alt: 'Dr. Muddu Nehru with Chiranjeevi at HOMA Clinic',
+    alt: 'Dr Muddu Surendra Nehru MD with Chiranjeevi VIP patient - Best diabetologist Gachibowli HOMA Clinic',
+    caption: 'Celebrity Patient Success - Dr. Muddu Nehru with Chiranjeevi',
   },
   {
     id: 2,
-    src: '/images/mets1.jpg',
-    caption: 'HOMA Clinic Gachibowli - Exterior View',
-    alt: 'HOMA Clinic exterior building',
+    src: '/images/newcamp1.jpg',
+    alt: 'HOMA Medical Camp Gachibowli - Free Diabetes Screening and HOMA-IR Test Hyderabad',
+    caption: 'Community Health Outreach - Medical Camp',
   },
   {
     id: 3,
-    src: '/images/waist1.jpg',
-    caption: 'Before & After - Metabolic Transformation',
-    alt: 'Patient before and after metabolic improvement',
+    src: '/images/vip2.jpg',
+    alt: 'VIP Patient Consultation - Dr Muddu Nehru diabetologist Gachibowli HOMA-IR reversal Hyderabad',
+    caption: 'VIP Patient Consultation',
   },
   {
     id: 4,
-    src: '/images/waist2.jpg',
-    caption: 'Before & After - Waist Reduction Success',
-    alt: 'Patient waist reduction results',
+    src: '/images/beforeafter3.jpg',
+    alt: 'Before After Diabetes Reversal - 90 Day Program Results HOMA Clinic Gachibowli Metabolic Remission',
+    caption: 'Before & After - Metabolic Transformation',
   },
   {
     id: 5,
-    src: '/images/waist4.jpg',
-    caption: 'Before & After - Metabolic Remission',
-    alt: 'Metabolic remission success story',
+    src: '/images/waist1.jpg',
+    alt: 'Patient Before After Waist Reduction - HOMA-IR reversal prediabetes reversal Gachibowli',
+    caption: 'Before & After - Waist Reduction Success',
   },
   {
     id: 6,
-    src: '/images/waist5.jpg',
-    caption: 'Before & After - 90-Day Program Results',
-    alt: '90-day program transformation',
+    src: '/images/waist2.jpg',
+    alt: 'Metabolic Remission Success Story - Dr Muddu Nehru 90 day diabetes reversal program Gachibowli',
+    caption: 'Before & After - Metabolic Remission',
   },
   {
     id: 7,
-    src: '/images/Metabolic Syndrome and Chronic Kidney Disease_ A Pathophysiologic Cascade.jpg',
-    caption: 'HOMA Clinic Team - Medical Excellence',
-    alt: 'HOMA Clinic medical team',
+    src: '/images/waist4.jpg',
+    alt: '90 Day Program Results - Insulin Resistance Reversal HOMA Clinic Gachibowli Hyderabad',
+    caption: 'Before & After - 90-Day Program Results',
   },
   {
     id: 8,
-    src: '/images/dr-muddu-chiranjeevi.jpg.jpg',
-    caption: 'Dr. Nehru + Chiranjeevi - Celebrity Endorsement',
-    alt: 'Dr. Muddu Nehru with Chiranjeevi',
+    src: '/images/waist5.jpg',
+    alt: 'Diabetes Reversal Transformation - HOMA-IR test results improvement Gachibowli diabetologist',
+    caption: 'Before & After - Complete Transformation',
   },
-  // Placeholder images for 4x4 grid (8 more)
   {
     id: 9,
     src: '/images/mets1.jpg',
-    caption: 'HOMA Clinic Reception Area',
-    alt: 'Clinic reception and waiting area',
+    alt: 'HOMA Clinic Gachibowli Exterior - Best diabetes clinic Hyderabad Dr Muddu Nehru MD',
+    caption: 'HOMA Clinic Gachibowli - Exterior View',
   },
   {
     id: 10,
-    src: '/images/waist1.jpg',
-    caption: 'Consultation Room - Patient Care',
-    alt: 'Doctor consultation room',
+    src: '/images/Metabolic Syndrome and Chronic Kidney Disease_ A Pathophysiologic Cascade.jpg',
+    alt: 'HOMA Clinic Medical Team - Metabolic Health Experts Gachibowli Diabetes Specialists',
+    caption: 'HOMA Clinic Team - Medical Excellence',
   },
   {
     id: 11,
-    src: '/images/waist2.jpg',
-    caption: 'Before & After - Insulin Resistance Reversal',
-    alt: 'Insulin resistance reversal success',
+    src: '/images/dr-muddu-chiranjeevi.jpg.jpg',
+    alt: 'Dr Muddu Surendra Nehru MD 30 Years Experience - Professor Medicine Senior Physician Gachibowli',
+    caption: 'Dr. Muddu Nehru - 30+ Years Experience',
   },
   {
     id: 12,
-    src: '/images/waist4.jpg',
-    caption: 'Before & After - Prediabetes Reversal',
-    alt: 'Prediabetes reversal transformation',
+    src: '/images/newcamp1.jpg',
+    alt: 'Free Health Screening Camp - HOMA-IR Test Diabetes Check Gachibowli Community Outreach',
+    caption: 'Health Screening Camp',
   },
   {
     id: 13,
-    src: '/images/waist5.jpg',
-    caption: 'HOMA Clinic Lab - Advanced Testing',
-    alt: 'Medical laboratory facility',
+    src: '/images/vip2.jpg',
+    alt: 'VIP Patient Success Story - Celebrity Endorsement HOMA Clinic Gachibowli Diabetes Reversal',
+    caption: 'VIP Patient Success Story',
   },
   {
     id: 14,
-    src: '/images/dr-muddu-chiranjeevi.jpg.jpg',
-    caption: 'Dr. Muddu Nehru - 30+ Years Experience',
-    alt: 'Dr. Muddu Nehru portrait',
+    src: '/images/beforeafter3.jpg',
+    alt: 'Metabolic Health Journey - Prediabetes Reversal Insulin Resistance Improvement Gachibowli',
+    caption: 'Before & After - Metabolic Health Journey',
   },
   {
     id: 15,
     src: '/images/mets1.jpg',
+    alt: 'State-of-the-Art Medical Facility - HOMA Clinic Gachibowli Modern Diabetes Treatment Center',
     caption: 'HOMA Clinic - State-of-the-Art Facility',
-    alt: 'Modern medical facility',
   },
   {
     id: 16,
     src: '/images/waist1.jpg',
-    caption: 'Before & After - Metabolic Health Journey',
-    alt: 'Complete metabolic transformation',
+    alt: 'Complete Metabolic Transformation - 85% Remission Rate HOMA Clinic Gachibowli Dr Muddu Nehru',
+    caption: 'Before & After - Complete Transformation',
   },
 ];
 
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  // JSON-LD Schema for ImageObject Gallery
+  useEffect(() => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "HOMA Clinic Gallery - Dr. Muddu Nehru MD Gachibowli",
+      "description": "Gallery of HOMA Clinic Gachibowli featuring Dr. Muddu Surendra Nehru MD, celebrity patient Chiranjeevi, before/after transformations, medical camps, and clinic facilities. Best diabetologist Gachibowli with 30+ years experience.",
+      "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/gallery",
+      "image": galleryImages.map(img => ({
+        "@type": "ImageObject",
+        "contentUrl": `https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com${img.src}`,
+        "description": img.caption,
+        "name": img.alt,
+        "caption": img.caption,
+      })),
+      "about": {
+        "@type": "MedicalClinic",
+        "name": "HOMA Clinic",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Gachibowli",
+          "addressRegion": "Hyderabad",
+          "addressCountry": "IN"
+        }
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const openLightbox = (id: number) => {
     setSelectedImage(id);
@@ -171,6 +207,8 @@ export default function GalleryPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 50vw, 25vw"
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
               
@@ -249,8 +287,9 @@ export default function GalleryPage() {
                     alt={selectedImageData.alt}
                     fill
                     className="object-contain"
-                    sizes="90vw"
-                    priority
+                    sizes="100vw"
+                    priority={false}
+                    quality={90}
                   />
                 </div>
 
