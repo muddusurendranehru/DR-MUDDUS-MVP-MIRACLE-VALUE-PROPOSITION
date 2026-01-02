@@ -2,119 +2,123 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { galleryApi } from '@/lib/gallery-api';
 
-// Gallery images data with SEO-optimized alt tags
-const galleryImages = [
+// Fallback static images if Supabase fails
+const fallbackImages = [
   {
-    id: 1,
+    id: '1',
     src: '/images/dr-muddu-chiranjeevi.jpg.jpg',
     alt: 'Dr Muddu Surendra Nehru MD with Chiranjeevi VIP patient - Best diabetologist Gachibowli HOMA Clinic',
     caption: 'Celebrity Patient Success - Dr. Muddu Nehru with Chiranjeevi',
   },
   {
-    id: 2,
+    id: '2',
     src: '/images/newcamp1.jpg',
     alt: 'HOMA Medical Camp Gachibowli - Free Diabetes Screening and HOMA-IR Test Hyderabad',
     caption: 'Community Health Outreach - Medical Camp',
   },
   {
-    id: 3,
+    id: '3',
     src: '/images/vip2.jpg',
     alt: 'VIP Patient Consultation - Dr Muddu Nehru diabetologist Gachibowli HOMA-IR reversal Hyderabad',
     caption: 'VIP Patient Consultation',
   },
   {
-    id: 4,
+    id: '4',
     src: '/images/beforeafter3.jpg',
     alt: 'Before After Diabetes Reversal - 90 Day Program Results HOMA Clinic Gachibowli Metabolic Remission',
     caption: 'Before & After - Metabolic Transformation',
   },
   {
-    id: 5,
+    id: '5',
     src: '/images/waist1.jpg',
     alt: 'Patient Before After Waist Reduction - HOMA-IR reversal prediabetes reversal Gachibowli',
     caption: 'Before & After - Waist Reduction Success',
   },
   {
-    id: 6,
+    id: '6',
     src: '/images/waist2.jpg',
     alt: 'Metabolic Remission Success Story - Dr Muddu Nehru 90 day diabetes reversal program Gachibowli',
     caption: 'Before & After - Metabolic Remission',
   },
   {
-    id: 7,
+    id: '7',
     src: '/images/waist4.jpg',
     alt: '90 Day Program Results - Insulin Resistance Reversal HOMA Clinic Gachibowli Hyderabad',
     caption: 'Before & After - 90-Day Program Results',
   },
   {
-    id: 8,
+    id: '8',
     src: '/images/waist5.jpg',
     alt: 'Diabetes Reversal Transformation - HOMA-IR test results improvement Gachibowli diabetologist',
     caption: 'Before & After - Complete Transformation',
   },
   {
-    id: 9,
+    id: '9',
     src: '/images/mets1.jpg',
     alt: 'HOMA Clinic Gachibowli Exterior - Best diabetes clinic Hyderabad Dr Muddu Nehru MD',
     caption: 'HOMA Clinic Gachibowli - Exterior View',
   },
   {
-    id: 10,
+    id: '10',
     src: '/images/Metabolic Syndrome and Chronic Kidney Disease_ A Pathophysiologic Cascade.jpg',
     alt: 'HOMA Clinic Medical Team - Metabolic Health Experts Gachibowli Diabetes Specialists',
     caption: 'HOMA Clinic Team - Medical Excellence',
   },
-  {
-    id: 11,
-    src: '/images/dr-muddu-chiranjeevi.jpg.jpg',
-    alt: 'Dr Muddu Surendra Nehru MD 30 Years Experience - Professor Medicine Senior Physician Gachibowli',
-    caption: 'Dr. Muddu Nehru - 30+ Years Experience',
-  },
-  {
-    id: 12,
-    src: '/images/newcamp1.jpg',
-    alt: 'Free Health Screening Camp - HOMA-IR Test Diabetes Check Gachibowli Community Outreach',
-    caption: 'Health Screening Camp',
-  },
-  {
-    id: 13,
-    src: '/images/vip2.jpg',
-    alt: 'VIP Patient Success Story - Celebrity Endorsement HOMA Clinic Gachibowli Diabetes Reversal',
-    caption: 'VIP Patient Success Story',
-  },
-  {
-    id: 14,
-    src: '/images/beforeafter3.jpg',
-    alt: 'Metabolic Health Journey - Prediabetes Reversal Insulin Resistance Improvement Gachibowli',
-    caption: 'Before & After - Metabolic Health Journey',
-  },
-  {
-    id: 15,
-    src: '/images/mets1.jpg',
-    alt: 'State-of-the-Art Medical Facility - HOMA Clinic Gachibowli Modern Diabetes Treatment Center',
-    caption: 'HOMA Clinic - State-of-the-Art Facility',
-  },
-  {
-    id: 16,
-    src: '/images/waist1.jpg',
-    alt: 'Complete Metabolic Transformation - 85% Remission Rate HOMA Clinic Gachibowli Dr Muddu Nehru',
-    caption: 'Before & After - Complete Transformation',
-  },
 ];
 
+interface GalleryImageDisplay {
+  id: string;
+  src: string;
+  alt: string;
+  caption: string;
+}
+
 export default function GalleryPage() {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [images, setImages] = useState<GalleryImageDisplay[]>(fallbackImages);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch images from API
+  useEffect(() => {
+    const loadImages = async () => {
+      try {
+        const response = await galleryApi.getAll();
+        if (response.images && response.images.length > 0) {
+          // Convert API data to display format
+          const displayImages: GalleryImageDisplay[] = response.images.map((img: any) => ({
+            id: img.id,
+            src: `/images/${img.filename}`,
+            alt: img.alt,
+            caption: img.caption,
+          }));
+          setImages(displayImages);
+        } else {
+          console.warn('No images from API, using fallback images');
+          setImages(fallbackImages);
+        }
+      } catch (error) {
+        console.error('Error loading gallery images, using fallback:', error);
+        setImages(fallbackImages);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadImages();
+  }, []);
 
   // JSON-LD Schema for ImageObject Gallery
   useEffect(() => {
+    if (images.length === 0) return;
+
     const schema = {
       "@context": "https://schema.org",
       "@type": "ImageGallery",
       "name": "HOMA Clinic Gallery - Dr. Muddu Nehru MD Gachibowli",
       "description": "Gallery of HOMA Clinic Gachibowli featuring Dr. Muddu Surendra Nehru MD, celebrity patient Chiranjeevi, before/after transformations, medical camps, and clinic facilities. Best diabetologist Gachibowli with 30+ years experience.",
       "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/gallery",
-      "image": galleryImages.map(img => ({
+      "image": images.map(img => ({
         "@type": "ImageObject",
         "contentUrl": `https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com${img.src}`,
         "description": img.caption,
@@ -139,11 +143,13 @@ export default function GalleryPage() {
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
-  }, []);
+  }, [images]);
 
-  const openLightbox = (id: number) => {
+  const openLightbox = (id: string) => {
     setSelectedImage(id);
     document.body.style.overflow = 'hidden';
   };
@@ -156,14 +162,19 @@ export default function GalleryPage() {
   const navigateImage = (direction: 'prev' | 'next') => {
     if (selectedImage === null) return;
     
-    const currentIndex = galleryImages.findIndex(img => img.id === selectedImage);
+    const currentIndex = images.findIndex(img => img.id === selectedImage);
     if (direction === 'next') {
-      const nextIndex = (currentIndex + 1) % galleryImages.length;
-      setSelectedImage(galleryImages[nextIndex].id);
+      const nextIndex = (currentIndex + 1) % images.length;
+      setSelectedImage(images[nextIndex].id);
     } else {
-      const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-      setSelectedImage(galleryImages[prevIndex].id);
+      const prevIndex = (currentIndex - 1 + images.length) % images.length;
+      setSelectedImage(images[prevIndex].id);
     }
+  };
+
+  const handleGalleryCTA = (caption: string) => {
+    const message = encodeURIComponent(`Saw "${caption}" photo - Interested in HOMA Clinic Gachibowli diabetes reversal program`);
+    window.open(`https://wa.me/919963721999?text=${message}`, '_blank');
   };
 
   // Handle keyboard navigation
@@ -175,7 +186,7 @@ export default function GalleryPage() {
   };
 
   const selectedImageData = selectedImage 
-    ? galleryImages.find(img => img.id === selectedImage)
+    ? images.find(img => img.id === selectedImage)
     : null;
 
   return (
@@ -192,41 +203,65 @@ export default function GalleryPage() {
         </div>
 
         {/* Gallery Grid - 4x4 on desktop, 2x2 on mobile */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {galleryImages.map((image) => (
-            <div
-              key={image.id}
-              className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              onClick={() => openLightbox(image.id)}
-            >
-              {/* Image */}
-              <div className="aspect-square relative bg-gray-200">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  loading="lazy"
-                  quality={85}
-                />
-              </div>
-              
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 text-sm font-medium px-2 text-center">
-                  Click to zoom
-                </span>
-              </div>
+        {loading ? (
+          <div className="text-center py-12">
+            <p className="text-gray-600">Loading gallery...</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {images.map((image) => (
+              <div
+                key={image.id}
+                className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                onClick={() => openLightbox(image.id)}
+              >
+                {/* Image */}
+                <div className="aspect-square relative bg-gray-200">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    loading="lazy"
+                    quality={85}
+                  />
+                </div>
+                
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 text-sm font-medium px-2 text-center">
+                    Click to zoom
+                  </span>
+                </div>
 
-              {/* Caption */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
-                <p className="text-white text-xs font-medium line-clamp-2">
-                  {image.caption}
-                </p>
+                {/* Caption */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                  <p className="text-white text-xs font-medium line-clamp-2">
+                    {image.caption}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        )}
+
+        {/* Gallery CTA Section */}
+        <div className="mt-12 text-center">
+          <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-8 text-white">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              📸 Interested in Our Gallery?
+            </h2>
+            <p className="text-lg mb-6 max-w-2xl mx-auto">
+              See real patient transformations, clinic facilities, and success stories. Book your consultation today!
+            </p>
+            <button
+              onClick={() => handleGalleryCTA('HOMA Clinic Gallery')}
+              className="bg-white text-green-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              💬 Contact via WhatsApp
+            </button>
+          </div>
         </div>
 
         {/* Lightbox Modal */}
@@ -299,8 +334,18 @@ export default function GalleryPage() {
                     {selectedImageData.caption}
                   </p>
                   <p className="text-gray-400 text-sm mt-2">
-                    {selectedImage} / {galleryImages.length}
+                    {images.findIndex(img => img.id === selectedImage) + 1} / {images.length}
                   </p>
+                  {/* CTA Button in Lightbox */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleGalleryCTA(selectedImageData.caption);
+                    }}
+                    className="mt-4 bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+                  >
+                    💬 Contact About This Photo
+                  </button>
                 </div>
               </div>
             </div>
