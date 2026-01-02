@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db, galleryImages } from '@/lib/db';
-import { sql } from 'drizzle-orm';
+import { sql, desc, eq } from 'drizzle-orm';
 import { writeFile, mkdir } from 'fs/promises';
 import { join } from 'path';
 
@@ -18,14 +18,26 @@ function checkAuth(request: NextRequest): boolean {
 // GET /api/gallery - Get all active gallery images (public)
 export async function GET() {
   try {
-    // Use raw SQL to match exact table structure
-    const result = await db.execute(sql`
-      SELECT * FROM gallery_images 
-      WHERE active = true 
-      ORDER BY "order" ASC
-    `);
+    // Use Drizzle query builder with eq for better compatibility
+    const result = await db
+      .select()
+      .from(galleryImages)
+      .where(eq(galleryImages.active, true))
+      .orderBy(galleryImages.order);
 
-    return NextResponse.json({ images: result.rows });
+    // Convert to snake_case for API response
+    const images = result.map((img) => ({
+      id: img.id,
+      filename: img.filename,
+      alt: img.alt,
+      caption: img.caption,
+      order: img.order,
+      is_cover: img.isCover,
+      active: img.active,
+      created_at: img.createdAt,
+    }));
+
+    return NextResponse.json({ images });
   } catch (error: any) {
     console.error('Error fetching gallery images:', error);
     return NextResponse.json(
@@ -76,11 +88,13 @@ export async function POST(request: NextRequest) {
     // Auto-generate alt text
     const alt = `HOMA Clinic Gachibowli ${filename.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ')}`;
 
-    // Get max order using Drizzle
-    const maxOrderResult = await db.execute(sql`
-      SELECT COALESCE(MAX("order"), 0) as max_order FROM gallery_images
-    `);
-    const maxOrder = Number(maxOrderResult.rows[0]?.max_order) || 0;
+    // Get max order using Drizzle - get all orders and find max
+    const allImages = await db
+      .select({ order: galleryImages.order })
+      .from(galleryImages);
+    const maxOrder = allImages.length > 0 
+      ? Math.max(...allImages.map(img => img.order), 0)
+      : 0;
     const nextOrder = maxOrder + 1;
 
     // Insert into database using Drizzle
