@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
 import LeadScoringForm from '@/components/LeadScoringForm';
-import HomePageClient from '@/components/HomePageClient';
+import LandingPageHero from '@/components/LandingPageHero';
 
 // 🔑 Force static HTML generation for SEO & Google verification
 export const dynamic = 'force-static';
@@ -104,8 +104,8 @@ export default function HomePage() {
           __html: JSON.stringify(faqSchema),
         }}
       />
+      <LandingPageHero />
       <LeadScoringForm />
-      <HomePageClient />
     </>
   );
 }

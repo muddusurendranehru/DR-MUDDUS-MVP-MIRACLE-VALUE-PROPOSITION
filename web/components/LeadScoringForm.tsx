@@ -140,17 +140,66 @@ export default function LeadScoringForm() {
       submittedAt: new Date().toISOString(),
     };
 
-    // TODO: Save to Supabase/API
-    // await api.saveLead(leadData);
-    
-    // For now, log to console and show success
-    console.log('Lead Data:', leadData);
-    
-    // Open WhatsApp with pre-filled message
-    const message = `Hi! I completed the Metabolic Evaluation.\n\nName: ${formData.fullName}\nMetabolic Risk: ${calculatedScores.metabolicRiskScore}%\nLead Quality: ${calculatedScores.leadQualityScore}%\n\nI'm ready to learn more!`;
-    window.open(`https://wa.me/919963721999?text=${encodeURIComponent(message)}`, '_blank');
-    
-    setSubmitted(true);
+    try {
+      // Save to Neon DB via Next.js API route
+      const response = await fetch('/api/submit-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(leadData),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        console.log('Lead saved successfully:', result.leadId);
+        
+        // Open WhatsApp with pre-filled message
+        const message = `Hi Dr. Muddu! I completed the Metabolic Evaluation.
+
+Name: ${formData.fullName}
+Age: ${formData.age || 'N/A'}
+WhatsApp: ${formData.whatsappNumber || 'N/A'}
+Email: ${formData.email}
+
+Metabolic Risk Score: ${calculatedScores.metabolicRiskScore}%
+Lead Quality Score: ${calculatedScores.leadQualityScore}%
+BMI: ${calculatedScores.bmiScore}
+TyG Index: ${calculatedScores.tygIndex}
+
+I'm interested in the 90-Day Metabolic Remission Program in Gachibowli, Hyderabad.`;
+
+        window.open(`https://wa.me/919963721999?text=${encodeURIComponent(message)}`, '_blank');
+        setSubmitted(true);
+      } else {
+        console.error('Failed to save lead:', result.error);
+        alert('Failed to save your information. Please try again or contact us directly at 09963721999.');
+        // Still open WhatsApp even if save fails
+        const message = `Hi Dr. Muddu! I completed the Metabolic Evaluation but had trouble saving online.
+
+Name: ${formData.fullName}
+Email: ${formData.email}
+Metabolic Risk: ${calculatedScores.metabolicRiskScore}%
+
+I'm interested in the 90-Day Program in Gachibowli.`;
+        window.open(`https://wa.me/919963721999?text=${encodeURIComponent(message)}`, '_blank');
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred while saving. Opening WhatsApp to contact directly...');
+      // Still open WhatsApp on error
+      const message = `Hi Dr. Muddu! I completed the Metabolic Evaluation.
+
+Name: ${formData.fullName}
+Email: ${formData.email}
+Metabolic Risk: ${calculatedScores.metabolicRiskScore}%
+
+I'm interested in the 90-Day Program in Gachibowli.`;
+      window.open(`https://wa.me/919963721999?text=${encodeURIComponent(message)}`, '_blank');
+      setSubmitted(true);
+    }
   };
 
   const updateField = (field: keyof FormData, value: string | string[]) => {
@@ -350,7 +399,7 @@ export default function LeadScoringForm() {
         {/* Hero CTA */}
         <div className="text-center mb-6">
           <a
-            href="https://wa.me/919963721999?text=I want a Free Risk Assessment"
+            href="https://wa.me/919963721999?text=Hi%20Dr.%20Muddu!%20I%20want%20to%20start%20the%20Free%20Metabolic%20Risk%20Assessment%20for%20the%2090-Day%20Program%20in%20Gachibowli,%20Hyderabad."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-xl text-lg md:text-xl shadow-xl transition-all transform hover:scale-105"
