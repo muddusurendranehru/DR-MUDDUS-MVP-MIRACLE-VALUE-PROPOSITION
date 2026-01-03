@@ -200,6 +200,44 @@ export default function InsulinResistanceKidneyBlog() {
             </div>
           </section>
 
+          {/* Instagram/FB Post Cards */}
+          <section className="mb-10 border-t pt-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">📱 Share This Article</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Facebook Post Card */}
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 shadow-md border border-blue-200">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">📘 Facebook Post</h3>
+                <p className="text-gray-700 mb-4 text-sm">
+                  <strong>Caption:</strong> "🔬 How Insulin Resistance Silently Damages Kidneys 🔥 Discover the hidden metabolic-renal link. Hyperinsulinemia drives kidney damage even before diabetes. Learn how to protect your kidneys with HOMA-IR testing. 📍 HOMA Clinic Gachibowli | 📱 09963721999"
+                </p>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/blog/insulin-resistance-kidney-link')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-4 rounded-lg font-semibold transition-colors"
+                >
+                  📘 Share on Facebook
+                </a>
+              </div>
+
+              {/* Instagram Post Card */}
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 shadow-md border border-purple-200">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">📷 Instagram Post</h3>
+                <p className="text-gray-700 mb-4 text-sm">
+                  <strong>Caption:</strong> "🔬 Insulin Resistance & Kidney Disease: The Hidden Link 🔥 Hyperinsulinemia damages kidneys even before diabetes. Protect your kidneys with early HOMA-IR testing. Dr. Muddu Nehru MD | HOMA Clinic Gachibowli 📍 Link in bio 👆 #InsulinResistance #KidneyHealth #HOMAClinic #Gachibowli"
+                </p>
+                <a
+                  href={`https://www.instagram.com/create/story/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-center py-3 px-4 rounded-lg font-semibold transition-colors"
+                >
+                  📷 Share on Instagram
+                </a>
+              </div>
+            </div>
+          </section>
+
         </div>
 
         {/* Related Posts */}

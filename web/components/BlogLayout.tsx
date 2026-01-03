@@ -104,6 +104,9 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
               <Link href="/pricing" className="text-gray-600 hover:text-green-600 transition font-medium">
                 Packages
               </Link>
+              <Link href="/gallery" className="text-gray-600 hover:text-green-600 transition font-medium">
+                Gallery
+              </Link>
               <Link href="/dashboard" className="text-gray-600 hover:text-green-600 transition font-medium">
                 Dashboard
               </Link>

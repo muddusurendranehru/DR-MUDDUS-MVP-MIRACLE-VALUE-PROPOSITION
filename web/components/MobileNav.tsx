@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
   { href: '/', label: 'Home', icon: '🏠' },
   { href: '/pricing', label: 'Packages', icon: '💰' },
+  { href: '/zoom', label: 'Zoom Sundays', icon: '📹' },
+  { href: '/gallery', label: 'Gallery', icon: '📸' },
   { href: '/blog', label: 'Blog', icon: '📝' },
   { href: '/dashboard', label: 'Dashboard', icon: '📊' },
   { href: '/nutri-bot', label: 'NutriBot AI', icon: '🤖' },
@@ -17,12 +19,22 @@ const navLinks = [
   { href: '/auth', label: 'Login', icon: '🔐' },
 ];
 
+const appLinks = [
+  { name: 'Drug Trials Tracker', url: 'https://drug-trials-frontend.onrender.com', icon: '💊' },
+  { name: 'OCR Report Analyzer', url: 'https://ai-image-ocr-1.onrender.com', icon: '📄' },
+  { name: 'PCOS HOMA Score', url: 'https://pcos-homaiq-score-frontend.onrender.com', icon: '🎯' },
+  { name: '90-Day Metrics', url: 'https://healthmetrics-render1.onrender.com', icon: '📊' },
+  { name: 'Nutrition Bot', url: 'https://homa-foods-nutrition.onrender.com', icon: '🍎' },
+];
+
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [appsOpen, setAppsOpen] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
+  const toggleApps = () => setAppsOpen(!appsOpen);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -96,6 +108,46 @@ export default function MobileNav() {
                 </Link>
               </li>
             ))}
+            
+            {/* Apps Dropdown */}
+            <li>
+              <button
+                onClick={toggleApps}
+                className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg transition-all text-gray-300 hover:bg-gray-700 hover:text-white"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-lg">📱</span>
+                  <span className="font-medium">Apps</span>
+                </div>
+                <svg
+                  className={`w-5 h-5 transition-transform ${appsOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {appsOpen && (
+                <ul className="mt-2 ml-4 space-y-1 border-l-2 border-teal-600 pl-4">
+                  {appLinks.map((app, index) => (
+                    <li key={index}>
+                      <a
+                        href={app.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={closeMenu}
+                        className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all text-gray-400 hover:bg-gray-700 hover:text-white text-sm"
+                      >
+                        <span className="text-base">{app.icon}</span>
+                        <span>{app.name}</span>
+                        <span className="ml-auto text-xs">↗</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
           </ul>
         </nav>
 

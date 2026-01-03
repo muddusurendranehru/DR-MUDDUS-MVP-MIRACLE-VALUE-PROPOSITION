@@ -9,8 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.89.0",
+    "@types/multer": "^2.0.0",
+    "@types/pg": "^8.16.0",
     "axios": "^1.13.2",
+    "drizzle-kit": "^0.31.8",
+    "drizzle-orm": "^0.45.1",
+    "multer": "^2.0.2",
     "next": "14.2.0",
+    "pg": "^8.16.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

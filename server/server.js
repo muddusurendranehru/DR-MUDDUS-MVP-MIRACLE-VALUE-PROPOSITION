@@ -6,6 +6,7 @@ require('dotenv').config();
 const authRoutes = require('./routes/auth');
 const assessmentRoutes = require('./routes/assessments');
 const nutribotRoutes = require('./routes/nutribot');
+const galleryRoutes = require('./routes/gallery');
 
 // Initialize Express app
 const app = express();
@@ -36,6 +37,7 @@ app.get('/api/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/assessments', assessmentRoutes);
 app.use('/api/nutribot', nutribotRoutes);
+app.use('/api/gallery', galleryRoutes);
 
 // 404 handler
 app.use((req, res) => {
@@ -75,6 +77,11 @@ app.listen(PORT, () => {
   console.log(`   GET  http://localhost:${PORT}/api/nutribot/tokens`);
   console.log(`   POST http://localhost:${PORT}/api/nutribot/use-token`);
   console.log(`   POST http://localhost:${PORT}/api/nutribot/recharge`);
+  console.log(`📸 Gallery endpoints:`);
+  console.log(`   GET  http://localhost:${PORT}/api/gallery`);
+  console.log(`   POST http://localhost:${PORT}/api/gallery (protected)`);
+  console.log(`   PUT  http://localhost:${PORT}/api/gallery/:id (protected)`);
+  console.log(`   DELETE http://localhost:${PORT}/api/gallery/:id (protected)`);
   console.log('');
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log('==========================================');
