@@ -9,11 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@neondatabase/serverless": "^1.0.2",
-=======
     "@neondatabase/serverless": "^0.10.6",
->>>>>>> 5eb8c11c89192957382402a9fd920791e3bbdef1
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.89.0",
     "@types/multer": "^2.0.0",
