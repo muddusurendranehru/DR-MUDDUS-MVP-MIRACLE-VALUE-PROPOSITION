@@ -1,59 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db, galleryImages } from '@/lib/db';
-import { eq } from 'drizzle-orm';
+import axios from 'axios';
 
-// Hardcoded admin password (optional auth)
-const ADMIN_PASSWORD = 'homa_admin_2024';
+// Backend API URL (already includes /api suffix)
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
-function checkAuth(request: NextRequest): boolean {
-  const authHeader = request.headers.get('authorization');
-  if (!authHeader) return false;
-  
-  const password = authHeader.replace('Bearer ', '');
-  return password === ADMIN_PASSWORD;
-}
-
-// POST /api/gallery/[id]/set-cover - Set cover image (protected)
+// POST /api/gallery/[id]/set-cover - Set cover image (forward to backend)
 export async function POST(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  if (!checkAuth(request)) {
-    return NextResponse.json(
-      { error: 'Unauthorized' },
-      { status: 401 }
-    );
-  }
-
   try {
-    const { id } = params;
+    const id = params.id;
+    
+    const response = await axios.post(
+      `${BACKEND_URL}/gallery/${id}/set-cover`,
+      {},
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': request.headers.get('authorization') || '',
+        },
+        timeout: 10000,
+      }
+    );
 
-    // First, unset all covers
-    await db
-      .update(galleryImages)
-      .set({ isCover: false });
-
-    // Then set the new cover
-    const [coverImage] = await db
-      .update(galleryImages)
-      .set({ isCover: true })
-      .where(eq(galleryImages.id, id))
-      .returning();
-
-    if (!coverImage) {
-      return NextResponse.json(
-        { error: 'Gallery image not found' },
-        { status: 404 }
-      );
-    }
-
-    return NextResponse.json({ image: coverImage });
+    return NextResponse.json(response.data, { status: response.status });
   } catch (error: any) {
-    console.error('Error setting cover image:', error);
+    console.error('Frontend gallery set-cover proxy error:', error?.response?.data || error.message);
+    
     return NextResponse.json(
-      { error: 'Failed to set cover image' },
-      { status: 500 }
+      {
+        error: error?.response?.data?.error || 'Failed to set cover image',
+        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      },
+      { status: error?.response?.status || 500 }
     );
   }
 }
-
