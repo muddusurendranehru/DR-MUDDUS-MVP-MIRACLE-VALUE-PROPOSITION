@@ -2,12 +2,6 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
-// Import routes
-const authRoutes = require('./routes/auth');
-const assessmentRoutes = require('./routes/assessments');
-const nutribotRoutes = require('./routes/nutribot');
-const galleryRoutes = require('./routes/gallery');
-
 // Initialize Express app
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -33,11 +27,55 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// API Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/assessments', assessmentRoutes);
-app.use('/api/nutribot', nutribotRoutes);
-app.use('/api/gallery', galleryRoutes);
+// Import routes with error handling
+let authRoutes, assessmentRoutes, nutribotRoutes, galleryRoutes;
+
+try {
+  console.log('Loading routes...');
+  authRoutes = require('./routes/auth');
+  console.log('✅ Auth routes loaded');
+} catch (error) {
+  console.error('❌ Failed to load auth routes:', error.message);
+}
+
+try {
+  assessmentRoutes = require('./routes/assessments');
+  console.log('✅ Assessment routes loaded');
+} catch (error) {
+  console.error('❌ Failed to load assessment routes:', error.message);
+}
+
+try {
+  nutribotRoutes = require('./routes/nutribot');
+  console.log('✅ NutriBot routes loaded');
+} catch (error) {
+  console.error('❌ Failed to load nutribot routes:', error.message);
+}
+
+try {
+  galleryRoutes = require('./routes/gallery');
+  console.log('✅ Gallery routes loaded');
+} catch (error) {
+  console.error('❌ Failed to load gallery routes:', error.message);
+}
+
+// API Routes - only register if loaded successfully
+if (authRoutes) {
+  app.use('/api/auth', authRoutes);
+  console.log('✅ /api/auth routes registered');
+}
+if (assessmentRoutes) {
+  app.use('/api/assessments', assessmentRoutes);
+  console.log('✅ /api/assessments routes registered');
+}
+if (nutribotRoutes) {
+  app.use('/api/nutribot', nutribotRoutes);
+  console.log('✅ /api/nutribot routes registered');
+}
+if (galleryRoutes) {
+  app.use('/api/gallery', galleryRoutes);
+  console.log('✅ /api/gallery routes registered');
+}
 
 // 404 handler
 app.use((req, res) => {
@@ -89,4 +127,3 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
-

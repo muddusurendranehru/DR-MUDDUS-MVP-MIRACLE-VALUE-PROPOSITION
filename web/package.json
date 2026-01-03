@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@neondatabase/serverless": "^1.0.2",
+=======
+    "@neondatabase/serverless": "^0.10.6",
+>>>>>>> 5eb8c11c89192957382402a9fd920791e3bbdef1
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.89.0",
     "@types/multer": "^2.0.0",
@@ -18,10 +22,10 @@
     "drizzle-kit": "^0.31.8",
     "drizzle-orm": "^0.45.1",
     "multer": "^2.0.2",
-    "next": "14.2.0",
+    "next": "^15.1.6",
     "pg": "^8.16.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
