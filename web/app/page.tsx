@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
-import LeadScoringForm from '@/components/LeadScoringForm';
-import LandingPageHero from '@/components/LandingPageHero';
+import LeadScoringForm from '../components/LeadScoringForm';
+import LandingPageHero from '../components/LandingPageHero';
 
 // 🔑 Force static HTML generation for SEO & Google verification
 export const dynamic = 'force-static';
