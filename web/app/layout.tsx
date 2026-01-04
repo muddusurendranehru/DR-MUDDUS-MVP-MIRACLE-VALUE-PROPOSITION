@@ -243,6 +243,25 @@ export default function RootLayout({
           {/* Global Footer */}
           <footer className="bg-gray-900 text-white py-8 px-4">
             <div className="max-w-7xl mx-auto">
+              {/* Conditions Internal Linking - SEO */}
+              <div className="mb-8 text-center">
+                <div className="inline-flex flex-wrap justify-center gap-2 text-sm text-gray-300">
+                  <Link href="/conditions/diabetes" className="hover:text-white transition-colors">Diabetes</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/pcos" className="hover:text-white transition-colors">PCOS</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/kidney-disease" className="hover:text-white transition-colors">Kidney Health</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/hypertension" className="hover:text-white transition-colors">Hypertension</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/obesity" className="hover:text-white transition-colors">Obesity</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/prediabetes" className="hover:text-white transition-colors">Prediabetes</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/metabolic-syndrome" className="hover:text-white transition-colors">Metabolic Syndrome</Link>
+                </div>
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Doctor Info */}
                 <div>
