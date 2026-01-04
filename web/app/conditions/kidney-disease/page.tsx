@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
+
+// ✅ Force static generation for SEO
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Kidney Disease Prevention & Protection | Dr. Muddu Surendra Nehru, MD - Hyderabad',
@@ -29,12 +31,14 @@ export default function KidneyDiseasePage() {
           <p className="text-gray-700 mb-4">
             Start your journey with a 15-minute metabolic risk test.
           </p>
-          <Link 
-            href="/assessment" 
-            className="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc4cw6zfm3ZDC7x1aCc7nGFNMRqpd14eogHWa91gj6jRFPXXw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 font-medium"
           >
-            Begin Free Assessment
-          </Link>
+            📝 Book Your Free Assessment
+          </a>
         </div>
 
         <div className="mt-12 text-sm text-gray-500">

@@ -18,12 +18,12 @@ export default function LandingPageHero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <a 
-            href="https://forms.gle/YOUR_GOOGLE_FORM" 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc4cw6zfm3ZDC7x1aCc7nGFNMRqpd14eogHWa91gj6jRFPXXw/viewform" 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-white text-indigo-600 hover:bg-indigo-50 text-xl px-8 py-4 font-semibold shadow-2xl rounded-lg transition-all duration-200 inline-block text-center"
           >
-            Book Free Assessment (2 min)
+            📝 Book Your Free Assessment
           </a>
         </div>
         

@@ -614,10 +614,26 @@ export default function RootLayout({
                 </div>
               </div>
 
-              {/* Bottom Bar */}
+              {/* Bottom Bar - SEO Internal Links */}
               <div className="border-t border-gray-700 mt-4 pt-4 text-center">
+                {/* SEO Internal Links */}
+                <div className="flex flex-wrap justify-center gap-4 mb-4 text-sm">
+                  <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                    Home
+                  </Link>
+                  <Link href="/assessment" className="text-gray-300 hover:text-white transition-colors">
+                    Free Assessment
+                  </Link>
+                  <Link href="/gallery" className="text-gray-300 hover:text-white transition-colors">
+                    Success Stories
+                  </Link>
+                  <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                    Blog
+                  </Link>
+                </div>
+                
                 <p className="text-xs text-gray-400">
-                  © 2025 HOMA Clinic | Dr. Muddu Surendra Nehru M.D. | All Rights Reserved
+                  © 2026 HOMA Clinic | Dr. Muddu Surendra Nehru M.D. | All Rights Reserved
                 </p>
                 <p className="text-xs text-gray-500 mt-1">
                   🎯 "Achieve Metabolic Remission in 90 Days — Not Just Manage It"
