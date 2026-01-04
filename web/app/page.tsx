@@ -1,13 +1,9 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
-import LeadScoringForm from '../components/LeadScoringForm';
 import LandingPageHero from '../components/LandingPageHero';
 
 // 🔑 Force static HTML generation for SEO & Google verification
 export const dynamic = 'force-static';
-
-// Optional: Revalidate every 24 hours if you want ISR (not needed now)
-// export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: 'Dr Muddu\'s HOMA Clinic Gachibowli Hyderabad India - Diabetes Cardio Obesity REMISSION',
@@ -93,7 +89,7 @@ const faqSchema = {
   ],
 };
 
-export default function HomePage() {
+export default function Home() {
   return (
     <>
       {/* FAQ Structured Data for SEO */}
@@ -104,8 +100,10 @@ export default function HomePage() {
           __html: JSON.stringify(faqSchema),
         }}
       />
-      <LandingPageHero />
-      <LeadScoringForm />
+      <div className="min-h-screen">
+        <LandingPageHero /> {/* modern gradient + buttons */}
+        {/* Optional: add dashboard preview below */}
+      </div>
     </>
   );
 }
