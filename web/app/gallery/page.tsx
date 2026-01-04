@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ImageCard from '../../components/ImageCard';
 
 // ✅ Force static generation for SEO
 export const dynamic = 'force-static';
@@ -17,20 +18,22 @@ export default function GalleryPage() {
           See how patients reversed diabetes, lost weight, and regained health under Dr. Nehru's 90-day protocol.
         </p>
 
-        {/* Placeholder for gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <img src="/placeholder.jpg" alt="Patient 1" className="w-full h-48 object-cover rounded-lg" />
-            <p className="mt-2 text-sm text-gray-700">"Reversed my diabetes in 90 days!" — Patient A</p>
-          </div>
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <img src="/placeholder.jpg" alt="Patient 2" className="w-full h-48 object-cover rounded-lg" />
-            <p className="mt-2 text-sm text-gray-700">"Lost 15kg and got off medications!" — Patient B</p>
-          </div>
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <img src="/placeholder.jpg" alt="Patient 3" className="w-full h-48 object-cover rounded-lg" />
-            <p className="mt-2 text-sm text-gray-700">"HOMA-IR normalized in 90 days!" — Patient C</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <ImageCard
+            src="/images/patient-1.jpg"
+            alt="Patient 1 Success Story"
+            caption="Reversed diabetes in 90 days"
+          />
+          <ImageCard
+            src="/images/patient-2.jpg"
+            alt="Patient 2 Success Story"
+            caption="Lost 20kg with metabolic plan"
+          />
+          <ImageCard
+            src="/images/patient-3.jpg"
+            alt="Patient 3 Success Story"
+            caption="HOMA-IR normalized in 90 days"
+          />
         </div>
 
         <div className="mt-8 text-center">
@@ -50,4 +53,3 @@ export default function GalleryPage() {
     </div>
   );
 }
-
