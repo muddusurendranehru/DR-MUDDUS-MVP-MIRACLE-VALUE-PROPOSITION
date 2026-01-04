@@ -568,51 +568,23 @@ export default function RootLayout({
                 </a>
               </div>
 
-              {/* PAYMENTS Section */}
+              {/* PAYMENTS Section - Commented out for now, can add Swift/Visa later */}
+              {/* 
               <div className="footer-payments bg-gray-50 p-6 rounded-xl mb-6">
                 <h3 className="text-center font-bold text-lg mb-4 text-gray-800">100% Secure Payments</h3>
                 <div className="flex flex-wrap justify-center items-center gap-4">
-                  <a
-                    href="whatsapp://send?phone=919963721999&text=UPI HOMA Basic"
-                    className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow hover:shadow-lg transition-all"
-                  >
-                    <Image
-                      src="https://cdn-icons-png.flaticon.com/512/11645/11645614.png"
-                      alt="UPI"
-                      width={40}
-                      height={40}
-                      sizes="(max-width: 768px) 40px, 60px"
-                      className="h-8 w-auto"
-                      unoptimized
-                    />
-                    <span className="font-bold text-sm">Pay ₹999</span>
-                  </a>
                   <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
-                    <Image
-                      src="https://seeklogo.com/images/V/visa-logo-E7DA9E050D-seeklogo.com.png"
-                      alt="Visa"
-                      width={60}
-                      height={40}
-                      sizes="(max-width: 768px) 40px, 60px"
-                      className="h-8 w-auto"
-                      unoptimized
-                    />
                     <span className="font-bold text-sm">Visa</span>
                   </div>
                   <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
-                    <Image
-                      src="https://cdn-icons-png.flaticon.com/512/5968/5968898.png"
-                      alt="PayPal"
-                      width={40}
-                      height={40}
-                      sizes="(max-width: 768px) 40px, 60px"
-                      className="h-8 w-auto"
-                      unoptimized
-                    />
-                    <span className="font-bold text-sm">PayPal</span>
+                    <span className="font-bold text-sm">Mastercard</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
+                    <span className="font-bold text-sm">Swift</span>
                   </div>
                 </div>
               </div>
+              */}
 
               {/* Bottom Bar - SEO Internal Links */}
               <div className="border-t border-gray-700 mt-4 pt-4 text-center">
@@ -635,17 +607,50 @@ export default function RootLayout({
                 <p className="text-xs text-gray-400">
                   © 2026 HOMA Clinic | Dr. Muddu Surendra Nehru M.D. | All Rights Reserved
                 </p>
-                <p className="text-xs text-gray-500 mt-1">
+                {/* WhatsApp Button */}
+                <div className="flex justify-center mb-4">
+                  <a
+                    href="https://wa.me/919963721999?text=Hi%20Dr.%20Nehru%2C%20I%20want%20to%20start%20my%20free%20metabolic%20risk%20assessment."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors font-medium"
+                  >
+                    💬 Chat on WhatsApp
+                  </a>
+                </div>
+
+                {/* UPI QR Code Section - Payment QR Code */}
+                <div className="mt-4 text-center">
+                  <p className="text-sm font-medium text-gray-300 mb-2">Pay via UPI:</p>
+                  <div className="flex justify-center mb-2">
+                    <Image
+                      src="/images/gpay1.jpg"
+                      alt="UPI payment QR code - surendra.muddu-1@okhdfcbank - Scan to pay Dr. Muddu Surendra Nehru MD via UPI"
+                      width={200}
+                      height={200}
+                      className="border-2 border-gray-600 rounded-lg bg-white p-2 shadow-lg"
+                      unoptimized
+                    />
+                  </div>
+                  <p className="text-xs text-gray-400 mt-2 mb-1">
+                    Scan with PhonePe, Google Pay, Paytm, or any UPI app
+                  </p>
+                  <p className="text-xs text-gray-500 font-mono">
+                    UPI ID: surendra.muddu-1@okhdfcbank
+                  </p>
+                </div>
+
+                <p className="text-xs text-gray-500 mt-4">
                   🎯 "Achieve Metabolic Remission in 90 Days — Not Just Manage It"
                 </p>
                 <div className="flex justify-center gap-4 mt-3 text-xs">
-                  <a href="https://wa.me/919963721999?text=I want to JOIN" target="_blank" className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded transition-colors">
+                  <a href="https://wa.me/919963721999?text=I want to JOIN" target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded transition-colors">
                     JOIN
                   </a>
-                  <a href="https://wa.me/919963721999?text=I want to DONATE" target="_blank" className="bg-yellow-600 hover:bg-yellow-700 px-3 py-1 rounded transition-colors">
+                  <a href="https://wa.me/919963721999?text=I want to DONATE" target="_blank" rel="noopener noreferrer" className="bg-yellow-600 hover:bg-yellow-700 px-3 py-1 rounded transition-colors">
                     DONATE
                   </a>
-                  <a href="https://wa.me/919963721999?text=I want FRANCHISE info" target="_blank" className="bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded transition-colors">
+                  <a href="https://wa.me/919963721999?text=I want FRANCHISE info" target="_blank" rel="noopener noreferrer" className="bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded transition-colors">
                     FRANCHISE
                   </a>
                 </div>

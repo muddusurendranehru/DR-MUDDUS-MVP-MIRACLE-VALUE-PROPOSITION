@@ -1,12 +1,23 @@
 import { Metadata } from 'next';
 import ImageCard from '../../components/ImageCard';
+import YouTubeEmbed from '../../components/YouTubeEmbed';
 
 // ✅ Force static generation for SEO
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Patient Success Stories | Dr. Muddu Surendra Nehru, MD - Hyderabad',
-  description: 'Real patient stories of metabolic remission at HOMA Clinic in Gachibowli, Hyderabad.',
+  description: 'Real patient stories of metabolic remission at HOMA Clinic in Gachibowli, Hyderabad. See before and after photos, diabetes reversal, PCOS remission, and weight loss success stories.',
+  openGraph: {
+    title: 'Patient Success Stories | Dr. Muddu Surendra Nehru, MD',
+    description: 'Real patient transformations: Diabetes reversal, PCOS remission, weight loss - 90-day metabolic remission program in Gachibowli, Hyderabad.',
+    images: [
+      {
+        url: '/images/waist1.jpg',
+        alt: 'Patient success story - Metabolic health improvement',
+      },
+    ],
+  },
 };
 
 export default function GalleryPage() {
@@ -18,21 +29,61 @@ export default function GalleryPage() {
           See how patients reversed diabetes, lost weight, and regained health under Dr. Nehru's 90-day protocol.
         </p>
 
+        {/* Patient Video */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Watch Patient Stories</h2>
+          <YouTubeEmbed 
+            videoId="ZajBOTMisjY" 
+            title="Patient Success Stories - HOMA Clinic"
+            className="max-w-4xl mx-auto"
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <ImageCard
-            src="/images/patient-1.jpg"
-            alt="Patient 1 Success Story"
+            src="/images/waist1.jpg"
+            alt="Patient waist measurement showing metabolic health improvement - Dr. Muddu Surendra Nehru 90-day program Gachibowli Hyderabad"
             caption="Reversed diabetes in 90 days"
           />
           <ImageCard
-            src="/images/patient-2.jpg"
-            alt="Patient 2 Success Story"
+            src="/images/waist2.jpg"
+            alt="Patient progress tracking waist circumference reduction - HOMA Clinic metabolic remission program"
             caption="Lost 20kg with metabolic plan"
           />
           <ImageCard
-            src="/images/patient-3.jpg"
-            alt="Patient 3 Success Story"
+            src="/images/waist4.jpg"
+            alt="Patient health transformation before and after - Type 2 diabetes reversal Gachibowli"
             caption="HOMA-IR normalized in 90 days"
+          />
+          <ImageCard
+            src="/images/waist5.jpg"
+            alt="Metabolic remission success story waist measurement - Dr. Muddu Surendra Nehru MD patient results"
+            caption="Waist circumference reduced - Metabolic health improved"
+          />
+          <ImageCard
+            src="/images/pcos-reversal-anita-hyderabad.jpg.png"
+            alt="PCOS reversal success story Anita from Hyderabad - Dr. Muddu metabolic health program"
+            caption="PCOS reversed - Now pregnant! Anita, 34 - Hyderabad"
+          />
+          <ImageCard
+            src="/images/public.jpg"
+            alt="Patient success story metabolic health improvement - HOMA Clinic Gachibowli 90-day program"
+            caption="Insulin resistance reversed - Metabolic syndrome resolved"
+          />
+          <ImageCard
+            src="/images/public (1).jpg"
+            alt="Patient transformation metabolic remission - Dr. Muddu Surendra Nehru MD patient results"
+            caption="HbA1c normalized - Diabetes in remission"
+          />
+          <ImageCard
+            src="/images/public (2).jpg"
+            alt="Patient success story weight loss metabolic health - HOMA Clinic Gachibowli Hyderabad"
+            caption="BMI reduced - Cardiovascular risk lowered"
+          />
+          <ImageCard
+            src="/images/dr-muddu-chiranjeevi.jpg.jpg"
+            alt="Dr. Muddu Surendra Nehru MD with Chiranjeevi - World-renowned metabolic health expert Gachibowli Hyderabad"
+            caption="World-renowned metabolic health expert"
           />
         </div>
 

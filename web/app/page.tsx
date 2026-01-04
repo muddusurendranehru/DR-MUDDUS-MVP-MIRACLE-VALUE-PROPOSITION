@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
 import LandingPageHero from '../components/LandingPageHero';
+import TestimonialSlider from '../components/TestimonialSlider';
 
 // 🔑 Force static HTML generation for SEO & Google verification
 export const dynamic = 'force-static';
@@ -102,6 +103,7 @@ export default function Home() {
       />
       <div className="min-h-screen">
         <LandingPageHero /> {/* modern gradient + buttons */}
+        <TestimonialSlider /> {/* testimonials below hero */}
         {/* Optional: add dashboard preview below */}
       </div>
     </>

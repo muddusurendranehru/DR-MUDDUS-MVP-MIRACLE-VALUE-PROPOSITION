@@ -25,6 +25,14 @@ export default function LandingPageHero() {
           >
             📝 Book Your Free Assessment
           </a>
+          <a
+            href="https://wa.me/919963721999?text=Hi%20Dr.%20Nehru%2C%20I%20want%20to%20start%20my%20free%20metabolic%20risk%20assessment."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-600 text-white hover:bg-green-700 text-xl px-8 py-4 font-semibold shadow-2xl rounded-lg transition-all duration-200 inline-block text-center"
+          >
+            💬 Chat on WhatsApp
+          </a>
         </div>
         
         {/* Trust badges */}
