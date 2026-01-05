@@ -119,18 +119,21 @@ export default function Home() {
         <TestimonialSlider /> {/* testimonials below hero */}
         
         {/* Take Our Survey Banner */}
-        <div className="bg-blue-50 p-6 my-8 rounded-lg text-center max-w-4xl mx-auto px-4">
-          <h3 className="text-xl font-bold mb-2">Help Us Improve Your Metabolic Health Journey!</h3>
-          <p className="text-gray-700 mb-4">
+        <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-6 my-8 rounded-lg text-center max-w-4xl mx-auto px-4 border-2 border-purple-300">
+          <h3 className="text-xl font-bold mb-2 text-purple-900">Help Us Improve Your Metabolic Health Journey!</h3>
+          <p className="text-gray-800 mb-2 font-medium">
             Take our 2-minute survey and get a free HOMA-IR calculator + personalized nutrition tips.
+          </p>
+          <p className="text-lg font-bold text-purple-700 mb-4">
+            🎉 Get 15% Off on Your First Consultation!
           </p>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSc4cwzfm3ZDC7x1aCc7nGFNMRqpd14eogHWa91gj6jRFPXXw/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors font-medium"
+            className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full hover:from-purple-700 hover:to-pink-700 transition-colors font-medium shadow-lg"
           >
-            📊 Take the Survey
+            📊 Take the Survey - Get 15% Off
           </a>
         </div>
         

@@ -352,7 +352,7 @@ export default function RootLayout({
 
               {/* App Ecosystem Section */}
               <div className="mt-8 pt-8 border-t border-gray-700">
-                <h3 className="text-xl font-bold text-teal-400 mb-4 text-center">🩺 Dr Muddu's App Ecosystem</h3>
+                <h3 className="text-xl font-bold text-teal-400 mb-4 text-center">🛠️ Use the Tools - 70% Discount</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
                   {/* Nutrition Bot - Highlighted */}
                   <a
@@ -538,13 +538,13 @@ export default function RootLayout({
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <img 
-                    src="https://cdn-icons-png.flaticon.com/512/484/484662.png" 
-                    alt="Blog" 
+                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
+                    alt="Articles" 
                     className="w-12 h-12 mb-2"
                     loading="lazy"
                   />
-                  <span className="font-bold text-sm">4. Blog #1</span>
-                  <span className="text-xs">HOMA-IR Explained</span>
+                  <span className="font-bold text-sm">4. 300 Articles Written</span>
+                  <span className="text-xs">Health Insights & Research</span>
                 </div>
               </div>
 

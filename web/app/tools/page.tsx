@@ -15,34 +15,34 @@ export default function ToolsPage() {
         </p>
 
         {/* BMI Calculator */}
-        <div className="bg-gray-100 p-6 rounded-lg mb-6">
-          <h2 className="text-xl font-bold mb-2">BMI Calculator</h2>
-          <p className="mb-4">
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg mb-6 border-2 border-green-200">
+          <h2 className="text-xl font-bold mb-2 text-green-800">BMI Calculator</h2>
+          <p className="mb-4 text-gray-700">
             Enter your height and weight to calculate your Body Mass Index.
           </p>
-          <button className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700">
+          <button className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors font-medium">
             Calculate BMI
           </button>
         </div>
 
         {/* HOMA-IR Calculator */}
-        <div className="bg-gray-100 p-6 rounded-lg mb-6">
-          <h2 className="text-xl font-bold mb-2">HOMA-IR Calculator</h2>
-          <p className="mb-4">
+        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg mb-6 border-2 border-blue-200">
+          <h2 className="text-xl font-bold mb-2 text-blue-800">HOMA-IR Calculator</h2>
+          <p className="mb-4 text-gray-700">
             Enter your fasting glucose and insulin levels to calculate your insulin resistance.
           </p>
-          <button className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700">
+          <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors font-medium">
             Calculate HOMA-IR
           </button>
         </div>
 
         {/* Triglyceride-Glucose Index */}
-        <div className="bg-gray-100 p-6 rounded-lg">
-          <h2 className="text-xl font-bold mb-2">Triglyceride-Glucose Index</h2>
-          <p className="mb-4">
+        <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border-2 border-purple-200">
+          <h2 className="text-xl font-bold mb-2 text-purple-800">Triglyceride-Glucose Index</h2>
+          <p className="mb-4 text-gray-700">
             Enter your triglycerides and fasting glucose to assess your metabolic risk.
           </p>
-          <button className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700">
+          <button className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors font-medium">
             Calculate TyG Index
           </button>
         </div>

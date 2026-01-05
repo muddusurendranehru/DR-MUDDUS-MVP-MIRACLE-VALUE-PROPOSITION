@@ -129,10 +129,14 @@ export default function OnboardingDemo() {
   return (
     <>
       {/* Demo: 90-Day Onboarding Journey Preview */}
-      <div className="border-t border-gray-700 mt-8 pt-4 md:pt-6">
+      <div className="border-t border-gray-700 mt-8 pt-4 md:pt-6 bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg p-4 md:p-6">
         <div className="text-center mb-3 md:mb-6">
-          <h3 className="text-sm md:text-lg font-bold text-blue-400 mb-1">📧 90-Day Journey Demo</h3>
-          <p className="text-[10px] md:text-xs text-gray-400 px-2">Tap to preview each milestone</p>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-4 py-2 rounded-full mb-2">
+            <span className="text-lg">👋</span>
+            <span className="font-bold text-sm md:text-base">Get Hands-On Experience</span>
+          </div>
+          <h3 className="text-sm md:text-lg font-bold text-orange-800 mb-1">📧 90-Day Journey Demo</h3>
+          <p className="text-[10px] md:text-xs text-gray-600 px-2">Tap to preview each milestone</p>
         </div>
         {/* Mobile: Vertical stack, Desktop: Horizontal grid */}
         <div className="flex flex-col md:flex-row md:grid md:grid-cols-5 gap-2 md:gap-3 max-w-3xl mx-auto px-4 md:px-0">
