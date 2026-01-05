@@ -612,11 +612,11 @@ export default function RootLayout({
                 <div className="mt-6 text-center text-sm text-gray-400">
                   <p className="mb-2">Find us on trusted medical directories:</p>
                   <div className="flex justify-center space-x-4 flex-wrap">
-                    <a href="https://www.justdial.com/Hyderabad/Homa-Health-Care-Center/040PXX40-XX40-240516111543-E9Z5_BZDET" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">JustDial</a>
-                    <a href="https://www.practo.com/hyderabad/clinic/homa-health-care-center-gachibowli" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Practo</a>
-                    <a href="https://www.kividoctor.com/clinics/homa-health-care-center-hyderabad" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">KiviDoctor</a>
-                    <a href="https://www.sulekha.com/homa-health-care-center-hyderabad" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Sulekha</a>
-                    <a href="https://g.page/dr-muddu-surendra-nehrumd" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Google Business</a>
+                    <a href="https://www.justdial.com/Hyderabad/HOMA-Health-Care-Center" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">JustDial</a>
+                    <a href="https://www.practo.com/hyderabad/clinic/homa-health-care-center-gachibowli" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">Practo</a>
+                    <a href="https://kividoctor.com/clinics/homa-health-care-center-hyderabad" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">KiviDoctor</a>
+                    <a href="https://www.sulekha.com/homa-health-care-center-hyderabad" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">Sulekha</a>
+                    <a href="https://g.page/dr-muddu-surendra-nehrumd" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">Google Business</a>
                   </div>
                 </div>
                 
