@@ -121,6 +121,39 @@ export default function RootLayout({
             })
           }}
         />
+        {/* MedicalClinic Schema for Local SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MedicalClinic",
+              "name": "HOMA Clinic - Metabolic Disease Reversal",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "plot:no:140, Gachibowli Rd, beside mehfill restaurant, Rajiv Gandhi Nagar, Gachibowli",
+                "addressLocality": "Hyderabad",
+                "addressRegion": "Telangana",
+                "postalCode": "500032",
+                "addressCountry": "IN"
+              },
+              "telephone": "+919963721999",
+              "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com",
+              "sameAs": [
+                "https://www.justdial.com/Hyderabad/HOMA-Health-Care-Center",
+                "https://www.practo.com/hyderabad/clinic/homa-health-care-center-gachibowli",
+                "https://kividoctor.com/clinics/homa-health-care-center-hyderabad",
+                "https://www.sulekha.com/homa-health-care-center-hyderabad",
+                "https://g.page/dr-muddu-surendra-nehrumd"
+              ],
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "17.4487",
+                "longitude": "78.3987"
+              }
+            })
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
