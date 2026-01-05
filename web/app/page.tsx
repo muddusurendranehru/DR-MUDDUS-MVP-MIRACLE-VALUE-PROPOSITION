@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
+import Link from 'next/link';
 import LandingPageHero from '../components/LandingPageHero';
 import TestimonialSlider from '../components/TestimonialSlider';
 
@@ -102,8 +103,37 @@ export default function Home() {
         }}
       />
       <div className="min-h-screen">
+        {/* New Year / Pongal Promotional Banner */}
+        <div className="bg-gradient-to-r from-red-500 to-orange-500 py-4 text-white text-center">
+          <p className="text-sm font-medium px-4">
+            🎉 New Year & Pongal Special: Book Your Free Metabolic Assessment & Get Personalized Nutrition Plan + 30-Day Habit Tracker FREE!
+          </p>
+          <Link
+            href="/assessment"
+            className="inline-block bg-white text-red-600 px-6 py-2 rounded-full mt-2 font-bold hover:bg-gray-100 transition-colors"
+          >
+            📝 Book Your Free Assessment
+          </Link>
+        </div>
         <LandingPageHero /> {/* modern gradient + buttons */}
         <TestimonialSlider /> {/* testimonials below hero */}
+        
+        {/* Take Our Survey Banner */}
+        <div className="bg-blue-50 p-6 my-8 rounded-lg text-center max-w-4xl mx-auto px-4">
+          <h3 className="text-xl font-bold mb-2">Help Us Improve Your Metabolic Health Journey!</h3>
+          <p className="text-gray-700 mb-4">
+            Take our 2-minute survey and get a free HOMA-IR calculator + personalized nutrition tips.
+          </p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc4cwzfm3ZDC7x1aCc7nGFNMRqpd14eogHWa91gj6jRFPXXw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors font-medium"
+          >
+            📊 Take the Survey
+          </a>
+        </div>
+        
         {/* Optional: add dashboard preview below */}
       </div>
     </>
