@@ -607,6 +607,19 @@ export default function RootLayout({
                 <p className="text-xs text-gray-400">
                   © 2026 HOMA Clinic | Dr. Muddu Surendra Nehru M.D. | All Rights Reserved
                 </p>
+                
+                {/* SEO-Optimized Directory Links */}
+                <div className="mt-6 text-center text-sm text-gray-400">
+                  <p className="mb-2">Find us on trusted medical directories:</p>
+                  <div className="flex justify-center space-x-4 flex-wrap">
+                    <a href="https://www.justdial.com/Hyderabad/Homa-Health-Care-Center/040PXX40-XX40-240516111543-E9Z5_BZDET" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">JustDial</a>
+                    <a href="https://www.practo.com/hyderabad/clinic/homa-health-care-center-gachibowli" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Practo</a>
+                    <a href="https://www.kividoctor.com/clinics/homa-health-care-center-hyderabad" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">KiviDoctor</a>
+                    <a href="https://www.sulekha.com/homa-health-care-center-hyderabad" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Sulekha</a>
+                    <a href="https://g.page/dr-muddu-surendra-nehrumd" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Google Business</a>
+                  </div>
+                </div>
+                
                 {/* WhatsApp Button */}
                 <div className="flex justify-center mb-4">
                   <a

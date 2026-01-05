@@ -48,12 +48,16 @@ export default function ToolsPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-8 text-center">
+        <div className="mt-12 text-center bg-blue-50 p-8 rounded-lg">
+          <h2 className="text-2xl font-bold mb-4">Ready for Full Metabolic Remission?</h2>
+          <p className="text-gray-700 mb-6">
+            Get your personalized 90-day protocol with daily coaching, lab monitoring, and WhatsApp support.
+          </p>
           <a
             href="/assessment"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 font-medium transition-colors"
           >
-            📝 Start Your Full Metabolic Risk Assessment
+            📝 Start Your Free Assessment
           </a>
         </div>
       </div>

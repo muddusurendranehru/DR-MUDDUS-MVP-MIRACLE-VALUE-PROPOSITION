@@ -106,35 +106,42 @@ export default function Home() {
         {/* New Year / Pongal Promotional Banner */}
         <div className="bg-gradient-to-r from-red-500 to-orange-500 py-4 text-white text-center">
           <p className="text-sm font-medium px-4">
-            🎉 New Year & Pongal Special: Book Your Free Metabolic Assessment & Get Personalized Nutrition Plan + 30-Day Habit Tracker FREE!
+            🎉 New Year & Pongal Special: Get your free HOMA-IR report + 30-day habit tracker!
           </p>
           <Link
-            href="/assessment"
+            href="/tools"
             className="inline-block bg-white text-red-600 px-6 py-2 rounded-full mt-2 font-bold hover:bg-gray-100 transition-colors"
           >
-            📝 Book Your Free Assessment
+            📊 Use Free Calculators
           </Link>
         </div>
         <LandingPageHero /> {/* modern gradient + buttons */}
         <TestimonialSlider /> {/* testimonials below hero */}
         
         {/* Take Our Survey Banner */}
-        <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-6 my-8 rounded-lg text-center max-w-4xl mx-auto px-4 border-2 border-purple-300">
-          <h3 className="text-xl font-bold mb-2 text-purple-900">Help Us Improve Your Metabolic Health Journey!</h3>
-          <p className="text-gray-800 mb-2 font-medium">
-            Take our 2-minute survey and get a free HOMA-IR calculator + personalized nutrition tips.
-          </p>
-          <p className="text-lg font-bold text-purple-700 mb-4">
-            🎉 Get 15% Off on Your First Consultation!
-          </p>
+        <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6 my-8 rounded-lg text-center max-w-4xl mx-auto px-4 text-white">
+          <h3 className="text-xl font-bold mb-2">🎉 Get 15% Off Your 90-Day Program</h3>
+          <p className="mb-4">Complete our 2-minute survey and unlock your discount.</p>
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSc4cwzfm3ZDC7x1aCc7nGFNMRqpd14eogHWa91gj6jRFPXXw/viewform"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc4cw6zfm3ZDC7x1aCc7nGFNMRqpd14eogHWa91gj6jRFPXXw/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full hover:from-purple-700 hover:to-pink-700 transition-colors font-medium shadow-lg"
+            className="inline-block bg-white text-purple-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors"
           >
-            📊 Take the Survey - Get 15% Off
+            📝 Take Survey & Save 15%
           </a>
+        </div>
+        
+        {/* App Ecosystem CTA */}
+        <div className="bg-amber-100 p-6 rounded-lg text-center my-8 max-w-4xl mx-auto px-4">
+          <span className="inline-block bg-amber-500 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+            👋 Get Hands-On Experience
+          </span>
+          <h3 className="text-2xl font-bold mt-4 mb-2">🛠️ Use the Tools - 70% Discount</h3>
+          <p className="text-gray-700 mb-4">Try our BMI, HOMA-IR, and TyG calculators — then get 70% off your full program.</p>
+          <Link href="/tools" className="inline-block bg-amber-600 text-white px-6 py-2 rounded-full hover:bg-amber-700 transition-colors font-medium">
+            🔍 Explore Tools
+          </Link>
         </div>
         
         {/* Optional: add dashboard preview below */}
