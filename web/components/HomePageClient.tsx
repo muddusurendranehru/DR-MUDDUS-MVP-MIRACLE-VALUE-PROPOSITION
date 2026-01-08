@@ -107,36 +107,36 @@ export default function HomePageClient() {
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:py-16 max-w-7xl mx-auto min-h-screen">
         
         {/* Left Side - Text Content */}
-        <div className="max-w-2xl space-y-6 text-white text-center lg:text-left">
-          <span className="inline-block px-5 py-2 bg-white/25 backdrop-blur-md rounded-full text-sm font-semibold shadow-lg">
-            🩺 Dr. Muddu's AI-Powered Health Platform
+        <div className="max-w-lg space-y-6 text-white text-center lg:text-left">
+          <span className="inline-block px-4 py-1 bg-white/20 rounded-full text-sm font-medium">
+            🩺 Dr. Muddu's Health Platform
           </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-            Diabetes <span className="text-yellow-300">REMISSION</span> Gachibowli Hyderabad
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
+            Diabetes REMISSION Gachibowli Hyderabad
           </h1>
-          <div className="text-xl md:text-2xl font-bold text-orange-100">
+          <div className="text-lg md:text-xl font-semibold text-orange-100">
             Dr Muddu Nehru MD | 09963721999
           </div>
           <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
             {['85% Success', 'Insulin Testing Pioneer', '32 Yrs Experience'].map((item) => (
-              <span key={item} className="px-4 py-2 bg-white/25 backdrop-blur-md rounded-lg text-sm font-semibold shadow-md">
+              <span key={item} className="px-3 py-1 bg-white/20 rounded text-xs font-medium">
                 ✓ {item}
               </span>
             ))}
           </div>
-          <p className="text-lg md:text-xl text-orange-50 leading-relaxed font-medium">
-            <span className="font-bold text-yellow-300">Evidence-Based Protocols!</span> We test <span className="font-bold text-teal-300">FASTING INSULIN + HOMA-IR</span> to find root cause. 85% remission rate in 90 days.
+          <p className="text-base md:text-lg text-orange-100 leading-relaxed">
+            <span className="font-semibold">Evidence-Based Protocols!</span> We test <span className="font-semibold">FASTING INSULIN + HOMA-IR</span> to find root cause. 85% remission rate in 90 days.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-10 py-5 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white font-bold rounded-2xl shadow-2xl transition-all duration-300 text-lg transform hover:scale-105 hover:shadow-green-500/50"
+              className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors text-base"
             >
-              🎯 Free Risk Test →
+              Free Risk Test
             </button>
             <Link
               href="/pricing"
-              className="px-10 py-5 border-3 border-white/80 hover:bg-white hover:text-orange-600 text-white font-bold rounded-2xl transition-all duration-300 text-lg backdrop-blur-sm bg-white/10"
+              className="px-8 py-4 border-2 border-white hover:bg-white hover:text-orange-600 text-white font-semibold rounded-lg transition-colors text-base"
             >
               See Packages
             </Link>

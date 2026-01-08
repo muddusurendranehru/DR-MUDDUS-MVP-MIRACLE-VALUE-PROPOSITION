@@ -183,69 +183,68 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
     const whatsappMessage = `Hi! I completed the HOMA Risk Test.\n\nName: ${formData.fullName}\nHOMA Score: ${risk.level} Risk (${scores.metabolicRiskScore}%)\n\nI want to Book ₹999 Basic Plan`;
 
     return (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
-        <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50">
+        <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors z-10"
+            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-normal w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded transition-colors z-10"
           >
             ×
           </button>
 
-          <div className="p-8">
-            <div className="text-center mb-8">
-              <div className="text-6xl mb-4">🎉</div>
-              <h2 className="text-3xl font-extrabold text-gray-800 mb-2">
+          <div className="p-6">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-2">
                 Your HOMA Risk Assessment
               </h2>
-              <p className="text-gray-600">Complete! Here's your personalized score</p>
+              <p className="text-gray-600 text-sm">Assessment complete</p>
             </div>
 
             {/* Score Display */}
-            <div className={`bg-gradient-to-br ${
-              risk.color === 'red' ? 'from-red-500 to-red-600' :
-              risk.color === 'yellow' ? 'from-yellow-500 to-yellow-600' :
-              'from-green-500 to-green-600'
-            } text-white rounded-2xl p-8 mb-6 text-center shadow-xl`}>
-              <p className="text-xl mb-3 font-semibold">Your HOMA Score</p>
-              <p className="text-5xl font-extrabold mb-2">{risk.level} Risk</p>
-              <p className="text-3xl font-bold">{scores.metabolicRiskScore}%</p>
+            <div className={`${
+              risk.color === 'red' ? 'bg-red-50 border-red-200' :
+              risk.color === 'yellow' ? 'bg-yellow-50 border-yellow-200' :
+              'bg-green-50 border-green-200'
+            } border rounded-lg p-6 mb-6 text-center`}>
+              <p className="text-sm text-gray-600 mb-2">Your HOMA Score</p>
+              <p className="text-3xl font-semibold text-gray-900 mb-1">{risk.level} Risk</p>
+              <p className="text-2xl font-medium text-gray-700">{scores.metabolicRiskScore}%</p>
             </div>
 
             {/* WhatsApp CTA */}
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-400 rounded-2xl p-6 mb-6 shadow-lg">
-              <h3 className="text-2xl font-bold text-green-800 mb-3 text-center">
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
                 Next Steps
               </h3>
-              <p className="text-gray-700 mb-6 text-center text-lg">
-                Book your <span className="font-bold text-green-700">₹999 Basic Plan</span> to start your journey to remission
+              <p className="text-gray-700 mb-4 text-center text-sm">
+                Book your <span className="font-semibold">₹999 Basic Plan</span> to start your journey to remission
               </p>
               <a
                 href={`https://wa.me/919963721999?text=${encodeURIComponent(whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-6 py-5 rounded-xl text-center text-xl transition-all transform hover:scale-105 shadow-xl"
+                className="block w-full bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-md text-center transition-colors"
               >
-                📱 Book ₹999 Basic Plan →
+                Book ₹999 Basic Plan
               </a>
             </div>
 
             {/* Score Breakdown */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-5 text-center border-2 border-blue-200">
-                <p className="text-sm text-gray-600 font-semibold mb-2">BMI</p>
-                <p className="text-2xl font-bold text-blue-700">{scores.bmiScore}</p>
+            <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+                <p className="text-xs text-gray-600 mb-1">BMI</p>
+                <p className="text-xl font-semibold text-gray-900">{scores.bmiScore}</p>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-5 text-center border-2 border-purple-200">
-                <p className="text-sm text-gray-600 font-semibold mb-2">TyG Index</p>
-                <p className="text-2xl font-bold text-purple-700">{scores.tygIndex}</p>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+                <p className="text-xs text-gray-600 mb-1">TyG Index</p>
+                <p className="text-xl font-semibold text-gray-900">{scores.tygIndex}</p>
               </div>
             </div>
 
             <button
               onClick={onClose}
-              className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold px-6 py-4 rounded-xl transition-all"
+              className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-6 py-2 rounded-md transition-colors"
             >
               Close
             </button>
@@ -257,37 +256,37 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
 
   // Form Screen
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
-      <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50">
+      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-6 flex items-center justify-between">
+        <div className="bg-white border-b border-gray-200 p-4 flex items-center justify-between">
           <div>
-            <h2 className="text-2xl font-bold">🎯 Free Risk Test</h2>
-            <p className="text-green-100 text-sm mt-1">Question {currentStep} of 15</p>
+            <h2 className="text-xl font-semibold text-gray-900">Free Risk Test</h2>
+            <p className="text-gray-500 text-sm mt-1">Question {currentStep} of 15</p>
           </div>
           <button
             onClick={onClose}
-            className="text-white hover:text-gray-200 text-3xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/20 transition-colors"
+            className="text-gray-400 hover:text-gray-600 text-2xl font-normal w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded transition-colors"
           >
             ×
           </button>
         </div>
 
         {/* Progress Bar */}
-        <div className="bg-gray-200 h-3">
+        <div className="bg-gray-100 h-1">
           <div 
-            className="bg-gradient-to-r from-green-500 to-emerald-500 h-3 transition-all duration-300 shadow-lg"
+            className="bg-green-600 h-1 transition-all duration-300"
             style={{ width: `${(currentStep / 15) * 100}%` }}
           />
         </div>
 
         {/* Form Content */}
-        <div className="p-6 md:p-8 flex-1 overflow-y-auto">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="p-6 flex-1 overflow-y-auto">
+          <form onSubmit={handleSubmit}>
             {/* Q1: Full Name */}
             {currentStep === 1 && (
-              <div className="space-y-4">
-                <label className="block text-xl font-bold text-gray-800 mb-3">
+              <div className="space-y-3">
+                <label className="block text-base font-medium text-gray-700">
                   1. Full Name *
                 </label>
                 <input
@@ -295,7 +294,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   required
                   value={formData.fullName}
                   onChange={(e) => updateField('fullName', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -303,8 +302,8 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
 
             {/* Q2: WhatsApp */}
             {currentStep === 2 && (
-              <div className="space-y-4">
-                <label className="block text-xl font-bold text-gray-800 mb-3">
+              <div className="space-y-3">
+                <label className="block text-base font-medium text-gray-700">
                   2. WhatsApp Number *
                 </label>
                 <input
@@ -312,7 +311,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   required
                   value={formData.whatsappNumber}
                   onChange={(e) => updateField('whatsappNumber', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="10-digit mobile number"
                 />
               </div>
@@ -320,8 +319,8 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
 
             {/* Q3: Email */}
             {currentStep === 3 && (
-              <div className="space-y-4">
-                <label className="block text-xl font-bold text-gray-800 mb-3">
+              <div className="space-y-3">
+                <label className="block text-base font-medium text-gray-700">
                   3. Email *
                 </label>
                 <input
@@ -329,7 +328,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   required
                   value={formData.email}
                   onChange={(e) => updateField('email', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -348,7 +347,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   max="100"
                   value={formData.age}
                   onChange={(e) => updateField('age', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="Your age"
                 />
               </div>
@@ -392,7 +391,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   max="250"
                   value={formData.height}
                   onChange={(e) => updateField('height', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="e.g., 170"
                 />
               </div>
@@ -411,7 +410,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   max="200"
                   value={formData.weight}
                   onChange={(e) => updateField('weight', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="e.g., 75"
                 />
               </div>
@@ -430,7 +429,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   max="200"
                   value={formData.waistCircumference}
                   onChange={(e) => updateField('waistCircumference', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="e.g., 90"
                 />
               </div>
@@ -449,7 +448,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   max="300"
                   value={formData.fastingBloodSugar}
                   onChange={(e) => updateField('fastingBloodSugar', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="e.g., 100"
                 />
               </div>
@@ -468,7 +467,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   max="400"
                   value={formData.totalCholesterol}
                   onChange={(e) => updateField('totalCholesterol', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="e.g., 200"
                 />
               </div>
@@ -487,7 +486,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   max="500"
                   value={formData.triglycerides}
                   onChange={(e) => updateField('triglycerides', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="e.g., 150"
                 />
               </div>
@@ -506,7 +505,7 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
                   max="10"
                   value={formData.weightLossAttempts}
                   onChange={(e) => updateField('weightLossAttempts', e.target.value)}
-                  className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                   placeholder="0-10"
                 />
                 <p className="text-sm text-gray-500">0 = No attempts, 10 = Many failed attempts</p>
@@ -594,22 +593,22 @@ export default function RiskTestModal({ isOpen, onClose }: RiskTestModalProps) {
             )}
 
             {/* Navigation Buttons */}
-            <div className="flex gap-4 mt-8 pt-6 border-t border-gray-200">
+            <div className="flex gap-3 mt-6 pt-4 border-t border-gray-200">
               {currentStep > 1 && (
                 <button
                   type="button"
                   onClick={() => setCurrentStep(prev => prev - 1)}
-                  className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold px-6 py-4 rounded-xl transition-all"
+                  className="px-6 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-md transition-colors"
                 >
-                  ← Back
+                  Back
                 </button>
               )}
               <button
                 type="submit"
                 disabled={currentStep === 13 && formData.biggestFrustration.length === 0}
-                className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-6 py-4 rounded-xl transition-all shadow-lg transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {currentStep < 15 ? 'Next →' : 'Get Results 🎯'}
+                {currentStep < 15 ? 'Next' : 'Get Results'}
               </button>
             </div>
           </form>
