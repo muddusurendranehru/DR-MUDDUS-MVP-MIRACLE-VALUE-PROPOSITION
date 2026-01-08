@@ -16,7 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/auth`, lastModified: now, priority: 0.6 },
     { url: `${baseUrl}/diet`, lastModified: now, priority: 0.7 },
     { url: `${baseUrl}/nutri-bot`, lastModified: now, priority: 0.7 },
+    { url: `${baseUrl}/tools`, lastModified: now, priority: 0.8 },
     { url: `${baseUrl}/testimonials`, lastModified: now, priority: 0.7 },
+    { url: `${baseUrl}/gallery`, lastModified: now, priority: 0.7 },
     { url: `${baseUrl}/disclaimer`, lastModified: now, priority: 0.5 },
     { url: `${baseUrl}/upgrade`, lastModified: now, priority: 0.6 },
     { url: `${baseUrl}/onboarding-emails`, lastModified: now, priority: 0.5 },
@@ -32,5 +34,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/can-prediabetes-be-reversed-in-90-days`, lastModified: now, priority: 0.8 },
     { url: `${baseUrl}/blog/insulin-resistance-kidney-link`, lastModified: now, priority: 0.7 },
     // Add future blogs here
+    
+    // Condition pages
+    { url: `${baseUrl}/conditions/diabetes`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/hypertension`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/pcos`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/kidney-disease`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/obesity`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/prediabetes`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/metabolic-syndrome`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
   ];
 }

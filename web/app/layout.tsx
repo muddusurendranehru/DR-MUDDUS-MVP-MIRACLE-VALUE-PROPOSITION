@@ -121,6 +121,39 @@ export default function RootLayout({
             })
           }}
         />
+        {/* MedicalClinic Schema for Local SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MedicalClinic",
+              "name": "HOMA Clinic - Metabolic Disease Reversal",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "plot:no:140, Gachibowli Rd, beside mehfill restaurant, Rajiv Gandhi Nagar, Gachibowli",
+                "addressLocality": "Hyderabad",
+                "addressRegion": "Telangana",
+                "postalCode": "500032",
+                "addressCountry": "IN"
+              },
+              "telephone": "+919963721999",
+              "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com",
+              "sameAs": [
+                "https://www.justdial.com/Hyderabad/HOMA-Health-Care-Center",
+                "https://www.practo.com/hyderabad/clinic/homa-health-care-center-gachibowli",
+                "https://kividoctor.com/clinics/homa-health-care-center-hyderabad",
+                "https://www.sulekha.com/homa-health-care-center-hyderabad",
+                "https://g.page/dr-muddu-surendra-nehrumd"
+              ],
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "17.4487",
+                "longitude": "78.3987"
+              }
+            })
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -243,6 +276,25 @@ export default function RootLayout({
           {/* Global Footer */}
           <footer className="bg-gray-900 text-white py-8 px-4">
             <div className="max-w-7xl mx-auto">
+              {/* Conditions Internal Linking - SEO */}
+              <div className="mb-8 text-center">
+                <div className="inline-flex flex-wrap justify-center gap-2 text-sm text-gray-300">
+                  <Link href="/conditions/diabetes" className="hover:text-white transition-colors">Diabetes</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/pcos" className="hover:text-white transition-colors">PCOS</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/kidney-disease" className="hover:text-white transition-colors">Kidney Health</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/hypertension" className="hover:text-white transition-colors">Hypertension</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/obesity" className="hover:text-white transition-colors">Obesity</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/prediabetes" className="hover:text-white transition-colors">Prediabetes</Link>
+                  <span className="text-gray-600">•</span>
+                  <Link href="/conditions/metabolic-syndrome" className="hover:text-white transition-colors">Metabolic Syndrome</Link>
+                </div>
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Doctor Info */}
                 <div>
@@ -333,7 +385,7 @@ export default function RootLayout({
 
               {/* App Ecosystem Section */}
               <div className="mt-8 pt-8 border-t border-gray-700">
-                <h3 className="text-xl font-bold text-teal-400 mb-4 text-center">🩺 Dr Muddu's App Ecosystem</h3>
+                <h3 className="text-xl font-bold text-teal-400 mb-4 text-center">🛠️ Use the Tools - 70% Discount</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
                   {/* Nutrition Bot - Highlighted */}
                   <a
@@ -519,13 +571,13 @@ export default function RootLayout({
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <img 
-                    src="https://cdn-icons-png.flaticon.com/512/484/484662.png" 
-                    alt="Blog" 
+                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
+                    alt="Articles" 
                     className="w-12 h-12 mb-2"
                     loading="lazy"
                   />
-                  <span className="font-bold text-sm">4. Blog #1</span>
-                  <span className="text-xs">HOMA-IR Explained</span>
+                  <span className="font-bold text-sm">4. 300 Articles Written</span>
+                  <span className="text-xs">Health Insights & Research</span>
                 </div>
               </div>
 
@@ -549,68 +601,102 @@ export default function RootLayout({
                 </a>
               </div>
 
-              {/* PAYMENTS Section */}
+              {/* PAYMENTS Section - Commented out for now, can add Swift/Visa later */}
+              {/* 
               <div className="footer-payments bg-gray-50 p-6 rounded-xl mb-6">
                 <h3 className="text-center font-bold text-lg mb-4 text-gray-800">100% Secure Payments</h3>
                 <div className="flex flex-wrap justify-center items-center gap-4">
-                  <a
-                    href="whatsapp://send?phone=919963721999&text=UPI HOMA Basic"
-                    className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow hover:shadow-lg transition-all"
-                  >
-                    <Image
-                      src="https://cdn-icons-png.flaticon.com/512/11645/11645614.png"
-                      alt="UPI"
-                      width={40}
-                      height={40}
-                      sizes="(max-width: 768px) 40px, 60px"
-                      className="h-8 w-auto"
-                      unoptimized
-                    />
-                    <span className="font-bold text-sm">Pay ₹999</span>
-                  </a>
                   <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
-                    <Image
-                      src="https://seeklogo.com/images/V/visa-logo-E7DA9E050D-seeklogo.com.png"
-                      alt="Visa"
-                      width={60}
-                      height={40}
-                      sizes="(max-width: 768px) 40px, 60px"
-                      className="h-8 w-auto"
-                      unoptimized
-                    />
                     <span className="font-bold text-sm">Visa</span>
                   </div>
                   <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
-                    <Image
-                      src="https://cdn-icons-png.flaticon.com/512/5968/5968898.png"
-                      alt="PayPal"
-                      width={40}
-                      height={40}
-                      sizes="(max-width: 768px) 40px, 60px"
-                      className="h-8 w-auto"
-                      unoptimized
-                    />
-                    <span className="font-bold text-sm">PayPal</span>
+                    <span className="font-bold text-sm">Mastercard</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow">
+                    <span className="font-bold text-sm">Swift</span>
                   </div>
                 </div>
               </div>
+              */}
 
-              {/* Bottom Bar */}
+              {/* Bottom Bar - SEO Internal Links */}
               <div className="border-t border-gray-700 mt-4 pt-4 text-center">
+                {/* SEO Internal Links */}
+                <div className="flex flex-wrap justify-center gap-4 mb-4 text-sm">
+                  <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                    Home
+                  </Link>
+                  <Link href="/assessment" className="text-gray-300 hover:text-white transition-colors">
+                    Free Assessment
+                  </Link>
+                  <Link href="/gallery" className="text-gray-300 hover:text-white transition-colors">
+                    Success Stories
+                  </Link>
+                  <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                    Blog
+                  </Link>
+                </div>
+                
                 <p className="text-xs text-gray-400">
-                  © 2025 HOMA Clinic | Dr. Muddu Surendra Nehru M.D. | All Rights Reserved
+                  © 2026 HOMA Clinic | Dr. Muddu Surendra Nehru M.D. | All Rights Reserved
                 </p>
-                <p className="text-xs text-gray-500 mt-1">
+                
+                {/* SEO-Optimized Directory Links */}
+                <div className="mt-6 text-center text-sm text-gray-400">
+                  <p className="mb-2">Find us on trusted medical directories:</p>
+                  <div className="flex justify-center space-x-4 flex-wrap">
+                    <a href="https://www.justdial.com/Hyderabad/HOMA-Health-Care-Center" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">JustDial</a>
+                    <a href="https://www.practo.com/hyderabad/clinic/homa-health-care-center-gachibowli" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">Practo</a>
+                    <a href="https://kividoctor.com/clinics/homa-health-care-center-hyderabad" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">KiviDoctor</a>
+                    <a href="https://www.sulekha.com/homa-health-care-center-hyderabad" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">Sulekha</a>
+                    <a href="https://g.page/dr-muddu-surendra-nehrumd" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">Google Business</a>
+                  </div>
+                </div>
+                
+                {/* WhatsApp Button */}
+                <div className="flex justify-center mb-4">
+                  <a
+                    href="https://wa.me/919963721999?text=Hi%20Dr.%20Nehru%2C%20I%20want%20to%20start%20my%20free%20metabolic%20risk%20assessment."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors font-medium"
+                  >
+                    💬 Chat on WhatsApp
+                  </a>
+                </div>
+
+                {/* UPI QR Code Section - Payment QR Code */}
+                <div className="mt-4 text-center">
+                  <p className="text-sm font-medium text-gray-300 mb-2">Pay via UPI:</p>
+                  <div className="flex justify-center mb-2">
+                    <Image
+                      src="/images/gpay1.jpg"
+                      alt="UPI payment QR code - surendra.muddu-1@okhdfcbank - Scan to pay Dr. Muddu Surendra Nehru MD via UPI"
+                      width={200}
+                      height={200}
+                      className="border-2 border-gray-600 rounded-lg bg-white p-2 shadow-lg"
+                      unoptimized
+                    />
+                  </div>
+                  <p className="text-xs text-gray-400 mt-2 mb-1">
+                    Scan with PhonePe, Google Pay, Paytm, or any UPI app
+                  </p>
+                  <p className="text-xs text-gray-500 font-mono">
+                    UPI ID: surendra.muddu-1@okhdfcbank
+                  </p>
+                </div>
+
+                <p className="text-xs text-gray-500 mt-4">
                   🎯 "Achieve Metabolic Remission in 90 Days — Not Just Manage It"
                 </p>
                 <div className="flex justify-center gap-4 mt-3 text-xs">
-                  <a href="https://wa.me/919963721999?text=I want to JOIN" target="_blank" className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded transition-colors">
+                  <a href="https://wa.me/919963721999?text=I want to JOIN" target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded transition-colors">
                     JOIN
                   </a>
-                  <a href="https://wa.me/919963721999?text=I want to DONATE" target="_blank" className="bg-yellow-600 hover:bg-yellow-700 px-3 py-1 rounded transition-colors">
+                  <a href="https://wa.me/919963721999?text=I want to DONATE" target="_blank" rel="noopener noreferrer" className="bg-yellow-600 hover:bg-yellow-700 px-3 py-1 rounded transition-colors">
                     DONATE
                   </a>
-                  <a href="https://wa.me/919963721999?text=I want FRANCHISE info" target="_blank" className="bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded transition-colors">
+                  <a href="https://wa.me/919963721999?text=I want FRANCHISE info" target="_blank" rel="noopener noreferrer" className="bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded transition-colors">
                     FRANCHISE
                   </a>
                 </div>

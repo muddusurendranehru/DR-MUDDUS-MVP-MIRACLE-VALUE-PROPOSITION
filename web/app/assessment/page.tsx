@@ -118,6 +118,21 @@ export default function AssessmentPage() {
           </Link>
         </div>
 
+        {/* Google Form Option */}
+        <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <p className="text-sm text-gray-700 mb-3">
+            <strong>Quick Option:</strong> Prefer a simple form? Use our Google Form instead.
+          </p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc4cw6zfm3ZDC7x1aCc7nGFNMRqpd14eogHWa91gj6jRFPXXw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 font-medium"
+          >
+            📝 Book Your Free Assessment
+          </a>
+        </div>
+
         {/* Error Message */}
         {error && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">

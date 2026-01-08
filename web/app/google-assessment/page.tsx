@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Advanced Assessment - Google Form | Dr Muddu\'s HOMA Clinic',
-  description: 'Complete our comprehensive health assessment form to get personalized metabolic health insights.',
+  title: 'Free Metabolic Assessment | Dr. Muddu Surendra Nehru, MD - Gachibowli, Hyderabad',
+  description: 'Take our free metabolic assessment to evaluate your risk for diabetes, insulin resistance, and metabolic syndrome. Get personalized insights from Dr. Muddu Surendra Nehru, MD.',
 };
 
 export default function GoogleAssessmentPage() {
@@ -23,7 +23,7 @@ export default function GoogleAssessmentPage() {
         <div className="bg-white rounded-lg shadow-md p-4 md:p-6">
           <div className="w-full" style={{ minHeight: '600px' }}>
             <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSdYOUR_FORM_ID_HERE/viewform?embedded=true"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSc4cw6zfm3ZDC7x1aCc7nGFNMRqpd14eogHWa91gj6jRFPXXw/viewform?embedded=true"
               width="100%"
               height="600"
               frameBorder="0"
