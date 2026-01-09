@@ -27,7 +27,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="KR-S5Yw9tbmd22VH8sY4wkwGxD3jv_UiIGHYgeHAlRM" />
-        <title>Dr Muddu's HOMA Clinic Gachibowli Hyderabad India - Diabetes Cardio Obesity REMISSION</title>
         <meta name="description" content="Years struggling? We test FASTING INSULIN (not glucose) + HOMA-IR. 32yrs ethics-guided care, 35L patients, India #1 5K+ HOMA tests, pioneer cardio-obesity-metabolism. 25 apps built. Pioneer close monitoring → REMISSION." />
         
         {/* Open Graph / Facebook */}
@@ -75,49 +74,6 @@ export default function RootLayout({
                 "name": "Dr. Muddu Surendra Nehru",
                 "jobTitle": "Professor of Medicine"
               }
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Best diabetologist Gachibowli?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Dr. Muddu Surendra Nehru MD is the best diabetologist in Gachibowli, Hyderabad. With 30+ years of experience, 500,000+ patients treated, and 85% remission rate using the evidence-based 90-day HOMA protocol. Professor of Medicine specializing in diabetes reversal, insulin resistance, and metabolic health."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Diabetes reversal cost Gachibowli?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "₹999 Metabolic Risk Calculator + 90 Day Program. The program includes personalized treatment plans, HOMA-IR testing, nutrition tracking, and continuous monitoring for metabolic remission."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Diabetes reversal cost Hyderabad?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "₹999 Metabolic Risk Calculator + 90 Day Program at HOMA Clinic Gachibowli. Dr. Muddu Nehru MD offers evidence-based diabetes reversal protocols with 85% success rate. Located in Gachibowli, Hyderabad. Call 09963721999 for consultation."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "HOMA IR test near me?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "HOMA-IR test available at HOMA Clinic Gachibowli, Hyderabad. Dr. Muddu Nehru MD offers comprehensive metabolic testing including HOMA-IR (Homeostatic Model Assessment for Insulin Resistance), fasting glucose, triglycerides, and TyG Index. Address: Diabetes Reversal Center Health care center Gachibowli. Phone: 09963721999."
-                  }
-                }
-              ]
             })
           }}
         />
