@@ -6,13 +6,17 @@ export default function LandingPageHero() {
       <div className="max-w-4xl mx-auto text-center">
         {/* Title */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent leading-tight">
-          HOMA Clinic
-          <span className="block text-4xl md:text-6xl text-yellow-300">Metabolic Reversal</span>
+          Best Metabolic Doctor in Hyderabad | Metabolic Reversal in 90 Days
         </h1>
         
-        {/* Subtitle */}
-        <p className="text-xl md:text-2xl mb-8 md:mb-12 max-w-2xl mx-auto opacity-95 leading-relaxed">
-          90-Day Program | Diabetes Reversal | Obesity Gone | Heart Risk Zero
+        {/* Keyword-Rich Subtitle */}
+        <p className="subtitle text-gray-600 text-center mt-2 text-lg md:text-xl mb-4 md:mb-6 max-w-3xl mx-auto opacity-95 leading-relaxed">
+          Specializing in insulin resistance, PCOS, central obesity & heart disease prevention. Serving Gachibowli, Ameerpet, Bachupally & Patancheru.
+        </p>
+        
+        {/* Hyperlocal Service Area Notice */}
+        <p className="text-sm md:text-base text-gray-300 text-center mb-8 md:mb-12 max-w-2xl mx-auto">
+          Serving Gachibowli, Ameerpet, Bachupally & Patancheru with at-home metabolic assessments.
         </p>
         
         {/* CTA Buttons */}

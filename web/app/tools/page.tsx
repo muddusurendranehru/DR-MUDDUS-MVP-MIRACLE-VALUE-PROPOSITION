@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Metabolic Health Calculators | Dr. Muddu Surendra Nehru, MD - Hyderabad',
@@ -20,9 +21,9 @@ export default function ToolsPage() {
           <p className="mb-4 text-gray-700">
             Enter your height and weight to calculate your Body Mass Index.
           </p>
-          <button className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors font-medium">
+          <Link href="/tools/bmi-calculator" className="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors font-medium">
             Calculate BMI
-          </button>
+          </Link>
         </div>
 
         {/* HOMA-IR Calculator */}
@@ -31,20 +32,53 @@ export default function ToolsPage() {
           <p className="mb-4 text-gray-700">
             Enter your fasting glucose and insulin levels to calculate your insulin resistance.
           </p>
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors font-medium">
+          <Link href="/tools/homa-ir-calculator" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors font-medium">
             Calculate HOMA-IR
-          </button>
+          </Link>
         </div>
 
         {/* Triglyceride-Glucose Index */}
-        <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border-2 border-purple-200">
-          <h2 className="text-xl font-bold mb-2 text-purple-800">Triglyceride-Glucose Index</h2>
+        <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg mb-6 border-2 border-purple-200">
+          <h2 className="text-xl font-bold mb-2 text-purple-800">Triglyceride-Glucose Index (TyG)</h2>
           <p className="mb-4 text-gray-700">
             Enter your triglycerides and fasting glucose to assess your metabolic risk.
           </p>
-          <button className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors font-medium">
+          <Link href="/tools/tyg-index-calculator" className="inline-block bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors font-medium">
             Calculate TyG Index
-          </button>
+          </Link>
+        </div>
+
+        {/* Waist Circumference */}
+        <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-lg mb-6 border-2 border-orange-200">
+          <h2 className="text-xl font-bold mb-2 text-orange-800">Waist Circumference Assessment</h2>
+          <p className="mb-4 text-gray-700">
+            Measure your waist circumference to assess central obesity risk.
+          </p>
+          <Link href="/tools/waist-circumference" className="inline-block bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition-colors font-medium">
+            Assess Waist Risk
+          </Link>
+        </div>
+
+        {/* Waist-to-Hip Ratio */}
+        <div className="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-lg mb-6 border-2 border-teal-200">
+          <h2 className="text-xl font-bold mb-2 text-teal-800">Waist-to-Hip Ratio (WHR)</h2>
+          <p className="mb-4 text-gray-700">
+            Calculate your waist-to-hip ratio to assess body fat distribution and metabolic risk.
+          </p>
+          <Link href="/tools/whr-calculator" className="inline-block bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition-colors font-medium">
+            Calculate WHR
+          </Link>
+        </div>
+
+        {/* Waist-to-Height Ratio */}
+        <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-lg border-2 border-orange-200">
+          <h2 className="text-xl font-bold mb-2 text-orange-800">Waist-to-Height Ratio (WHtR)</h2>
+          <p className="mb-4 text-gray-700">
+            The most accurate predictor of belly fat risk — better than BMI. Calculate your waist-to-height ratio.
+          </p>
+          <Link href="/tools/whtr-calculator" className="inline-block bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition-colors font-medium">
+            Calculate WHtR
+          </Link>
         </div>
 
         {/* CTA */}

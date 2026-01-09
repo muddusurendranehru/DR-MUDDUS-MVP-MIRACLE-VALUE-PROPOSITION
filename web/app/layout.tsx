@@ -219,7 +219,7 @@ export default function RootLayout({
                   "@type": "SoftwareApplication",
                   "name": "Nutrition Bot",
                   "description": "AI nutrition guidance powered by HOMA Foods - Get personalized nutrition recommendations",
-                  "url": "https://homa-foods-nutrition.onrender.com",
+                  "url": "https://nutrition-bot-frontend.onrender.com",
                   "applicationCategory": "HealthApplication",
                   "operatingSystem": "Web",
                   "offers": {
@@ -389,7 +389,7 @@ export default function RootLayout({
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
                   {/* Nutrition Bot - Highlighted */}
                   <a
-                    href="https://homa-foods-nutrition.onrender.com"
+                    href="https://nutrition-bot-frontend.onrender.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gradient-to-br from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 rounded-xl p-4 text-white transition-all transform hover:scale-105 shadow-lg border-2 border-green-400"
@@ -644,12 +644,12 @@ export default function RootLayout({
                 {/* SEO-Optimized Directory Links */}
                 <div className="mt-6 text-center text-sm text-gray-400">
                   <p className="mb-2">Find us on trusted medical directories:</p>
-                  <div className="flex justify-center space-x-4 flex-wrap">
+                  <div className="directory-links flex justify-center space-x-4 flex-wrap">
                     <a href="https://www.justdial.com/Hyderabad/HOMA-Health-Care-Center" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">JustDial</a>
                     <a href="https://www.practo.com/hyderabad/clinic/homa-health-care-center-gachibowli" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">Practo</a>
                     <a href="https://kividoctor.com/clinics/homa-health-care-center-hyderabad" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">KiviDoctor</a>
                     <a href="https://www.sulekha.com/homa-health-care-center-hyderabad" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">Sulekha</a>
-                    <a href="https://g.page/dr-muddu-surendra-nehrumd" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">Google Business</a>
+                    <a href="https://g.page/dr-muddu-surendra-nehrumd" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">Google Business Profile</a>
                   </div>
                 </div>
                 
@@ -703,6 +703,18 @@ export default function RootLayout({
               </div>
             </div>
           </footer>
+          
+          {/* Service Area Footer Notice - Outside main footer */}
+          <footer className="mt-16 py-6 text-center text-sm text-gray-600 bg-white">
+            Serving Gachibowli, Ameerpet, Bachupally & Patancheru with at-home metabolic assessments.
+          </footer>
+          
+          {/* PCOS/Insulin Resistance Message - Bottom */}
+          <div className="bg-gradient-to-r from-pink-50 to-purple-50 border-t border-pink-200 py-6 px-4">
+            <p className="text-center text-sm md:text-base text-gray-700 max-w-3xl mx-auto">
+              <strong>Struggling with PCOS, unexplained weight gain, fatigue, or irregular periods?</strong> These are signs of insulin resistance — not just 'hormonal imbalance'.
+            </p>
+          </div>
 
           {/* Welcome Bot */}
           <WelcomeBot />

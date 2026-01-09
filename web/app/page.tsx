@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 import Link from 'next/link';
 import LandingPageHero from '../components/LandingPageHero';
+import MetabolicServicesHero from '../components/MetabolicServicesHero';
 import TestimonialSlider from '../components/TestimonialSlider';
 
 // 🔑 Force static HTML generation for SEO & Google verification
@@ -116,7 +117,40 @@ export default function Home() {
           </Link>
         </div>
         <LandingPageHero /> {/* modern gradient + buttons */}
+        <MetabolicServicesHero /> {/* 9 patient segments with service cards */}
         <TestimonialSlider /> {/* testimonials below hero */}
+        
+        {/* Quick Action Links */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 py-12 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Link
+                href="/tools"
+                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-all transform hover:scale-105 border-2 border-blue-200"
+              >
+                <div className="text-3xl mb-3">🔧</div>
+                <h3 className="font-bold text-gray-900 mb-2">Try Our Free Tools</h3>
+                <p className="text-sm text-gray-600">BMI, HOMA-IR & TyG calculators</p>
+              </Link>
+              <Link
+                href="/gallery"
+                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-all transform hover:scale-105 border-2 border-green-200"
+              >
+                <div className="text-3xl mb-3">📸</div>
+                <h3 className="font-bold text-gray-900 mb-2">See Patient Success Stories</h3>
+                <p className="text-sm text-gray-600">Real transformations & testimonials</p>
+              </Link>
+              <Link
+                href="/assessment"
+                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-all transform hover:scale-105 border-2 border-purple-200"
+              >
+                <div className="text-3xl mb-3">📝</div>
+                <h3 className="font-bold text-gray-900 mb-2">Start Your Free Assessment</h3>
+                <p className="text-sm text-gray-600">15-minute metabolic risk evaluation</p>
+              </Link>
+            </div>
+          </div>
+        </div>
         
         {/* Take Our Survey Banner */}
         <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6 my-8 rounded-lg text-center max-w-4xl mx-auto px-4 text-white">
