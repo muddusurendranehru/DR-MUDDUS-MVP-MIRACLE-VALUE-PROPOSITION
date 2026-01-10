@@ -24,6 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/upgrade`, lastModified: now, priority: 0.6 },
     { url: `${baseUrl}/onboarding-emails`, lastModified: now, priority: 0.5 },
     
+    // Location pages
+    { url: `${baseUrl}/hyderabad/hyderabad`, lastModified: now, priority: 0.9 },
+    { url: `${baseUrl}/hyderabad/gachibowli`, lastModified: now, priority: 0.9 },
+    { url: `${baseUrl}/hyderabad/ameerpet`, lastModified: now, priority: 0.8 },
+    { url: `${baseUrl}/hyderabad/patancheru`, lastModified: now, priority: 0.8 },
+    { url: `${baseUrl}/hyderabad/bachupally`, lastModified: now, priority: 0.8 },
+    
     // Blog posts
     { url: `${baseUrl}/blog/can-prediabetes-be-reversed-in-90-days`, lastModified: now, priority: 0.8 },
     { url: `${baseUrl}/blog/insulin-resistance-kidney-link`, lastModified: now, priority: 0.7 },

@@ -136,6 +136,12 @@ export default function DashboardPage() {
               >
                 New Assessment
               </Link>
+              <Link
+                href="/google-assessment"
+                className="text-sm text-blue-600 hover:text-blue-700 font-medium"
+              >
+                Advanced Assessment → Google Form
+              </Link>
             <Link
               href="/diet?day=1"
               className="text-sm font-medium text-green-700 bg-green-50 border border-green-200 px-3 py-1.5 rounded-md hover:bg-green-100 transition"

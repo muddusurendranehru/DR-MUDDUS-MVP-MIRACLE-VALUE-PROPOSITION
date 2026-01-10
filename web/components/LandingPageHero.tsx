@@ -12,12 +12,22 @@ export default function LandingPageHero() {
           Miracle Methods Gachibowli
         </h2>
         <p className="text-2xl md:text-3xl font-bold mb-4 text-white">
-          Metabolic Reversal
+          Best Metabolic Doctor in Hyderabad | Metabolic Reversal in 90 Days
         </p>
         
         {/* Subtitle */}
-        <p className="text-xl md:text-2xl mb-6 max-w-2xl mx-auto opacity-95 leading-relaxed font-semibold">
+        <p className="text-xl md:text-2xl mb-4 max-w-2xl mx-auto opacity-95 leading-relaxed font-semibold">
           90-Day Program | Diabetes Reversal | Obesity Gone | Heart Risk Zero
+        </p>
+        
+        {/* Keyword-Rich Subtitle */}
+        <p className="text-lg md:text-xl mb-4 max-w-3xl mx-auto opacity-90 leading-relaxed">
+          Specializing in insulin resistance, PCOS, central obesity & heart disease prevention. Serving Gachibowli, Ameerpet, Bachupally & Patancheru.
+        </p>
+        
+        {/* Hyperlocal Service Area Notice */}
+        <p className="text-sm md:text-base text-gray-300 mb-6 max-w-2xl mx-auto">
+          Serving Gachibowli, Ameerpet, Bachupally & Patancheru with at-home metabolic assessments.
         </p>
         <p className="text-lg md:text-xl mb-4 max-w-2xl mx-auto opacity-90 font-bold">
           Best Diabetologist in Gachibowli, Hyderabad

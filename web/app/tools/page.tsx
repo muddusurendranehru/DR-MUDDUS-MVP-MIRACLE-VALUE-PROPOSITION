@@ -160,9 +160,9 @@ export default function ToolsPage() {
             <p className="text-sm text-gray-600 mb-6 italic">
               📊 Used by 10,000+ patients since 2020. Free. No signup needed.
             </p>
-            <button className="bg-green-600 text-white px-10 py-4 rounded-full hover:bg-green-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <Link href="/tools/bmi-calculator" className="inline-block bg-green-600 text-white px-10 py-4 rounded-full hover:bg-green-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Calculate BMI →
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -181,9 +181,9 @@ export default function ToolsPage() {
             <p className="text-sm text-gray-600 mb-6 italic">
               📊 Used by 10,000+ patients since 2020. Based on 500,000+ tests since 2000. Free. No signup needed.
             </p>
-            <button className="bg-blue-600 text-white px-10 py-4 rounded-full hover:bg-blue-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <Link href="/tools/homa-ir-calculator" className="inline-block bg-blue-600 text-white px-10 py-4 rounded-full hover:bg-blue-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Calculate HOMA-IR →
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -202,9 +202,9 @@ export default function ToolsPage() {
             <p className="text-sm text-gray-600 mb-6 italic">
               📊 Used by 10,000+ patients since 2020. Based on research from 500,000+ patients. Free. No signup needed.
             </p>
-            <button className="bg-purple-600 text-white px-10 py-4 rounded-full hover:bg-purple-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <Link href="/tools/tyg-index-calculator" className="inline-block bg-purple-600 text-white px-10 py-4 rounded-full hover:bg-purple-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Calculate TyG Index →
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -223,9 +223,9 @@ export default function ToolsPage() {
             <p className="text-sm text-gray-600 mb-6 italic">
               📊 Used by 10,000+ patients since 2020. Based on research from 500,000+ patients. Free. No signup needed.
             </p>
-            <button className="bg-orange-600 text-white px-10 py-4 rounded-full hover:bg-orange-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <Link href="/tools/waist-circumference" className="inline-block bg-orange-600 text-white px-10 py-4 rounded-full hover:bg-orange-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Check Waist Size →
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -244,9 +244,9 @@ export default function ToolsPage() {
             <p className="text-sm text-gray-600 mb-6 italic">
               📊 Used by 10,000+ patients since 2020. Research shows this is more accurate than BMI. Free. No signup needed.
             </p>
-            <button className="bg-indigo-600 text-white px-10 py-4 rounded-full hover:bg-indigo-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <Link href="/tools/whtr-calculator" className="inline-block bg-indigo-600 text-white px-10 py-4 rounded-full hover:bg-indigo-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Calculate WHtR →
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -265,9 +265,9 @@ export default function ToolsPage() {
             <p className="text-sm text-gray-600 mb-6 italic">
               📊 Used by 10,000+ patients since 2020. Important for PCOS and hormonal issues. Free. No signup needed.
             </p>
-            <button className="bg-pink-600 text-white px-10 py-4 rounded-full hover:bg-pink-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <Link href="/tools/whr-calculator" className="inline-block bg-pink-600 text-white px-10 py-4 rounded-full hover:bg-pink-700 transition-colors font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Calculate WHR →
-            </button>
+            </Link>
           </div>
         </div>
 
