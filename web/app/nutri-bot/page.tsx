@@ -172,7 +172,7 @@ Let's get started! 🥗`,
   };
 
   // Use token via API
-  const useTokenFromAPI = async (): Promise<boolean> => {
+  const consumeTokenFromAPI = async (): Promise<boolean> => {
     const authToken = localStorage.getItem('token');
     if (!authToken) return false;
 
@@ -226,7 +226,7 @@ Let's get started! 🥗`,
     setIsTyping(true);
 
     // Use token from API/database
-    const tokenUsed = await useTokenFromAPI();
+    const tokenUsed = await consumeTokenFromAPI();
 
     // Simulate API delay
     setTimeout(() => {
