@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/enroll`, lastModified: now, priority: 0.9 },
     { url: `${baseUrl}/remission-program`, lastModified: now, priority: 0.8 },
     { url: `${baseUrl}/assessment`, lastModified: now, priority: 0.8 },
+    { url: `${baseUrl}/conditions`, lastModified: now, priority: 0.9 },
     { url: `${baseUrl}/dashboard`, lastModified: now, priority: 0.7 },
     { url: `${baseUrl}/auth`, lastModified: now, priority: 0.6 },
     { url: `${baseUrl}/diet`, lastModified: now, priority: 0.7 },
@@ -36,5 +37,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/conditions/obesity`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${baseUrl}/conditions/prediabetes`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${baseUrl}/conditions/metabolic-syndrome`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    
+    // New condition pages - Patient-focused questions
+    { url: `${baseUrl}/conditions/pcos-unexplained-weight-gain`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/tired-at-60-not-just-aging`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/belly-fat-wont-go-away`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/sugar-normal-high-risk`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/diabetes-swelling-in-legs`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/family-heart-attack-diabetes`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/high-bp-diabetes-treatment`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/retired-always-tired`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/family-metabolic-screening`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/conditions/always-exhausted-even-after-sleep`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
   ];
 }

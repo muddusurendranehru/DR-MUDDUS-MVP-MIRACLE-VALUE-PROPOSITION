@@ -1,16 +1,24 @@
-# 🚀 Run Both Servers - Quick Commands
+# 🚀 Run Both Servers - Quick Commands with Full Paths
 
-## Option 1: Two Separate Terminal Windows (Easiest)
+## Complete Absolute Paths
+
+**Project Root:** `C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION`
+**Backend Path:** `C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\server`
+**Frontend Path:** `C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\web`
+
+---
+
+## Option 1: Two Separate Terminal Windows (Easiest - Recommended)
 
 ### Terminal 1 - Backend Server (Port 5000):
 ```powershell
-cd server
+cd C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\server
 npm run dev
 ```
 
 ### Terminal 2 - Frontend Server (Port 3002):
 ```powershell
-cd web
+cd C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\web
 npm run dev
 ```
 
@@ -21,10 +29,10 @@ npm run dev
 ### Run both in background:
 ```powershell
 # Start backend server
-Start-Job -ScriptBlock { Set-Location "C:\Users\MYPC\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\server"; npm run dev } -Name BackendServer
+Start-Job -ScriptBlock { Set-Location "C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\server"; npm run dev } -Name BackendServer
 
 # Start frontend server  
-Start-Job -ScriptBlock { Set-Location "C:\Users\MYPC\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\web"; npm run dev } -Name FrontendServer
+Start-Job -ScriptBlock { Set-Location "C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\web"; npm run dev } -Name FrontendServer
 
 # Check status
 Get-Job
@@ -42,20 +50,20 @@ Remove-Job -Name BackendServer, FrontendServer
 
 ## Option 3: PowerShell Script (Automated)
 
-Create `start-servers.ps1`:
+Use existing `start-servers.ps1` script (in project root):
 ```powershell
-# Start Backend
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd server; npm run dev"
-
-# Start Frontend
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd web; npm run dev"
-
-Write-Host "✅ Both servers starting in separate windows..."
-Write-Host "Backend: http://localhost:5000"
-Write-Host "Frontend: http://localhost:3002"
+cd C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION
+.\start-servers.ps1
 ```
 
-Then run: `.\start-servers.ps1`
+Or run directly with full paths:
+```powershell
+# Start Backend
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd 'C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\server'; npm run dev"
+
+# Start Frontend
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd 'C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\web'; npm run dev"
+```
 
 ---
 
