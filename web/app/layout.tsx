@@ -608,30 +608,9 @@ export default function RootLayout({
                 </a>
               </div>
 
-              {/* Quick Links & HOMA Clinic Info - Moved DOWN (after Chiranjeevi, before GBP) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-                {/* Quick Links */}
-                <div>
-                  <h3 className="text-lg font-bold text-teal-400 mb-3">Quick Links</h3>
-                  <div className="flex flex-col gap-2 text-sm">
-                    <Link href="/" className="text-gray-300 hover:text-white transition-colors">🏠 Home</Link>
-                    <Link href="/tools" className="text-gray-300 hover:text-green-400 transition-colors">📊 Free Metabolic Calculators (First in World)</Link>
-                    <Link href="/conditions" className="text-gray-300 hover:text-purple-400 transition-colors">🩺 Conditions & Services</Link>
-                    <Link href="/auth" className="text-gray-300 hover:text-white transition-colors">🔐 Login / Sign Up</Link>
-                    <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors">📊 Dashboard</Link>
-                    <Link href="/remission-program" className="text-gray-300 hover:text-white transition-colors">🎯 90-Day Program</Link>
-                    <Link href="/testimonials" className="text-gray-300 hover:text-yellow-400 transition-colors">🏆 Success Stories</Link>
-                    <Link href="/upgrade" className="text-gray-300 hover:text-green-400 transition-colors">💎 Premium Plans</Link>
-                    <Link href="/enroll" className="text-gray-300 hover:text-yellow-400 transition-colors">🎯 Enroll Now</Link>
-                    <Link href="/pricing" className="text-gray-300 hover:text-amber-400 transition-colors">💰 All Packages</Link>
-                    <Link href="/zoom" className="text-gray-300 hover:text-purple-400 transition-colors">📹 Zoom Sundays</Link>
-                    <Link href="/gallery" className="text-gray-300 hover:text-purple-400 transition-colors">📸 Gallery</Link>
-                    <Link href="/blog" className="text-gray-300 hover:text-green-400 transition-colors">📝 Blog / Health Insights</Link>
-                    <Link href="/disclaimer" className="text-gray-300 hover:text-red-400 transition-colors">⚖️ Legal / Disclaimer</Link>
-                  </div>
-                </div>
-
-                {/* Doctor Info - Moved DOWN */}
+              {/* HOMA Clinic Info - Moved UP (before Quick Links) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                {/* Doctor Info */}
                 <div>
                   <h3 className="text-lg font-bold text-teal-400 mb-3">🩺 HOMA Clinic</h3>
                   <p className="text-sm text-gray-300 mb-2">
@@ -717,6 +696,27 @@ export default function RootLayout({
                 >
                   Donate Now (UPI)
                 </a>
+              </div>
+
+              {/* Quick Links - Moved DOWN (after GIVE/DONATE section) */}
+              <div className="mt-8 mb-6">
+                <h3 className="text-lg font-bold text-teal-400 mb-4 text-center">Quick Links</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 text-sm">
+                  <Link href="/" className="text-gray-300 hover:text-white transition-colors text-center py-2">🏠 Home</Link>
+                  <Link href="/tools" className="text-gray-300 hover:text-green-400 transition-colors text-center py-2">📊 Calculators</Link>
+                  <Link href="/conditions" className="text-gray-300 hover:text-purple-400 transition-colors text-center py-2">🩺 Conditions</Link>
+                  <Link href="/auth" className="text-gray-300 hover:text-white transition-colors text-center py-2">🔐 Login</Link>
+                  <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors text-center py-2">📊 Dashboard</Link>
+                  <Link href="/remission-program" className="text-gray-300 hover:text-white transition-colors text-center py-2">🎯 Program</Link>
+                  <Link href="/testimonials" className="text-gray-300 hover:text-yellow-400 transition-colors text-center py-2">🏆 Stories</Link>
+                  <Link href="/upgrade" className="text-gray-300 hover:text-green-400 transition-colors text-center py-2">💎 Premium</Link>
+                  <Link href="/enroll" className="text-gray-300 hover:text-yellow-400 transition-colors text-center py-2">🎯 Enroll</Link>
+                  <Link href="/pricing" className="text-gray-300 hover:text-amber-400 transition-colors text-center py-2">💰 Packages</Link>
+                  <Link href="/zoom" className="text-gray-300 hover:text-purple-400 transition-colors text-center py-2">📹 Zoom</Link>
+                  <Link href="/gallery" className="text-gray-300 hover:text-purple-400 transition-colors text-center py-2">📸 Gallery</Link>
+                  <Link href="/blog" className="text-gray-300 hover:text-green-400 transition-colors text-center py-2">📝 Blog</Link>
+                  <Link href="/disclaimer" className="text-gray-300 hover:text-red-400 transition-colors text-center py-2">⚖️ Legal</Link>
+                </div>
               </div>
 
               {/* PAYMENTS Section - Commented out for now, can add Swift/Visa later */}
