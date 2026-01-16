@@ -9,9 +9,9 @@ import TestimonialSlider from '../components/TestimonialSlider';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Dr Muddu\'s HOMA Clinic Gachibowli Hyderabad India - Diabetes Cardio Obesity REMISSION',
-  description: 'Years struggling? We test FASTING INSULIN (not glucose) + HOMA-IR. 32yrs ethics-guided care, 35L patients, India #1 5K+ HOMA tests, pioneer cardio-obesity-metabolism. 25 apps built. Pioneer close monitoring → REMISSION.',
-  keywords: 'diabetes remission Gachibowli, HOMA test Hyderabad, fasting insulin test, Dr Muddu Nehru, diabetes reversal, insulin resistance, HOMA-IR test India',
+  title: 'Dr. Muddu Surendra Nehru MD Best Diabetologist Gachibowli | HOMA Clinic Hyderabad - Diabetes Cardio Obesity REMISSION',
+  description: 'Dr. Muddu Surendra Nehru MD best diabetologist Gachibowli. Years struggling? We test FASTING INSULIN (not glucose) + HOMA-IR. 32yrs ethics-guided care, 35L patients, India #1 5K+ HOMA tests, pioneer cardio-obesity-metabolism. Serving Gachibowli, ISB, IIIT, Banjara Hills & IKEA.',
+  keywords: 'Dr Muddu Surendra Nehru MD best diabetologist Gachibowli, diabetes remission Gachibowli, HOMA test Hyderabad, fasting insulin test Gachibowli, diabetes reversal ISB, insulin resistance treatment Hyderabad, HOMA-IR test Gachibowli',
   openGraph: {
     title: 'Dr Muddu Nehru | Diabetologist Gachibowli',
     description: '90 Day Diabetes Remission | 85% Success',
@@ -104,16 +104,19 @@ export default function Home() {
         }}
       />
       <div className="min-h-screen">
-        {/* New Year / Pongal Promotional Banner */}
-        <div className="bg-gradient-to-r from-red-500 to-orange-500 py-4 text-white text-center">
-          <p className="text-sm font-medium px-4">
-            🎉 New Year & Pongal Special: Get your free HOMA-IR report + 30-day habit tracker!
+        {/* Promotional Banner - ABOVE Hero Section - Best Hook to Attract */}
+        <div className="bg-gradient-to-r from-red-500 to-orange-500 py-6 text-white text-center">
+          <p className="text-lg md:text-xl font-bold px-4 mb-3">
+            Struggling with belly fat or fatigue? USE OUR METABOLIC CALCULATORS FIRST IN THE WORLD FREE ONLINE
+          </p>
+          <p className="text-sm md:text-base mb-4 px-4 opacity-95">
+            🎉 New Year & Pongal Special: Free Metabolic Risk Check – No Cost, No Signup
           </p>
           <Link
-            href="/tools"
-            className="inline-block bg-white text-red-600 px-6 py-2 rounded-full mt-2 font-bold hover:bg-gray-100 transition-colors"
+            href="/tools?utm_source=homepage_banner&utm_medium=cta_button&utm_campaign=metabolic_calculators"
+            className="inline-block bg-white text-red-600 px-8 py-3 rounded-full mt-2 font-bold hover:bg-gray-100 transition-colors text-lg shadow-lg transform hover:-translate-y-1"
           >
-            📊 Use Free Calculators
+            Free Metabolic Heart Diabetes Risk Check – No Cost, No Signup →
           </Link>
         </div>
         <LandingPageHero /> {/* modern gradient + buttons */}
@@ -166,15 +169,26 @@ export default function Home() {
           </a>
         </div>
         
-        {/* App Ecosystem CTA */}
-        <div className="bg-amber-100 p-6 rounded-lg text-center my-8 max-w-4xl mx-auto px-4">
-          <span className="inline-block bg-amber-500 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+        {/* App Ecosystem CTA - Updated Branding */}
+        <div className="bg-gradient-to-r from-amber-100 to-orange-100 p-8 rounded-2xl text-center my-8 max-w-5xl mx-auto px-4 border-4 border-amber-400 shadow-xl">
+          <span className="inline-block bg-amber-500 text-white px-6 py-2 rounded-full text-base font-bold mb-4 shadow-lg">
             👋 Get Hands-On Experience
           </span>
-          <h3 className="text-2xl font-bold mt-4 mb-2">🛠️ Use the Tools - 70% Discount</h3>
-          <p className="text-gray-700 mb-4">Try our BMI, HOMA-IR, and TyG calculators — then get 70% off your full program.</p>
-          <Link href="/tools" className="inline-block bg-amber-600 text-white px-6 py-2 rounded-full hover:bg-amber-700 transition-colors font-medium">
-            🔍 Explore Tools
+          <h3 className="text-3xl md:text-4xl font-extrabold mt-4 mb-3 text-gray-900">
+            🛠️ Free Metabolic Risk Check – No Cost, No Signup
+          </h3>
+          <p className="text-lg md:text-xl text-gray-700 mb-4 max-w-2xl mx-auto leading-relaxed">
+            <strong>Dr. Muddu Surendra Nehru MD Miracle Methods Gachibowli</strong> — 
+            Try our BMI, HOMA-IR, and TyG calculators. Get 70% off your full program.
+          </p>
+          <p className="text-sm text-gray-600 mb-6 italic">
+            Trusted by visitors to ISB, IIIT, and professionals near IKEA Gachibowli. Appreciated by Megastar Chiranjeevi.
+          </p>
+          <Link 
+            href="/tools" 
+            className="inline-block bg-amber-600 text-white px-10 py-4 rounded-full hover:bg-amber-700 transition-colors font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
+            🔍 Get Your Free Risk Check Now →
           </Link>
         </div>
         

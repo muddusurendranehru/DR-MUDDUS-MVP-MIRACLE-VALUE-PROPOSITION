@@ -1,21 +1,24 @@
 # Start Both Servers - HOMA Clinic MVP
 # This script opens two separate PowerShell windows for backend and frontend servers
 
-$projectRoot = $PSScriptRoot
+# Full absolute path
+$projectRoot = "C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION"
 
 Write-Host "🚀 Starting HOMA Clinic Servers..." -ForegroundColor Green
+Write-Host ""
+Write-Host "📁 Project Root: $projectRoot" -ForegroundColor Gray
 Write-Host ""
 
 # Start Backend Server (Port 5000)
 Write-Host "📡 Starting Backend Server on port 5000..." -ForegroundColor Cyan
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$projectRoot\server'; Write-Host 'Backend Server Starting...' -ForegroundColor Green; npm run dev"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$projectRoot\server'; Write-Host '🚀 Backend Server (Port 5000) Starting...' -ForegroundColor Green; npm run dev"
 
 # Wait a moment
 Start-Sleep -Seconds 2
 
 # Start Frontend Server (Port 3002)
 Write-Host "🌐 Starting Frontend Server on port 3002..." -ForegroundColor Cyan
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$projectRoot\web'; Write-Host 'Frontend Server Starting...' -ForegroundColor Green; npm run dev"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$projectRoot\web'; Write-Host '🌐 Frontend Server (Port 3002) Starting...' -ForegroundColor Cyan; npm run dev"
 
 # Wait a moment
 Start-Sleep -Seconds 2

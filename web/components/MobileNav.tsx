@@ -79,48 +79,64 @@ export default function MobileNav() {
 
       {/* Slide-out Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-gray-900 to-gray-800 z-[55] transform transition-transform duration-300 ease-in-out overflow-y-auto ${
+        className={`fixed top-0 right-0 h-full w-80 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 z-[55] transform transition-transform duration-300 ease-in-out overflow-y-auto shadow-2xl ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        {/* Menu Header */}
-        <div className="bg-gradient-to-r from-teal-600 to-blue-600 p-4 pt-6">
-          <h2 className="text-white font-bold text-lg">🩺 HOMA Clinic</h2>
-          <p className="text-teal-100 text-xs mt-1">Dr. Muddu's Metabolic Care</p>
+        {/* Menu Header - Enhanced */}
+        <div className="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 p-6 pt-8 shadow-lg">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-2">
+              <span className="text-2xl">🩺</span>
+            </div>
+            <div>
+              <h2 className="text-white font-extrabold text-xl tracking-tight">HOMA Clinic</h2>
+              <p className="text-cyan-50 text-xs font-medium mt-0.5">Dr. Muddu's Metabolic Care</p>
+            </div>
+          </div>
         </div>
 
-        {/* Navigation Links */}
-        <nav className="p-4 pb-32">
-          <ul className="space-y-2">
+        {/* Navigation Links - Beautiful Cards */}
+        <nav className="p-4 pb-40">
+          <ul className="space-y-3">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={closeMenu}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                  className={`group flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-200 transform hover:scale-[1.02] shadow-lg ${
                     pathname === link.href
-                      ? 'bg-teal-600 text-white'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                      ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-teal-500/50 shadow-xl'
+                      : 'bg-white/5 backdrop-blur-sm text-gray-200 hover:bg-white/10 hover:shadow-lg border border-white/10'
                   }`}
                 >
-                  <span className="text-lg">{link.icon}</span>
-                  <span className="font-medium">{link.label}</span>
+                  <div className={`text-2xl transition-transform group-hover:scale-110 ${pathname === link.href ? 'drop-shadow-lg' : ''}`}>
+                    {link.icon}
+                  </div>
+                  <span className={`font-semibold text-base flex-1 ${pathname === link.href ? 'text-white' : 'text-gray-100'}`}>
+                    {link.label}
+                  </span>
+                  {pathname === link.href && (
+                    <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  )}
                 </Link>
               </li>
             ))}
             
-            {/* Apps Dropdown */}
+            {/* Apps Dropdown - Enhanced */}
             <li>
               <button
                 onClick={toggleApps}
-                className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg transition-all text-gray-300 hover:bg-gray-700 hover:text-white"
+                className="w-full group flex items-center justify-between gap-4 px-5 py-4 rounded-xl transition-all duration-200 bg-white/5 backdrop-blur-sm text-gray-200 hover:bg-white/10 hover:shadow-lg border border-white/10 transform hover:scale-[1.02]"
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-lg">📱</span>
-                  <span className="font-medium">Apps</span>
+                <div className="flex items-center gap-4">
+                  <div className="text-2xl transition-transform group-hover:scale-110">📱</div>
+                  <span className="font-semibold text-base text-gray-100">Apps</span>
                 </div>
                 <svg
-                  className={`w-5 h-5 transition-transform ${appsOpen ? 'rotate-180' : ''}`}
+                  className={`w-5 h-5 transition-all duration-300 text-gray-400 group-hover:text-white ${
+                    appsOpen ? 'rotate-180 text-teal-400' : ''
+                  }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -129,7 +145,7 @@ export default function MobileNav() {
                 </svg>
               </button>
               {appsOpen && (
-                <ul className="mt-2 ml-4 space-y-1 border-l-2 border-teal-600 pl-4">
+                <ul className="mt-3 space-y-2 animate-in fade-in slide-in-from-top-2 duration-200">
                   {appLinks.map((app, index) => (
                     <li key={index}>
                       <a
@@ -137,11 +153,11 @@ export default function MobileNav() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={closeMenu}
-                        className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all text-gray-400 hover:bg-gray-700 hover:text-white text-sm"
+                        className="group flex items-center gap-3 px-5 py-3 rounded-lg transition-all duration-200 bg-indigo-900/40 backdrop-blur-sm text-gray-300 hover:bg-indigo-700/50 hover:text-white border border-indigo-700/30 hover:border-indigo-500 transform hover:scale-[1.02] shadow-md"
                       >
-                        <span className="text-base">{app.icon}</span>
-                        <span>{app.name}</span>
-                        <span className="ml-auto text-xs">↗</span>
+                        <span className="text-xl transition-transform group-hover:scale-110">{app.icon}</span>
+                        <span className="font-medium text-sm flex-1">{app.name}</span>
+                        <span className="text-xs text-indigo-400 group-hover:text-white transition-colors">↗</span>
                       </a>
                     </li>
                   ))}
@@ -151,28 +167,36 @@ export default function MobileNav() {
           </ul>
         </nav>
 
-        {/* Quick Actions - Fixed at bottom */}
-        <div className="fixed bottom-0 right-0 w-72 p-4 bg-gray-900 border-t border-gray-700">
-          <div className="grid grid-cols-2 gap-2">
-            <a
-              href="https://wa.me/919963721999"
-              target="_blank"
-              onClick={closeMenu}
-              className="flex items-center justify-center gap-2 px-3 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors"
-            >
-              💬 WhatsApp
-            </a>
-            <a
-              href="tel:+919963721999"
-              onClick={closeMenu}
-              className="flex items-center justify-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
-            >
-              📞 Call
-            </a>
+        {/* Quick Actions - Enhanced Bottom Section */}
+        <div className="fixed bottom-0 right-0 w-80 p-5 bg-gradient-to-t from-slate-900 via-indigo-900 to-transparent border-t border-indigo-700/50 backdrop-blur-sm">
+          <div className="bg-white/5 rounded-xl p-4 backdrop-blur-sm border border-white/10 shadow-xl">
+            <div className="grid grid-cols-2 gap-3 mb-3">
+              <a
+                href="https://wa.me/919963721999"
+                target="_blank"
+                onClick={closeMenu}
+                className="group flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white text-sm font-bold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg shadow-green-500/30"
+              >
+                <span className="text-lg">💬</span>
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href="tel:+919963721999"
+                onClick={closeMenu}
+                className="group flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white text-sm font-bold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg shadow-blue-500/30"
+              >
+                <span className="text-lg">📞</span>
+                <span>Call</span>
+              </a>
+            </div>
+            <p className="text-center text-cyan-300 text-sm font-semibold tracking-wide">
+              09963721999
+            </p>
           </div>
-          <p className="text-center text-gray-500 text-xs mt-2">
-            09963721999
-          </p>
+          <div className="mt-4 text-center">
+            <p className="text-gray-400 text-xs font-medium">DR. MUDDU SURENDRA NEHRU M.D.</p>
+            <p className="text-gray-500 text-[10px] mt-1">Professor of Medicine • 30+ Years</p>
+          </div>
         </div>
       </div>
     </>
