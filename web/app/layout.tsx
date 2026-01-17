@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import { AuthProvider } from '@/lib/auth-context'
 import Link from 'next/link'
@@ -43,6 +44,7 @@ export default function RootLayout({
         <meta name="twitter:title" content="Dr Muddu Nehru | Diabetologist Gachibowli" />
         <meta name="twitter:description" content="90 Day Diabetes Remission | 85% Success" />
         <meta name="twitter:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/og-chiranjeevi.jpg" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -232,8 +234,46 @@ export default function RootLayout({
             })
           }}
         />
+        
+        {/* Person Schema - Dr. Muddu Surendra Nehru, MD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Dr. Muddu Surendra Nehru, MD",
+              "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/about",
+              "image": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/profile.jpg",
+              "jobTitle": "Professor of Medicine",
+              "affiliation": "HOMA Health Clinics",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Gachibowli",
+                "addressLocality": "Hyderabad",
+                "addressRegion": "Telangana",
+                "postalCode": "500032",
+                "addressCountry": "IN"
+              },
+              "description": "With 32+ years of clinical experience, Dr. Muddu pioneered the HOMA-IR based metabolic remission approach. Author of 4 books and 300+ articles on diabetes reversal and obesity management."
+            })
+          }}
+        />
       </head>
       <body className={inter.className}>
+        {/* Google Analytics 4 (GA4) - Next.js Script Component */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XJQ762V2MY"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XJQ762V2MY');
+          `}
+        </Script>
         <AuthProvider>
           {/* Mobile Navigation */}
           <MobileNav />
