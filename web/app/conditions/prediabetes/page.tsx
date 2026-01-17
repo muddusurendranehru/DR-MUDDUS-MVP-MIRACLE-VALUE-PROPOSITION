@@ -1,30 +1,93 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
-
-// ✅ Force static generation for SEO
-export const dynamic = 'force-static';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Prediabetes Reversal in 90 Days | Dr. Muddu Surendra Nehru, MD - Hyderabad',
   description: 'Stop progression to full diabetes through metabolic remission program in Gachibowli, Hyderabad. Led by Professor Dr. Muddu Surendra Nehru, MD with 32+ years experience.',
+  openGraph: {
+    title: 'Prediabetes Reversal in 90 Days | Dr. Muddu Nehru, MD',
+    description: 'Stop progression to full diabetes through metabolic remission program. Evidence-based protocols.',
+    url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/conditions/prediabetes',
+    siteName: 'HOMA Health Clinics',
+    images: [
+      {
+        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/prediabetes-reversal-hyderabad.jpg.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Prediabetes Reversal Program - Dr. Muddu Nehru, MD',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Prediabetes Reversal in 90 Days',
+    description: 'Stop progression to full diabetes through metabolic remission program.',
+    images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/prediabetes-reversal-hyderabad.jpg'],
+  },
 };
 
+export const dynamic = 'force-static';
+
 export default function PrediabetesPage() {
+  const pageUrl = 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/conditions/prediabetes';
+  const pageTitle = 'Prediabetes Reversal in 90 Days - Dr. Muddu Nehru, MD';
+  const pageDescription = 'Stop progression to full diabetes through metabolic remission program in Gachibowli, Hyderabad.';
+
   return (
     <div className="min-h-screen bg-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">
-          Prediabetes Reversal in Gachibowli – Dr. Muddu Surendra Nehru, MD
-        </h1>
-        <p className="text-gray-700 mb-6">
-          Hyderabad's leading metabolic approach to prediabetes reversal, led by Professor Dr. Muddu Surendra Nehru, MD — 32+ years of clinical excellence in Gachibowli.
-        </p>
+        {/* Hero with Image Placeholder */}
+        <header className="mb-8">
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900 mb-4">
+                Prediabetes Reversal in Gachibowli – Dr. Muddu Surendra Nehru, MD
+              </h1>
+              <p className="text-gray-700 mb-4">
+                Hyderabad's leading metabolic approach to prediabetes reversal, led by Professor Dr. Muddu Surendra Nehru, MD — 32+ years of clinical excellence in Gachibowli.
+              </p>
+            </div>
+            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/images/prediabetes-reversal-hyderabad.jpg.jpg"
+                alt="Prediabetes Reversal Program"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </header>
         
         <h2 className="text-2xl font-semibold mt-8 mb-4">Why Patients from Hyderabad Trust Our Protocol</h2>
-        <ul className="list-disc pl-5 mb-6 text-gray-700">
+        <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
           <li>90-day structured remission pathway</li>
           <li>Personalized nutrition & daily habit tracking</li>
           <li>Real-time WhatsApp support from medical team</li>
+          <li>Addresses root cause: insulin resistance</li>
+          <li>Prevents progression to full diabetes</li>
         </ul>
+
+        {/* Share Section */}
+        <ShareButtons 
+          pageUrl={pageUrl}
+          pageTitle={pageTitle}
+          pageDescription={pageDescription}
+        />
+
+        {/* Assessment CTA */}
+        <div className="bg-gradient-to-r from-red-500 to-orange-500 py-6 text-white text-center rounded-lg mb-6">
+          <Link 
+            href="/tools?utm_source=condition_page&utm_medium=cta_button&utm_campaign=metabolic_calculators"
+            className="inline-block bg-white text-red-600 px-8 py-3 rounded-full mt-2 font-bold hover:bg-gray-100 transition-colors text-lg shadow-lg transform hover:-translate-y-1"
+          >
+            Free Metabolic Heart Diabetes Risk Check – No Cost, No Signup →
+          </Link>
+        </div>
 
         <div className="bg-green-50 p-6 rounded-lg mb-8">
           <h3 className="font-bold text-green-800 mb-2">Free Risk Assessment</h3>
@@ -45,7 +108,48 @@ export default function PrediabetesPage() {
           <p>Dr. Muddu Surendra Nehru, MD | Metabolic Health Clinic | Gachibowli, Hyderabad, Telangana</p>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="py-6 text-center border-t mt-8 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <Link href="/" className="text-blue-600 hover:underline font-medium mr-4">
+            ← Back to Home
+          </Link>
+          <span className="text-gray-400">|</span>
+          <Link href="/about" className="text-blue-600 hover:underline font-medium ml-4">
+            About Dr. Muddu
+          </Link>
+        </div>
+      </footer>
+
+      {/* Schema.org - MedicalCondition */}
+      <script
+        id="prediabetes-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalCondition",
+            "name": "Prediabetes",
+            "description": "Elevated blood sugar levels that are higher than normal but not yet diabetic. Reversible through metabolic remission protocols.",
+            "url": pageUrl,
+            "image": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/prediabetes-reversal-hyderabad.jpg",
+            "associatedAnatomy": {
+              "@type": "AnatomicalStructure",
+              "name": "Pancreas"
+            },
+            "possibleTreatment": {
+              "@type": "MedicalTherapy",
+              "name": "Metabolic remission protocol, HOMA-IR guided nutrition, lifestyle modification"
+            },
+            "provider": {
+              "@type": "Person",
+              "name": "Dr. Muddu Surendra Nehru, MD",
+              "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/about"
+            }
+          })
+        }}
+      />
     </div>
   );
 }
-
