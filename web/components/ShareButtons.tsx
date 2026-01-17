@@ -18,9 +18,9 @@ export default function ShareButtons({ pageUrl, pageTitle, pageDescription = '' 
   };
 
   const handleShare = async () => {
-    if (navigator.share) {
+    if (typeof window !== 'undefined' && window.navigator && typeof window.navigator.share === 'function') {
       try {
-        await navigator.share({
+        await window.navigator.share({
           title: pageTitle,
           text: pageDescription || pageTitle,
           url: pageUrl,
@@ -30,6 +30,9 @@ export default function ShareButtons({ pageUrl, pageTitle, pageDescription = '' 
       }
     }
   };
+
+  // Check if Web Share API is available
+  const canWebShare = typeof window !== 'undefined' && window.navigator && typeof window.navigator.share === 'function';
 
   const whatsappMessage = encodeURIComponent(`${pageTitle}\n\n${pageUrl}\n\nFree Metabolic Risk Check – No Cost, No Signup`);
   const emailSubject = encodeURIComponent(pageTitle);
@@ -68,12 +71,12 @@ export default function ShareButtons({ pageUrl, pageTitle, pageDescription = '' 
         >
           {copied ? '✅ Copied!' : '🔗 Copy Link'}
         </button>
-        {typeof navigator !== 'undefined' && navigator.share && (
+        {canWebShare && (
           <button 
             onClick={handleShare}
             className="px-5 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-semibold shadow-md hover:shadow-lg transition-all"
           >
-            📤 Share
+            📲 Native Share
           </button>
         )}
       </div>
