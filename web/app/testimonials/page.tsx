@@ -54,7 +54,7 @@ export default function TestimonialsPage() {
             </div>
             <p className="text-center mt-2">
               <Link href="/conditions/diabetes" className="text-blue-600 hover:underline">
-                See how we reversed Diabetes →
+                Reverse type 2 diabetes naturally in Hyderabad →
               </Link>
             </p>
           </section>
@@ -88,7 +88,7 @@ export default function TestimonialsPage() {
             </div>
             <p className="text-center mt-2">
               <Link href="/conditions/diabetes" className="text-blue-600 hover:underline">
-                See how we reversed Insulin Resistance →
+                Reverse insulin resistance naturally in Gachibowli →
               </Link>
             </p>
           </section>
@@ -122,7 +122,7 @@ export default function TestimonialsPage() {
             </div>
             <p className="text-center mt-2">
               <Link href="/conditions/pcos" className="text-blue-600 hover:underline">
-                See how we reversed PCOS →
+                PCOS weight loss program in Gachibowli →
               </Link>
             </p>
           </section>
@@ -156,7 +156,7 @@ export default function TestimonialsPage() {
             </div>
             <p className="text-center mt-2">
               <Link href="/conditions/hypertension" className="text-blue-600 hover:underline">
-                See how we reversed Hypertension →
+                Hypertension reversal program in Gachibowli Hyderabad →
               </Link>
             </p>
           </section>
@@ -190,7 +190,7 @@ export default function TestimonialsPage() {
             </div>
             <p className="text-center mt-2">
               <Link href="/conditions/obesity" className="text-blue-600 hover:underline">
-                See how we reversed Belly Fat →
+                Belly fat reversal program in Gachibowli Hyderabad →
               </Link>
             </p>
           </section>

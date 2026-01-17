@@ -39,7 +39,7 @@ export default function ToolsPage() {
             </Link>
             <p className="mt-4 text-center">
               <Link href="/conditions/diabetes" className="text-blue-600 hover:underline">
-                Learn more about insulin resistance →
+                Reverse insulin resistance naturally in Hyderabad →
               </Link>
             </p>
           </section>

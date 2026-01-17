@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     description: '90 Day Diabetes Remission | 85% Success',
     images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/og-chiranjeevi.jpg'],
   },
+  alternates: {
+    canonical: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com',
+  },
 };
 
 // FAQ Structured Data Schema
@@ -43,6 +46,7 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
+      '@id': 'faq-1',
       name: 'Can type 2 diabetes be reversed naturally?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -51,6 +55,34 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      '@id': 'faq-2',
+      name: 'Are the metabolic calculators really free?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes! All calculators — including HOMA-IR, TyG Index, Waist-to-Height Ratio (WHtR), and Waist-to-Hip Ratio (WHR) — are 100% free. No cost, no signup, no credit card required.',
+      },
+    },
+    {
+      '@type': 'Question',
+      '@id': 'faq-3',
+      name: 'What is HOMA-IR?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'HOMA-IR (Homeostatic Model Assessment of Insulin Resistance) is a scientific method to estimate insulin resistance using fasting glucose and insulin levels.',
+      },
+    },
+    {
+      '@type': 'Question',
+      '@id': 'faq-4',
+      name: 'How do I start my free assessment?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Click "Start Your Free Assessment" on our tools page, complete the free calculators, and WhatsApp us at 09963721999 for a free 15-minute consultation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      '@id': 'faq-5',
       name: 'What is the HOMA-IR test?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -59,6 +91,7 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      '@id': 'faq-6',
       name: 'How is your 90-day program different from traditional diabetes care?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -67,6 +100,7 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      '@id': 'faq-7',
       name: 'Do I need to be diabetic to join the program?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -75,6 +109,7 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      '@id': 'faq-8',
       name: 'What tools do patients get access to?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -83,6 +118,7 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      '@id': 'faq-9',
       name: 'Is the program available in Gachibowli, Hyderabad?',
       acceptedAnswer: {
         '@type': 'Answer',
