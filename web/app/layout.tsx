@@ -8,6 +8,7 @@ import Image from 'next/image'
 import MobileNav from '@/components/MobileNav'
 import OnboardingDemo from '@/components/OnboardingDemo'
 import WelcomeBot from '@/components/WelcomeBot'
+import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,6 +44,10 @@ export default function RootLayout({
         </Script>
         <meta name="google-site-verification" content="KR-S5Yw9tbmd22VH8sY4wkwGxD3jv_UiIGHYgeHAlRM" />
         <meta name="description" content="Years struggling? We test FASTING INSULIN (not glucose) + HOMA-IR. 32yrs ethics-guided care, 35L patients, India #1 5K+ HOMA tests, pioneer cardio-obesity-metabolism. 25 apps built. Pioneer close monitoring → REMISSION." />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#1e40af" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -288,6 +293,9 @@ export default function RootLayout({
           `}
         </Script>
         <AuthProvider>
+          {/* Service Worker Registration for PWA */}
+          <ServiceWorkerRegistration />
+          
           {/* Mobile Navigation */}
           <MobileNav />
           
