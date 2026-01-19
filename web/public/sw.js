@@ -1,9 +1,14 @@
 // Service Worker for HOMA Clinic PWA
 // Cache version - update this when you want to force cache refresh
-const CACHE = 'homa-clinic-v1';
+const CACHE = 'homa-clinic-v2'; // Updated to cache calculator pages
 const urls = [
   '/',
   '/tools',
+  '/tools/homa-ir-calculator',
+  '/tools/tyg-index-calculator',
+  '/tools/whr-calculator',
+  '/tools/whtr-calculator',
+  '/tools/bmi-calculator',
   '/conditions/diabetes',
   '/about',
   '/manifest.json',

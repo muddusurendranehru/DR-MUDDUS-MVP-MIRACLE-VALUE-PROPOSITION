@@ -735,6 +735,14 @@ export default function RootLayout({
                     <a href="https://instagram.com/homahealthcarecenter" target="_blank" className="text-gray-300 hover:text-pink-400 transition-colors">
                       📷 Instagram/FB: homahealthcarecenter
                     </a>
+                    <a 
+                      href="https://play.google.com/store/apps/details?id=com.homaclinic.app&utm_source=whatsapp&utm_medium=staff_message&utm_campaign=app_launch" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-green-400 transition-colors"
+                    >
+                      📱 Download Android App
+                    </a>
                   </div>
                 </div>
               </div>
