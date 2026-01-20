@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ShareButtons from '@/components/ShareButtons';
 
 // ✅ Force static generation for SEO
 export const dynamic = 'force-static';
@@ -16,6 +17,7 @@ export default function DiabetesKidneyDiseasePage() {
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Diabetes + Swelling in Legs? — Stop Kidney Damage Now
         </h1>
+        <ShareButtons title="Diabetes + Swelling in Legs? Stop Diabetic Nephropathy Now | Dr. Muddu Surendra Nehru, MD – Best Diabetologist in Gachibowli" />
         <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
           You have diabetes. Your legs are swelling. You&apos;re worried about your kidneys. 
           If you live in <strong>Gachibowli, Banjara Hills, or near ISB/IIIT</strong>, here&apos;s the truth: 

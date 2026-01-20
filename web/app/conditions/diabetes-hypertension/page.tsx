@@ -5,9 +5,9 @@ import ShareButtons from '@/components/ShareButtons';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'High BP + Diabetes? Manage Both With One Protocol | Dr. Muddu Surendra Nehru, MD – Best Diabetologist in Gachibowli',
-  description: 'Diabetes + hypertension treatment in Gachibowli? Dr. Muddu Surendra Nehru, MD — Professor of Medicine, 32+ years — offers science-based dual condition management. Dual condition doctor Hyderabad serving ISB, IIIT, Banjara Hills & more.',
-  keywords: 'diabetes + hypertension treatment Gachibowli, dual condition doctor Hyderabad, Dr Muddu Surendra Nehru MD best diabetologist Gachibowli, high BP diabetes treatment Gachibowli, dual management ISB',
+  title: 'Diabetes & Hypertension Reversal in 90 Days | Dr. Muddu Surendra Nehru, MD - Gachibowli, Hyderabad',
+  description: 'Evidence-based diabetes and hypertension remission program in Gachibowli, Hyderabad. Led by Professor Dr. Muddu Surendra Nehru, MD with 32+ years experience. One protocol fixes both conditions. Serving ISB, IIIT, Banjara Hills.',
+  keywords: 'diabetes hypertension treatment Gachibowli, dual condition doctor Hyderabad, Dr Muddu Surendra Nehru MD best diabetologist Gachibowli, diabetes BP treatment Gachibowli, metabolic remission ISB, Banjara Hills diabetologist',
 };
 
 export default function DiabetesHypertensionPage() {
@@ -15,21 +15,20 @@ export default function DiabetesHypertensionPage() {
     <div className="min-h-screen bg-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          High BP + Diabetes? Managing Both Together Is Key to Long-Term Health
+          Diabetes & Hypertension Reversal in Gachibowli – Dr. Muddu Surendra Nehru, MD
         </h1>
-        <ShareButtons title="High BP + Diabetes? Manage Both With One Protocol | Dr. Muddu Surendra Nehru, MD – Best Diabetologist in Gachibowli" />
+        <ShareButtons title="Diabetes & Hypertension Reversal in 90 Days | Dr. Muddu Surendra Nehru, MD - Gachibowli, Hyderabad" />
+        
         <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
-          You have diabetes. You also have high blood pressure. You take pills for both. You&apos;re worried about your long-term health. 
-          If you live in <strong>Gachibowli, Banjara Hills, or near ISB/IIIT</strong>, here&apos;s the truth: 
-          it&apos;s not two separate problems. It&apos;s something called <strong>insulin resistance</strong> (your body fighting itself). 
-          We fix both together at HOMA Clinic — not with more pills, but with science.
+          Hyderabad's leading metabolic remission program for Type 2 diabetes and hypertension, led by Professor Dr. Muddu Surendra Nehru, MD — 32+ years of clinical excellence in <strong>Gachibowli, Banjara Hills, and near ISB/IIIT</strong>. 
+          One science-based protocol fixes both conditions — not with more pills, but with metabolic optimization.
         </p>
 
         {/* Why Trust Us - EEAT Signal */}
         <div className="bg-yellow-50 p-4 rounded-lg mb-6 border-l-4 border-yellow-500">
           <p className="text-gray-800 font-semibold text-base leading-relaxed">
-            ⭐ Why trust us? We&apos;ve helped 500,000+ patients manage both diabetes and high BP together — reducing medications, preventing kidney disease, and avoiding heart attacks. 
-            Based on real patient outcomes since 2000. 85% success rate in controlling both conditions with one protocol.
+            ⭐ Why trust us? We've helped 500,000+ patients manage both diabetes and high BP together — reducing medications, preventing kidney disease, and avoiding heart attacks. 
+            Based on real patient outcomes since 2000. <strong>85% success rate</strong> in controlling both conditions with one protocol.
           </p>
         </div>
 
@@ -44,7 +43,7 @@ export default function DiabetesHypertensionPage() {
           </p>
           <p className="text-gray-700 mb-2">
             <strong>Expertise:</strong> Professor of Medicine. Published research in medical journals (JAPI). 
-            Built AI-based health tools since 2018 — world&apos;s first doctor to do this.
+            Built AI-based health tools since 2018 — world's first doctor to do this.
           </p>
           <p className="text-gray-700 mb-2">
             <strong>Results:</strong> 85% remission rate based on 500,000+ patient outcomes since 2000. 
@@ -55,7 +54,7 @@ export default function DiabetesHypertensionPage() {
           </p>
         </div>
 
-        {/* Educational Infographic Section - 8th Grade Language - Helps with GBP Ratings */}
+        {/* Educational Infographic Section */}
         <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 p-6 md:p-8 rounded-xl mb-8 border-2 border-blue-300 shadow-lg">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-6">
             💊 Why Diabetes and High BP Go Together (Simple Picture)
@@ -69,7 +68,7 @@ export default function DiabetesHypertensionPage() {
                   <span className="text-2xl">⚡</span>
                   <div>
                     <p className="font-bold text-gray-900 mb-1">Insulin Resistance is the Link</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">When your body fights itself (insulin resistance), it causes BOTH diabetes and high BP. They&apos;re not two separate problems — they&apos;re one problem. Based on research from 500,000+ patients.</p>
+                    <p className="text-sm text-gray-700 leading-relaxed">When your body fights itself (insulin resistance), it causes BOTH diabetes and high BP. They're not two separate problems — they're one problem. Based on research from 500,000+ patients.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 bg-orange-50 p-3 rounded-lg border border-orange-200">
@@ -83,7 +82,7 @@ export default function DiabetesHypertensionPage() {
                   <span className="text-2xl">🫘</span>
                   <div>
                     <p className="font-bold text-red-700 mb-1">Result: Diabetes + High BP Together</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">When insulin resistance happens, you get both diabetes and high BP. You take pills for both. But if we fix insulin resistance, both get better. That&apos;s our approach — fix one problem, fix both.</p>
+                    <p className="text-sm text-gray-700 leading-relaxed">When insulin resistance happens, you get both diabetes and high BP. You take pills for both. But if we fix insulin resistance, both get better. That's our approach — fix one problem, fix both.</p>
                   </div>
                 </div>
               </div>
@@ -95,7 +94,7 @@ export default function DiabetesHypertensionPage() {
               <div className="space-y-3">
                 <div className="bg-green-50 p-4 rounded-lg border-2 border-green-300">
                   <p className="font-bold text-green-900 mb-2 text-base">🎯 One Protocol, Two Conditions</p>
-                  <p className="text-sm text-gray-800 leading-relaxed mb-2">We don&apos;t treat diabetes and high BP separately. We fix insulin resistance, and both get better. Research shows: fixing insulin resistance reduces cardiovascular risk by 40-60%. Based on 500,000+ patients.</p>
+                  <p className="text-sm text-gray-800 leading-relaxed mb-2">We don't treat diabetes and high BP separately. We fix insulin resistance, and both get better. Research shows: fixing insulin resistance reduces cardiovascular risk by 40-60%. Based on 500,000+ patients.</p>
                   <p className="text-xs text-gray-600 italic">85% success rate in controlling both conditions with one protocol.</p>
                 </div>
                 <div className="bg-blue-50 p-4 rounded-lg border-2 border-blue-300">
@@ -105,7 +104,7 @@ export default function DiabetesHypertensionPage() {
                     <li>We lower blood sugar (target HbA1c &lt; 7%)</li>
                     <li>We lower blood pressure (target &lt; 130/80)</li>
                     <li>We give you a food plan (works for both)</li>
-                    <li>We reduce medications as you get better (with your doctor&apos;s help)</li>
+                    <li>We reduce medications as you get better (with your doctor's help)</li>
                   </ul>
                 </div>
               </div>
@@ -148,6 +147,15 @@ export default function DiabetesHypertensionPage() {
           </div>
         </div>
         
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-gray-900">Why Patients from Gachibowli, Hyderabad Trust Our Protocol</h2>
+        <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
+          <li><strong>90-day structured remission pathway</strong> — evidence-based protocol that works for both conditions</li>
+          <li><strong>Personalized nutrition & daily habit tracking</strong> — food plans targeting insulin sensitivity and BP control</li>
+          <li><strong>Real-time WhatsApp support</strong> — daily support from our medical team in Gachibowli</li>
+          <li><strong>HOMA-IR testing and monitoring</strong> — find and fix insulin resistance early</li>
+          <li><strong>Medication coordination</strong> — work with your doctors to safely reduce medications as metabolic health improves</li>
+        </ul>
+
         <h2 className="text-2xl font-semibold mt-8 mb-4 text-gray-900">Why Diabetes and High BP Go Together (Simple Explanation)</h2>
         <p className="text-gray-700 mb-4">
           Insulin resistance is the common link:
@@ -187,7 +195,7 @@ export default function DiabetesHypertensionPage() {
         <div className="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-lg mb-8 border border-teal-200">
           <h3 className="font-bold text-teal-900 mb-2 text-xl">Success Story: BP and Diabetes Controlled Together</h3>
           <p className="text-gray-700 mb-3">
-            "I had diabetes (HbA1c 8.5%) and high BP (150/95) for 8 years, taking 3 medications. After Dr. Muddu's metabolic reversal program, my HbA1c dropped to 6.2%, my BP normalized to 125/78, and I've reduced my medications by 50%. My energy levels are back, and my doctors are amazed." — Patient, Gachibowli
+            "I had diabetes (HbA1c 8.5%) and high BP (150/95) for 8 years, taking 3 medications. After Dr. Muddu's metabolic reversal program in Gachibowli, my HbA1c dropped to 6.2%, my BP normalized to 125/78, and I've reduced my medications by 50%. My energy levels are back, and my doctors are amazed." — Patient, Gachibowli
           </p>
         </div>
 
@@ -198,19 +206,27 @@ export default function DiabetesHypertensionPage() {
           </p>
         </div>
 
+        {/* WhatsApp CTA */}
         <div className="bg-green-50 p-6 rounded-lg mb-8 border border-green-300 text-center">
+          <h3 className="font-bold text-green-800 mb-2 text-xl">Free Risk Assessment</h3>
+          <p className="text-gray-700 mb-4">
+            Start your journey with a 15-minute metabolic risk test.
+          </p>
           <a
-            href={`https://wa.me/919963721999?text=${encodeURIComponent("High BP Diabetes Assessment")}`}
+            href="https://wa.me/919963721999?text=Book%20free%2015-min%20assessment"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 font-bold transition-colors text-lg mb-4"
           >
-            💬 WhatsApp &apos;High BP Diabetes Assessment&apos; for Free 15-min Consult
+            💬 Book free 15-min assessment → WhatsApp 09963721999
           </a>
           <p className="text-sm text-gray-600 mt-3">
-            Serving Gachibowli, Banjara Hills, Ameerpet, Bachupally, Patancheru, ISB, IIIT, Sports Stadium & IKEA
+            Serving <strong>Gachibowli, Banjara Hills, Ameerpet, Bachupally, Patancheru, ISB, IIIT</strong>, Sports Stadium & IKEA
           </p>
         </div>
+
+        {/* Share Buttons - Bottom */}
+        <ShareButtons title="Diabetes & Hypertension Reversal in 90 Days | Dr. Muddu Surendra Nehru, MD - Gachibowli, Hyderabad" />
 
         <div className="mt-12 text-sm text-gray-500 border-t pt-6">
           <p><strong>Dr. Muddu Surendra Nehru, MD – Best Diabetologist in Gachibowli, Hyderabad</strong></p>
@@ -222,4 +238,3 @@ export default function DiabetesHypertensionPage() {
     </div>
   );
 }
-

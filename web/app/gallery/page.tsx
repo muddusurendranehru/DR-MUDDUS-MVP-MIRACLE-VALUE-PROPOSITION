@@ -85,6 +85,11 @@ export default function GalleryPage() {
             alt="Dr. Muddu Surendra Nehru MD with Chiranjeevi - World-renowned metabolic health expert Gachibowli Hyderabad"
             caption="World-renowned metabolic health expert"
           />
+          <ImageCard
+            src="/media/images/drmuddu-nehru-1-.jpg.png"
+            alt="Dr. Muddu Surendra Nehru MD - Metabolic health expert Gachibowli Hyderabad"
+            caption="Dr. Muddu Surendra Nehru, MD - 32+ Years Experience"
+          />
         </div>
 
         <div className="mt-8 text-center">

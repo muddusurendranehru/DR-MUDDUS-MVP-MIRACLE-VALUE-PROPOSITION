@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ShareButtons from '@/components/ShareButtons';
 
 // ✅ Force static generation for SEO
 export const dynamic = 'force-static';
@@ -16,6 +17,7 @@ export default function FatigueInsulinResistancePage() {
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Always Exhausted Even After Sleep? It&apos;s Not Stress — It&apos;s Likely Insulin Resistance
         </h1>
+        <ShareButtons title="Always Exhausted? Even After Sleep? Fix Root Cause in 90 Days | Dr. Muddu Surendra Nehru, MD – Best Diabetologist in Gachibowli" />
         <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
           You sleep 8 hours. You wake up tired. You drink coffee. You still feel exhausted. You think: &quot;It&apos;s just stress.&quot; 
           If you live in <strong>Gachibowli, Banjara Hills, or near ISB/IIIT</strong>, here&apos;s the truth: 

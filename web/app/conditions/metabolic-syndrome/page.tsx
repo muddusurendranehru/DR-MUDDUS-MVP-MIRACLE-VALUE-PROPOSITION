@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ShareButtons from '@/components/ShareButtons';
 
 // ✅ Force static generation for SEO
 export const dynamic = 'force-static';
@@ -15,6 +16,7 @@ export default function MetabolicSyndromePage() {
         <h1 className="text-3xl font-bold text-gray-900 mb-4">
           Metabolic Syndrome Treatment in Gachibowli – Dr. Muddu Surendra Nehru, MD
         </h1>
+        <ShareButtons title="Metabolic Syndrome Treatment in 90 Days | Dr. Muddu Surendra Nehru, MD - Hyderabad" />
         <p className="text-gray-700 mb-6">
           Hyderabad's leading metabolic approach to syndrome reversal, led by Professor Dr. Muddu Surendra Nehru, MD — 32+ years of clinical excellence in Gachibowli.
         </p>

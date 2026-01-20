@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ShareButtons from '@/components/ShareButtons';
 
 // ✅ Force static generation for SEO
 export const dynamic = 'force-static';
@@ -16,6 +17,7 @@ export default function BellyFatPage() {
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Why Won&apos;t My Belly Fat Go Away? — Fix It in 90 Days
         </h1>
+        <ShareButtons title="Why Won't My Belly Fat Go Away? | Dr. Muddu Surendra Nehru, MD – Best Diabetologist in Gachibowli" />
         <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
           You&apos;ve tried diets. You&apos;ve tried exercise. But your belly fat won&apos;t budge. 
           If you live in <strong>Gachibowli, Banjara Hills, or near ISB/IIIT</strong>, here&apos;s the truth: 

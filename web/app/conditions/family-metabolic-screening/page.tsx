@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ShareButtons from '@/components/ShareButtons';
 
 // ✅ Force static generation for SEO
 export const dynamic = 'force-static';
@@ -16,6 +17,7 @@ export default function FamilyScreeningPage() {
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Should Your Whole Family Get Tested for Diabetes Risk? Yes — Early Detection Saves Lives
         </h1>
+        <ShareButtons title="Screen Your Whole Family for Diabetes Risk? | Dr. Muddu Surendra Nehru, MD – Best Diabetologist in Gachibowli" />
         <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
           Your family has diabetes. Your parents had it. Your siblings have it. You&apos;re worried about your children. 
           If you live in <strong>Gachibowli, Banjara Hills, or near ISB/IIIT</strong>, here&apos;s the truth: 

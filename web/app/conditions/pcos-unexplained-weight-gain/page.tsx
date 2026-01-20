@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ShareButtons from '@/components/ShareButtons';
 
 // ✅ Force static generation for SEO
 export const dynamic = 'force-static';
@@ -16,6 +17,7 @@ export default function PCOSWeightGainPage() {
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           PCOS + Weight That Won&apos;t Go Away? — Fix It in 90 Days
         </h1>
+        <ShareButtons title="PCOS + Unexplained Weight Gain? | Dr. Muddu Surendra Nehru, MD – Best Diabetologist in Gachibowli" />
         <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
           You have PCOS. You&apos;ve tried pills. You&apos;ve tried diets. Nothing works. Your weight keeps going up.
           If you live in <strong>Gachibowli, Banjara Hills, or near ISB/IIIT</strong>, here&apos;s the truth: 

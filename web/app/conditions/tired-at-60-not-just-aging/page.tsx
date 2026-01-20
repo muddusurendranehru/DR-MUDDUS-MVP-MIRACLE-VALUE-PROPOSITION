@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ShareButtons from '@/components/ShareButtons';
 
 // ✅ Force static generation for SEO
 export const dynamic = 'force-static';
@@ -16,6 +17,7 @@ export default function SeniorFatiguePage() {
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Tired at 60+? Is It Just Aging — Or Something More Serious?
         </h1>
+        <ShareButtons title="Tired at 60+? Not Just Aging — Fix Fatigue in 90 Days | Dr. Muddu Surendra Nehru, MD – Best Diabetologist in Gachibowli" />
         <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
           You&apos;re 60 or older. You sleep enough, but you&apos;re still tired. You think: &quot;It&apos;s just aging.&quot; 
           If you live in <strong>Gachibowli, Banjara Hills, or near ISB/IIIT</strong>, here&apos;s the truth: 

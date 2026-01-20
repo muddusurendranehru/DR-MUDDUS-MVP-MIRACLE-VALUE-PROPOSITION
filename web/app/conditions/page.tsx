@@ -65,8 +65,8 @@ const serviceCards: ServiceCard[] = [
     title: 'Diabetes + Hypertension',
     description: 'Dual condition management & reversal with one protocol.',
     icon: '🩺',
-    href: '/conditions/high-bp-diabetes-treatment',
-    slug: 'high-bp-diabetes-treatment',
+    href: '/conditions/diabetes-hypertension',
+    slug: 'diabetes-hypertension',
   },
   {
     title: 'Retired Patients with Metabolic Syndrome',

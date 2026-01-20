@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ShareButtons from '@/components/ShareButtons';
 
 // ✅ Force static generation for SEO
 export const dynamic = 'force-static';
@@ -16,6 +17,7 @@ export default function PrediabetesPreventionPage() {
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Your Sugar Looks Normal, But You&apos;re Still at Risk? — Stop Diabetes Before It Starts
         </h1>
+        <ShareButtons title="Sugar Normal But High Risk? Prevent Diabetes Before It Starts | Dr. Muddu Surendra Nehru, MD – Best Diabetologist in Gachibowli" />
         <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
           Your doctor says your sugar is normal. But you feel tired. Your waist is big. Your parents have diabetes. 
           If you live in <strong>Gachibowli, Banjara Hills, or near ISB/IIIT</strong>, here&apos;s the truth: 

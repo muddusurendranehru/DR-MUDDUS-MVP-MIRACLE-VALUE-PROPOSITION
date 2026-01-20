@@ -378,10 +378,10 @@ export default function RootLayout({
                     📊 Hypertension
                   </Link>
                   <Link 
-                    href="/conditions/high-bp-diabetes-treatment?utm_source=footer&utm_medium=condition_tile&utm_campaign=high_bp_diabetes" 
+                    href="/conditions/diabetes-hypertension?utm_source=footer&utm_medium=condition_tile&utm_campaign=diabetes_hypertension" 
                     className="bg-gradient-to-br from-violet-500 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-4 py-3 rounded-lg text-center text-sm font-semibold transition-all transform hover:scale-105 hover:shadow-lg border-2 border-violet-400"
                   >
-                    🩺 High BP + Diabetes
+                    🩺 Diabetes + Hypertension
                   </Link>
                   <Link 
                     href="/conditions/obesity?utm_source=footer&utm_medium=condition_tile&utm_campaign=obesity" 
