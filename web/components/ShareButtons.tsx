@@ -1,73 +1,71 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function ShareButtons({ pageUrl, pageTitle, pageDescription }: { 
-  pageUrl: string; 
-  pageTitle: string; 
-  pageDescription?: string; 
-}) {
-  const [copied, setCopied] = useState(false);
+interface ShareButtonsProps {
+  title: string;
+}
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(pageUrl);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+export default function ShareButtons({ title }: ShareButtonsProps) {
+  const [url, setUrl] = useState('');
 
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: pageTitle,
-        text: pageDescription || 'Check out this metabolic health resource',
-        url: pageUrl,
-      });
+  useEffect(() => {
+    // Use actual URL in browser (not during SSR)
+    if (typeof window !== 'undefined') {
+      setUrl(window.location.href);
     }
-  };
+  }, []);
 
-  const whatsappMessage = encodeURIComponent(`${pageTitle}\n\n${pageUrl}\n\nFree Metabolic Risk Check – No Cost, No Signup`);
-  const emailSubject = encodeURIComponent(pageTitle);
-  const emailBody = encodeURIComponent(`Check out this metabolic health resource:\n\n${pageUrl}`);
+  const shareText = encodeURIComponent(`${title} – Free metabolic health tool by Dr. Muddu Surendra Nehru, MD`);
+  const shareUrl = encodeURIComponent(url);
+
+  const shares = [
+    {
+      name: 'WhatsApp',
+      icon: '💬',
+      url: `https://wa.me/?text=${shareText}%20${shareUrl}`,
+      aria: 'Share on WhatsApp'
+    },
+    {
+      name: 'Telegram',
+      icon: '✈️',
+      url: `https://t.me/share/url?url=${shareUrl}&text=${shareText}`,
+      aria: 'Share on Telegram'
+    },
+    {
+      name: 'Facebook',
+      icon: '📘',
+      url: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`,
+      aria: 'Share on Facebook'
+    },
+    {
+      name: 'Twitter',
+      icon: '🐦',
+      url: `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`,
+      aria: 'Share on Twitter'
+    },
+    {
+      name: 'Gmail',
+      icon: '✉️',
+      url: `https://mail.google.com/mail/?view=cm&fs=1&su=${encodeURIComponent(title)}&body=${shareUrl}`,
+      aria: 'Share via Gmail'
+    }
+  ];
 
   return (
-    <div className="flex flex-wrap justify-center gap-3 mt-4">
-      {/* Gmail */}
-      <a 
-        href={`https://mail.google.com/mail/?view=cm&fs=1&to=&su=${emailSubject}&body=${emailBody}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="px-5 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 font-semibold shadow-md hover:shadow-lg transition-all"
-      >
-        📧 Gmail
-      </a>
-
-      {/* WhatsApp */}
-      <a 
-        href={`https://wa.me/?text=${whatsappMessage}`} 
-        target="_blank"
-        rel="noopener noreferrer"
-        className="px-5 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold shadow-md hover:shadow-lg transition-all"
-      >
-        💬 WhatsApp
-      </a>
-
-      {/* Copy Link */}
-      <button 
-        onClick={handleCopy}
-        className="px-5 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 font-semibold shadow-md hover:shadow-lg transition-all"
-      >
-        {copied ? '✅ Copied!' : '🔗 Copy Link'}
-      </button>
-
-      {/* Native Share (Mobile) */}
-      {typeof navigator !== 'undefined' && typeof navigator.share === 'function' && (
-        <button 
-          onClick={handleShare}
-          className="px-5 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-semibold shadow-md hover:shadow-lg transition-all"
+    <div className="my-6 flex flex-wrap gap-3 justify-center">
+      {shares.map((s) => (
+        <a
+          key={s.name}
+          href={s.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={s.aria}
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-blue-50 transition-all shadow-sm hover:shadow-md text-lg"
         >
-          📲 Native Share
-        </button>
-      )}
+          {s.icon}
+        </a>
+      ))}
     </div>
   );
 }
