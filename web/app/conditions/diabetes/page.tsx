@@ -120,7 +120,11 @@ export default function DiabetesPage() {
           </div>
 
           {/* Share Section */}
-          <ShareButtons title="Type 2 Diabetes Remission in 90 Days - Dr. Muddu Nehru, MD" />
+          <ShareButtons 
+            pageUrl={pageUrl}
+            pageTitle={pageTitle}
+            pageDescription={pageDescription}
+          />
 
           {/* Assessment CTA - Enhanced Design */}
           <div className="bg-gradient-to-r from-red-500 via-orange-500 to-red-600 py-8 text-white text-center rounded-2xl mb-8 shadow-2xl relative overflow-hidden">
