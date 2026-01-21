@@ -9,17 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.5.9",
-    "react": "^18",
-    "react-dom": "^18",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "axios": "^1.13.2",
     "eslint": "^8.57.0",
     "eslint-config-next": "15.5.9",
     "gray-matter": "^4.0.3",
-    "remark": "^15.0.1",
+    "next": "15.5.9",
+    "react": "^18",
+    "react-dom": "^18",
     "rehype-raw": "^7.0.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "remark-rehype": "^11.0.0"
   }
 }
