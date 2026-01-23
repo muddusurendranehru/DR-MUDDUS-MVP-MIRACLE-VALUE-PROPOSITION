@@ -30,18 +30,16 @@ export default function HomePageClient() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Background - Orange/Fruit Gradient */}
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-teal-50 via-blue-50 to-indigo-50">
+      {/* Modern Background with subtle pattern */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-400 via-orange-500 to-amber-600"></div>
-        {/* Decorative circles to simulate oranges */}
-        <div className="absolute top-10 right-10 w-40 h-40 bg-orange-300 rounded-full opacity-40 blur-xl"></div>
-        <div className="absolute top-40 right-40 w-32 h-32 bg-yellow-300 rounded-full opacity-30 blur-lg"></div>
-        <div className="absolute bottom-20 left-10 w-48 h-48 bg-orange-300 rounded-full opacity-40 blur-xl"></div>
-        <div className="absolute bottom-40 left-40 w-24 h-24 bg-amber-300 rounded-full opacity-30 blur-lg"></div>
-        <div className="absolute top-1/2 left-1/4 w-36 h-36 bg-orange-200 rounded-full opacity-20 blur-xl"></div>
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-100/30 via-blue-100/20 to-indigo-100/30"></div>
+        {/* Subtle accent circles */}
+        <div className="absolute top-20 right-20 w-72 h-72 bg-teal-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
       </div>
 
       {/* 10 Tokens Free Badge - Left Side Circular */}
@@ -50,13 +48,13 @@ export default function HomePageClient() {
           // Logged in - Clickable badge linking to internal NutriBot
           <Link href="/nutri-bot" className="flex flex-col items-center group cursor-pointer">
             {/* Circular Badge */}
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-500 rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white animate-bounce group-hover:scale-110 transition-transform">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-teal-500 to-blue-500 rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white group-hover:scale-110 transition-transform">
               <span className="text-lg md:text-xl">🎁</span>
               <span className="text-xs md:text-sm font-bold text-white leading-none">10</span>
               <span className="text-[8px] md:text-[10px] font-semibold text-white leading-none">FREE</span>
             </div>
             {/* Small text below */}
-            <span className="mt-1 text-[10px] md:text-xs text-white/90 font-medium bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm group-hover:bg-green-600 transition-colors">
+            <span className="mt-1 text-[10px] md:text-xs text-gray-700 font-medium bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-full shadow-sm group-hover:bg-teal-50 transition-colors">
               NutriBot App →
             </span>
           </Link>
@@ -64,13 +62,13 @@ export default function HomePageClient() {
           // Not logged in - Badge links to login
           <Link href="/auth" className="flex flex-col items-center group cursor-pointer">
             {/* Circular Badge */}
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-500 rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white animate-bounce group-hover:scale-110 transition-transform">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-teal-500 to-blue-500 rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white group-hover:scale-110 transition-transform">
               <span className="text-lg md:text-xl">🎁</span>
               <span className="text-xs md:text-sm font-bold text-white leading-none">10</span>
               <span className="text-[8px] md:text-[10px] font-semibold text-white leading-none">FREE</span>
             </div>
             {/* Small text below */}
-            <span className="mt-1 text-[10px] md:text-xs text-white/90 font-medium bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm group-hover:bg-green-600 transition-colors">
+            <span className="mt-1 text-[10px] md:text-xs text-gray-700 font-medium bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-full shadow-sm group-hover:bg-teal-50 transition-colors">
               Login to Use →
             </span>
           </Link>
@@ -81,13 +79,13 @@ export default function HomePageClient() {
       <div className="absolute top-20 right-3 z-20 md:top-4 md:right-4 flex flex-col gap-2">
         <Link
           href="/auth"
-          className="px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-lg shadow-lg hover:bg-green-700 transition duration-200 text-center"
+          className="px-4 py-2 bg-gradient-to-r from-teal-600 to-blue-600 text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-teal-700 hover:to-blue-700 transition-all text-center"
         >
           Sign Up
         </Link>
         <Link
           href="/auth"
-          className="px-3 py-1.5 bg-white/90 backdrop-blur-sm text-gray-800 text-sm font-medium rounded-lg shadow hover:bg-white transition duration-200 text-center"
+          className="px-3 py-1.5 bg-white/95 backdrop-blur-sm text-gray-800 text-sm font-semibold rounded-lg shadow-md hover:shadow-lg hover:bg-white transition-all text-center border border-gray-200"
         >
           Login
         </Link>
@@ -104,48 +102,86 @@ export default function HomePageClient() {
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:py-16 max-w-7xl mx-auto min-h-screen">
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-6 py-16 md:py-24 max-w-7xl mx-auto min-h-screen">
         
         {/* Left Side - Text Content */}
-        <div className="max-w-lg space-y-6 text-white text-center lg:text-left">
-          <span className="inline-block px-4 py-1 bg-white/20 rounded-full text-sm font-medium">
-            🩺 Dr. Muddu's Health Platform
-          </span>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
-            Diabetes REMISSION Gachibowli Hyderabad
-          </h1>
-          <div className="text-lg md:text-xl font-semibold text-orange-100">
-            Dr Muddu Nehru MD | 09963721999
+        <div className="max-w-2xl space-y-8 text-center lg:text-left">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-teal-700 shadow-sm border border-teal-100">
+            <span className="text-lg">🩺</span>
+            <span>Dr. Muddu's Metabolic Health Platform</span>
           </div>
-          <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-            {['85% Success', 'Insulin Testing Pioneer', '32 Yrs Experience'].map((item) => (
-              <span key={item} className="px-3 py-1 bg-white/20 rounded text-xs font-medium">
-                ✓ {item}
-              </span>
+          
+          {/* Main Heading */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+            Diabetes <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">REMISSION</span>
+            <br />
+            <span className="text-3xl md:text-4xl lg:text-5xl text-gray-700">Gachibowli, Hyderabad</span>
+          </h1>
+          
+          {/* Doctor Info */}
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-lg text-gray-700">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">👨‍⚕️</span>
+              <span className="font-semibold">Dr. Muddu Surendra Nehru, MD</span>
+            </div>
+            <span className="hidden sm:inline text-gray-400">•</span>
+            <a href="tel:+919963721999" className="text-teal-600 hover:text-teal-700 font-medium hover:underline">
+              📞 09963721999
+            </a>
+          </div>
+          
+          {/* Key Stats */}
+          <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+            {[
+              { label: '85% Success', icon: '🎯' },
+              { label: 'Insulin Testing Pioneer', icon: '🔬' },
+              { label: '32+ Years Experience', icon: '⭐' }
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-100">
+                <span className="text-lg">{item.icon}</span>
+                <span className="text-sm font-semibold text-gray-700">{item.label}</span>
+              </div>
             ))}
           </div>
-          <p className="text-base md:text-lg text-orange-100 leading-relaxed">
-            <span className="font-semibold">Evidence-Based Protocols!</span> We test <span className="font-semibold">FASTING INSULIN + HOMA-IR</span> to find root cause. 85% remission rate in 90 days.
+          
+          {/* Description */}
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+            <span className="font-bold text-gray-900">Evidence-Based Protocols!</span> We test{' '}
+            <span className="font-bold text-teal-600">FASTING INSULIN + HOMA-IR</span> to find root cause.{' '}
+            <span className="font-semibold text-blue-600">85% remission rate in 90 days.</span>
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors text-base"
+              className="px-8 py-4 bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 text-lg"
             >
-              Free Risk Test
+              🎯 Free Risk Test
             </button>
             <Link
               href="/pricing"
-              className="px-8 py-4 border-2 border-white hover:bg-white hover:text-orange-600 text-white font-semibold rounded-lg transition-colors text-base"
+              className="px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-gray-200 text-lg"
             >
-              See Packages
+              💰 See Packages
             </Link>
           </div>
+          
           {/* Trust badges */}
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-6 text-sm text-orange-100">
-            <span>✅ 5,00,000+ Patients</span>
-            <span>✅ 85% Remission</span>
-            <span>✅ 30+ Years Exp</span>
+          <div className="flex flex-wrap gap-6 justify-center lg:justify-start mt-8 text-base text-gray-600">
+            <div className="flex items-center gap-2">
+              <span className="text-green-500 text-xl">✓</span>
+              <span className="font-semibold">5,00,000+ Patients</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-green-500 text-xl">✓</span>
+              <span className="font-semibold">85% Remission</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-green-500 text-xl">✓</span>
+              <span className="font-semibold">30+ Years Exp</span>
+            </div>
           </div>
         </div>
 

@@ -1,118 +1,93 @@
-# 🚀 Manual Server Start Commands
+# Manual Server Start Guide - Full Paths
 
-## Full Paths for Your System
+## Quick Start (2 PowerShell Windows)
 
-**Project Root:**
+### Window 1: Backend Server (Port 5000)
+```powershell
+cd "C:\Users\MYPC\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\server"
+npm start
 ```
-C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION
+
+### Window 2: Frontend Server (Port 3002)
+```powershell
+cd "C:\Users\MYPC\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\web"
+npm run dev
 ```
 
 ---
 
-## 📡 Terminal 1: Backend Server (Port 5000)
+## Full Paths Reference
 
-**Copy and paste this entire command:**
-
-```powershell
-cd C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\server; npm run dev
-```
-
-**Or step by step:**
-```powershell
-cd C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\server
-npm run dev
-```
-
-**Expected Output:**
-```
-Server running on port 5000
-Database connected
-```
-
-**Test Backend:**
-Open browser: `http://localhost:5000/api/health`
+- **Project Root:** `C:\Users\MYPC\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION`
+- **Backend Path:** `C:\Users\MYPC\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\server`
+- **Frontend Path:** `C:\Users\MYPC\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\web`
+- **Backend Port:** `5000`
+- **Frontend Port:** `3002`
 
 ---
 
-## 🌐 Terminal 2: Frontend Server (Port 3002)
+## Verification URLs
 
-**Copy and paste this entire command:**
+After starting both servers, test them:
 
+1. **Backend Health Check:**
+   - URL: http://localhost:5000/api/health
+   - Should return: `{"status":"ok","message":"HOMA Clinic Backend is running",...}`
+
+2. **Frontend:**
+   - URL: http://localhost:3002
+   - Should show the homepage
+
+---
+
+## Alternative: Use the Script
+
+Run the automated script:
 ```powershell
-cd C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\web; npm run dev
+cd "C:\Users\MYPC\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION"
+.\RUN_BOTH_SERVERS_FULL_PATH.ps1
 ```
 
-**Or step by step:**
-```powershell
-cd C:\Users\pc\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\web
-npm run dev
+This will open 2 separate PowerShell windows automatically.
+
+---
+
+## Troubleshooting
+
+### If servers don't start:
+
+1. **Check if ports are in use:**
+   ```powershell
+   netstat -ano | findstr ":5000"
+   netstat -ano | findstr ":3002"
+   ```
+
+2. **Install dependencies (if missing):**
+   ```powershell
+   cd "C:\Users\MYPC\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\server"
+   npm install
+   
+   cd "C:\Users\MYPC\Desktop\DR-MUDDUS-MVP-MIRACLE-VALUE-PROPOSITION\web"
+   npm install
+   ```
+
+3. **Check environment variables:**
+   - Backend needs `.env` file in `server/` folder
+   - Frontend may need `.env.local` in `web/` folder
+
+---
+
+## Expected Output
+
+### Backend (Window 1):
+```
+HOMA Clinic Backend is running
+Server listening on port 5000
 ```
 
-**Expected Output:**
+### Frontend (Window 2):
 ```
-▲ Next.js 15.1.6
+▲ Next.js 15.5.9
 - Local:        http://localhost:3002
-✓ Ready in 2.5s
+- ready started server on 0.0.0.0:3002
 ```
-
-**Test Frontend:**
-Open browser: `http://localhost:3002`
-
----
-
-## ✅ Quick Test URLs
-
-After both servers are running:
-
-1. **Homepage with Banners:**
-   - http://localhost:3002
-   - Should see: New Year/Pongal banner (red-orange) at top
-   - Should see: Survey banner (blue) below hero section
-
-2. **Tools Page:**
-   - http://localhost:3002/tools
-   - Should see: BMI, HOMA-IR, TyG Index calculator sections
-
-3. **Backend Health Check:**
-   - http://localhost:5000/api/health
-   - Should return: `{"status":"ok",...}`
-
----
-
-## 📋 What to Test
-
-### Homepage (`http://localhost:3002`)
-- ✅ New Year/Pongal banner visible at top (red-orange gradient)
-- ✅ Survey banner visible below hero (blue background)
-- ✅ Both banners are responsive (test on mobile view)
-- ✅ Links work correctly
-
-### Tools Page (`http://localhost:3002/tools`)
-- ✅ Page loads without errors
-- ✅ Three calculator sections visible
-- ✅ CTA button links to `/assessment`
-
-### Backend (`http://localhost:5000/api/health`)
-- ✅ Returns JSON response
-- ✅ Status is "ok"
-
----
-
-## 🛑 To Stop Servers
-
-Press `Ctrl + C` in each terminal window
-
----
-
-## ⚠️ If Ports Are Already in Use
-
-**Kill process on port 5000:**
-```powershell
-Stop-Process -Id (Get-NetTCPConnection -LocalPort 5000).OwningProcess -Force
-```
-
-**Kill process on port 3002:**
-```powershell
-Stop-Process -Id (Get-NetTCPConnection -LocalPort 3002).OwningProcess -Force
-```
-

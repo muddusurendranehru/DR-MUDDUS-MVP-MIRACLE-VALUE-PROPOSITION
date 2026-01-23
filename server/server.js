@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 // Initialize Express app
@@ -77,6 +78,11 @@ if (galleryRoutes) {
   console.log('✅ /api/gallery routes registered');
 }
 
+// Privacy Policy - Standalone HTML for Google Play compliance
+app.get('/privacy-policyAll', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'privacy-policy.html'));
+});
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ 
@@ -120,6 +126,8 @@ app.listen(PORT, () => {
   console.log(`   POST http://localhost:${PORT}/api/gallery (protected)`);
   console.log(`   PUT  http://localhost:${PORT}/api/gallery/:id (protected)`);
   console.log(`   DELETE http://localhost:${PORT}/api/gallery/:id (protected)`);
+  console.log(`📄 Privacy Policy:`);
+  console.log(`   GET  http://localhost:${PORT}/privacy-policyAll`);
   console.log('');
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log('==========================================');
