@@ -28,5 +28,9 @@
     "postcss": "8.4.31",
     "autoprefixer": "10.4.16",
     "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
   }
 }
