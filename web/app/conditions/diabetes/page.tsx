@@ -119,11 +119,11 @@ export default function DiabetesPage() {
             </div>
           </div>
 
-          {/* Share Section */}
+          {/* Share Section - FIXED */}
           <ShareButtons 
-            pageUrl={pageUrl}
-            pageTitle={pageTitle}
-            pageDescription={pageDescription}
+            url={pageUrl}
+            title={pageTitle}
+            description={pageDescription}
           />
 
           {/* Assessment CTA - Enhanced Design */}
