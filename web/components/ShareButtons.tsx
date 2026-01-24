@@ -2,24 +2,22 @@
 
 import { useEffect, useState } from 'react';
 
-interface ShareButtonsProps {
-  title: string;
-  // Optional props for backward compatibility
+type ShareButtonsProps = {
+  // Make ALL props optional for backward compatibility
+  url?: string;
+  title?: string;
+  description?: string;
   pageUrl?: string;
   pageTitle?: string;
   pageDescription?: string;
-  url?: string;
-  description?: string;
-}
+};
 
-export default function ShareButtons({ 
-  title, 
-  pageUrl, 
-  pageTitle, 
-  pageDescription,
-  url,
-  description 
-}: ShareButtonsProps) {
+const ShareButtons: React.FC<ShareButtonsProps> = (props) => {
+  // Extract new props with fallback to legacy props OR default
+  const title = props.title || props.pageTitle || 'HOMA Health Clinics';
+  const url = props.url || props.pageUrl;
+  const description = props.description || props.pageDescription;
+
   const [currentUrl, setCurrentUrl] = useState('');
 
   useEffect(() => {
@@ -29,13 +27,10 @@ export default function ShareButtons({
     }
   }, []);
 
-  // Backward compatibility: Use pageTitle or title
-  const displayTitle = pageTitle || title;
-  
   // Use provided URL or auto-detected URL
-  const shareUrl = pageUrl || url || currentUrl;
+  const shareUrl = url || currentUrl;
 
-  const shareText = encodeURIComponent(`${displayTitle} – Free metabolic health tool by Dr. Muddu Surendra Nehru, MD`);
+  const shareText = encodeURIComponent(`${title} – Free metabolic health tool by Dr. Muddu Surendra Nehru, MD`);
   const encodedUrl = encodeURIComponent(shareUrl);
 
   const shares = [
@@ -66,7 +61,7 @@ export default function ShareButtons({
     {
       name: 'Gmail',
       icon: '✉️',
-      url: `https://mail.google.com/mail/?view=cm&fs=1&su=${encodeURIComponent(displayTitle)}&body=${encodedUrl}`,
+      url: `https://mail.google.com/mail/?view=cm&fs=1&su=${encodeURIComponent(title)}&body=${encodedUrl}`,
       aria: 'Share via Gmail'
     }
   ];
@@ -87,4 +82,6 @@ export default function ShareButtons({
       ))}
     </div>
   );
-}
+};
+
+export default ShareButtons;
