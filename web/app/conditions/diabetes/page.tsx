@@ -121,9 +121,7 @@ export default function DiabetesPage() {
 
           {/* Share Section - FIXED */}
           <ShareButtons 
-            url={pageUrl}
             title={pageTitle}
-            description={pageDescription}
           />
 
           {/* Assessment CTA - Enhanced Design */}
