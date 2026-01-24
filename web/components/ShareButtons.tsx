@@ -4,50 +4,69 @@ import { useEffect, useState } from 'react';
 
 interface ShareButtonsProps {
   title: string;
+  // Optional props for backward compatibility
+  pageUrl?: string;
+  pageTitle?: string;
+  pageDescription?: string;
+  url?: string;
+  description?: string;
 }
 
-export default function ShareButtons({ title }: ShareButtonsProps) {
-  const [url, setUrl] = useState('');
+export default function ShareButtons({ 
+  title, 
+  pageUrl, 
+  pageTitle, 
+  pageDescription,
+  url,
+  description 
+}: ShareButtonsProps) {
+  const [currentUrl, setCurrentUrl] = useState('');
 
   useEffect(() => {
     // Use actual URL in browser (not during SSR)
     if (typeof window !== 'undefined') {
-      setUrl(window.location.href);
+      setCurrentUrl(window.location.href);
     }
   }, []);
 
-  const shareText = encodeURIComponent(`${title} – Free metabolic health tool by Dr. Muddu Surendra Nehru, MD`);
-  const shareUrl = encodeURIComponent(url);
+  // Backward compatibility: Use pageTitle or title
+  const displayTitle = pageTitle || title;
+  
+  // Use provided URL or auto-detected URL
+  const shareUrl = pageUrl || url || currentUrl;
+
+  const shareText = encodeURIComponent(`${displayTitle} – Free metabolic health tool by Dr. Muddu Surendra Nehru, MD`);
+  const encodedUrl = encodeURIComponent(shareUrl);
 
   const shares = [
     {
       name: 'WhatsApp',
       icon: '💬',
-      url: `https://wa.me/?text=${shareText}%20${shareUrl}`,
+      url: `https://wa.me/?text=${shareText}%20${encodedUrl}`,
       aria: 'Share on WhatsApp'
     },
     {
       name: 'Telegram',
       icon: '✈️',
-      url: `https://t.me/share/url?url=${shareUrl}&text=${shareText}`,
+      url: `https://t.me/share/url?url=${encodedUrl}&text=${shareText}`,
       aria: 'Share on Telegram'
     },
     {
       name: 'Facebook',
       icon: '📘',
-      url: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`,
+      url: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
       aria: 'Share on Facebook'
     },
     {
       name: 'Twitter',
       icon: '🐦',
-      url: `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`,
+      url: `https://twitter.com/intent/tweet?text=${shareText}&url=${encodedUrl}`,
       aria: 'Share on Twitter'
     },
     {
       name: 'Gmail',
       icon: '✉️',
-      url: `https://mail.google.com/mail/?view=cm&fs=1&su=${encodeURIComponent(title)}&body=${shareUrl}`,
+      url: `https://mail.google.com/mail/?view=cm&fs=1&su=${encodeURIComponent(displayTitle)}&body=${encodedUrl}`,
       aria: 'Share via Gmail'
     }
   ];
