@@ -18,34 +18,32 @@ const TelegramIcon = () => (
 
 type ShareButtonsProps = {
   url?: string;
-  title: string;
+  title?: string;
   description?: string;
-  // Legacy prop names for backward compatibility
   pageUrl?: string;
   pageTitle?: string;
   pageDescription?: string;
 };
 
-const ShareButtons: React.FC<ShareButtonsProps> = ({ 
-  url, 
-  title, 
+const ShareButtons: React.FC<ShareButtonsProps> = ({
+  url,
+  title,
   description,
   pageUrl,
   pageTitle,
   pageDescription
 }) => {
   const [currentUrl, setCurrentUrl] = useState('');
-  
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setCurrentUrl(window.location.href);
     }
   }, []);
 
-  // Support multiple prop naming conventions
   const finalUrl = url || pageUrl || currentUrl;
-  const finalTitle = pageTitle || title;
-  const finalDescription = pageDescription || description || title;
+  const finalTitle = pageTitle || title || 'HOMA Health Clinics';
+  const finalDescription = pageDescription || description || finalTitle;
 
   const encodedUrl = encodeURIComponent(finalUrl);
   const encodedTitle = encodeURIComponent(finalTitle);
