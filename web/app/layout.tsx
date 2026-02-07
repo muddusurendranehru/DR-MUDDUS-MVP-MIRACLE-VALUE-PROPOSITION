@@ -785,6 +785,7 @@ export default function RootLayout({
                   <Link href="/gallery" className="text-gray-300 hover:text-purple-400 transition-colors text-center py-2">📸 Gallery</Link>
                   <Link href="/blog" className="text-gray-300 hover:text-green-400 transition-colors text-center py-2">📝 Blog</Link>
                   <Link href="/disclaimer" className="text-gray-300 hover:text-red-400 transition-colors text-center py-2">⚖️ Legal</Link>
+                  <Link href="/security-policy" className="text-gray-300 hover:text-green-400 transition-colors text-center py-2">🔒 Security</Link>
                 </div>
               </div>
 
