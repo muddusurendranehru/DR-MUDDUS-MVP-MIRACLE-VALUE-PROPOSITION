@@ -40,3 +40,10 @@
 ---
 
 **Summary:** Auth is fully Clerk-based. Clean URLs `/sign-in`, `/sign-up`, `/auth`. Middleware protects non-public routes with correct async `protect()` usage. AuthProvider no longer overrides Clerk. Frontend and backend run locally on 3003 and 5000.
+
+---
+
+## What achieved today (3 lines)
+1. **Clerk-only auth** — No backend signup/login; sign-in/sign-up use only Clerk; public routes `/`, `/sign-in`, `/sign-up`, `/auth`; rest protected via `await auth.protect()` in middleware.
+2. **Middleware & AuthProvider** — Middleware uses `await auth.protect()` (types pass); AuthProvider no longer redirects Clerk-signed-in users from protected pages.
+3. **Local run & deploy** — Backend 5000, frontend 3003; both servers checked locally; changes pushed to GitHub.
