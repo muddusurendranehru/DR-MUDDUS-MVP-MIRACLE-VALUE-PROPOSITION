@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useUser, SignOutButton } from '@clerk/nextjs';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: '🏠' },
@@ -16,7 +17,6 @@ const navLinks = [
   { href: '/remission-program', label: '90-Day Program', icon: '🎯' },
   { href: '/testimonials', label: 'Success Stories', icon: '🏆' },
   { href: '/enroll', label: 'Enroll', icon: '✨' },
-  { href: '/auth', label: 'Login', icon: '🔐' },
 ];
 
 const appLinks = [
@@ -31,6 +31,7 @@ export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [appsOpen, setAppsOpen] = useState(false);
   const pathname = usePathname();
+  const { isSignedIn, user, isLoaded } = useUser();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -99,6 +100,30 @@ export default function MobileNav() {
         {/* Navigation Links - Beautiful Cards */}
         <nav className="p-4 pb-40">
           <ul className="space-y-3">
+            {/* Auth: Sign In / Create Account when signed out; Hello + Sign Out when signed in */}
+            {isLoaded && (
+              <li className="pb-3 border-b border-white/10">
+                {isSignedIn ? (
+                  <div className="px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <p style={{ color: 'white' }}>Hello {user?.firstName}</p>
+                    <SignOutButton>
+                      <button type="button" onClick={closeMenu} style={{ color: 'red' }}>
+                        Sign Out
+                      </button>
+                    </SignOutButton>
+                  </div>
+                ) : (
+                  <div className="flex gap-3">
+                    <Link href="/auth" onClick={closeMenu} className="text-white hover:underline">
+                      Sign In
+                    </Link>
+                    <Link href="/auth" onClick={closeMenu} className="text-white hover:underline">
+                      Create Account
+                    </Link>
+                  </div>
+                )}
+              </li>
+            )}
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link

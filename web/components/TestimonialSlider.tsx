@@ -6,7 +6,7 @@ export default function TestimonialSlider() {
       id: 1, 
       text: "Reversed my diabetes in 90 days!", 
       name: "Ramesh, 58 – Hyderabad", 
-      photo: "/images/testimonials/ramesh.jpg.jpg",
+      photo: "/images/testimonials/ramesh.jpg",
       gender: "male"
     },
     { 
@@ -20,7 +20,7 @@ export default function TestimonialSlider() {
       id: 3, 
       text: "PCOS gone – now pregnant!", 
       name: "Sneha, 29 – Telangana", 
-      photo: "/images/testimonials/sneha.jpg.jpg",
+      photo: "/images/testimonials/sneha.jpg",
       gender: "female"
     },
   ];

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: 'HOMA Health Clinics',
     images: [
       {
-        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/prediabetes-reversal-hyderabad.jpg.jpg',
+        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/prediabetes-reversal-hyderabad.jpg',
         width: 1200,
         height: 630,
         alt: 'Prediabetes Reversal Program - Dr. Muddu Nehru, MD',
@@ -79,7 +79,7 @@ export default function PrediabetesPage() {
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/30 transform hover:scale-105 transition-transform duration-300">
               <Image
-                src="/images/prediabetes-reversal-hyderabad.jpg.jpg"
+                src="/images/prediabetes-reversal-hyderabad.jpg"
                 alt="Prediabetes reversal success - prevent diabetes progression program in Gachibowli Hyderabad with Dr. Muddu Surendra Nehru MD"
                 fill
                 className="object-cover"

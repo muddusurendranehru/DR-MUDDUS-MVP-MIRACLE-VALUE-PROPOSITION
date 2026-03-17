@@ -2,10 +2,12 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
+import { ClerkProvider } from '@clerk/nextjs'
 import { AuthProvider } from '@/lib/auth-context'
 import Link from 'next/link'
 import Image from 'next/image'
 import MobileNav from '@/components/MobileNav'
+import HeaderAuth from '@/components/HeaderAuth'
 import OnboardingDemo from '@/components/OnboardingDemo'
 import WelcomeBot from '@/components/WelcomeBot'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
@@ -27,6 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <head>
         {/* Google tag (gtag.js) */}
@@ -54,14 +57,14 @@ export default function RootLayout({
         <meta property="og:url" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com" />
         <meta property="og:title" content="Dr Muddu Nehru | Diabetologist Gachibowli" />
         <meta property="og:description" content="90 Day Diabetes Remission | 85% Success" />
-        <meta property="og:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/og-chiranjeevi.jpg" />
+        <meta property="og:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/labnotice4.jpg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com" />
         <meta name="twitter:title" content="Dr Muddu Nehru | Diabetologist Gachibowli" />
         <meta name="twitter:description" content="90 Day Diabetes Remission | 85% Success" />
-        <meta name="twitter:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/og-chiranjeevi.jpg" />
+        <meta name="twitter:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/labnotice4.jpg" />
         
         <script
           type="application/ld+json"
@@ -279,19 +282,6 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        {/* Google Analytics 4 (GA4) - Next.js Script Component */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XJQ762V2MY"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XJQ762V2MY');
-          `}
-        </Script>
         <AuthProvider>
           {/* Service Worker Registration for PWA */}
           <ServiceWorkerRegistration />
@@ -317,12 +307,14 @@ export default function RootLayout({
                     📞 09963721999
                   </a>
                   <span className="text-gray-400 hidden md:inline">|</span>
-                  <div className="flex gap-2 text-xs">
+                  <div className="flex gap-2 text-xs items-center">
                     <a href="https://wa.me/919963721999" target="_blank" className="hover:text-green-300 transition-colors">JOIN</a>
                     <span className="text-gray-400">•</span>
                     <a href="https://wa.me/919963721999?text=I want to donate" target="_blank" className="hover:text-yellow-300 transition-colors">DONATE</a>
                     <span className="text-gray-400">•</span>
                     <a href="https://wa.me/919963721999?text=I am interested in franchise" target="_blank" className="hover:text-pink-300 transition-colors">FRANCHISE</a>
+                    <span className="text-gray-400 hidden md:inline">|</span>
+                    <HeaderAuth />
                   </div>
                 </div>
               </div>
@@ -601,7 +593,7 @@ export default function RootLayout({
               <div className="mt-8 text-center">
                 <div className="inline-block">
                   <img
-                    src="/images/dr-muddu-chiranjeevi.jpg.jpg"
+                    src="/images/labnotice4.jpg"
                     alt="Dr. Muddu Surendra Nehru with Chiranjeevi"
                     className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover mx-auto border-4 border-yellow-400 shadow-xl"
                   />
@@ -911,6 +903,7 @@ export default function RootLayout({
         </AuthProvider>
       </body>
     </html>
+    </ClerkProvider>
   )
 }
 
