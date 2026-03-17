@@ -42,22 +42,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setLoading(false);
   }, []);
 
-  // Handle routing protection
+  // Route protection is handled by Clerk middleware; no redirects here
+  // so Clerk-signed-in users are not sent to /auth by old token check
   useEffect(() => {
     if (loading) return;
-
-    const protectedRoutes = ['/assessment', '/dashboard', '/follow-up'];
     const authRoute = '/auth';
-
-    const isProtectedRoute = protectedRoutes.some(route => pathname?.startsWith(route));
     const isAuthRoute = pathname === authRoute;
-
-    // If user is not authenticated and tries to access protected route
-    if (!token && isProtectedRoute) {
-      router.push('/auth');
-    }
-
-    // If user is authenticated and tries to access auth page
+    // Only redirect to dashboard if we have legacy token and user is on /auth
     if (token && isAuthRoute) {
       router.push('/dashboard');
     }

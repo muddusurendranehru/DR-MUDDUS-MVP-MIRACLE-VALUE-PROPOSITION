@@ -1,32 +1,42 @@
 # Achievements – 17 March 2025
 
-## Clerk-only authentication
+## Clerk-only authentication (frontend)
 
 ### 1. Removed backend auth API usage
 - **`web/lib/api.ts`**  
-  - Removed `api.signup()` (previously `POST /auth/signup`).  
-  - Removed `api.login()` (previously `POST /auth/login`).  
-  - Auth is no longer called on the Express backend from the frontend.
+  - Removed `api.signup()` and `api.login()`. No frontend calls to `/auth/signup` or `/auth/login`.
 - **`web/app/auth/page.tsx`**  
-  - Already using only Clerk: `<SignIn />` and `<SignUp />` with a simple tab switch. No backend auth calls.
+  - Uses only Clerk: `<SignIn />` and `<SignUp />` with tab switch. No backend auth.
+- Sign In and Create Account use **only** Clerk components.
+
+### 2. Clean auth routes (App Router)
+- **`app/(auth)/sign-in/[[...sign-in]]/page.tsx`** → `/sign-in` — `<SignIn />` only.
+- **`app/(auth)/sign-up/[[...sign-up]]/page.tsx`** → `/sign-up` — `<SignUp />` only.
+- **`/auth`** — tabbed Sign In / Create Account page (still public).
+
+### 3. Clerk middleware (`web/middleware.ts`)
+- **Public routes:** `/`, `/sign-in(.*)`, `/sign-up(.*)`, `/auth(.*)`.
+- **All other routes:** protected via Clerk; unauthenticated users redirect to sign-in.
+- **Fix applied:** `auth().protect()` → use async API: `const { protect } = await auth(); await protect();` (fixes "protect is not a function" runtime error).
+
+### 4. AuthProvider no longer fights Clerk
 - **`web/lib/auth-context.tsx`**  
-  - No backend auth calls; only client-side state. Left as-is.
+  - Removed redirect to `/auth` on protected routes when there is no localStorage token.  
+  - Clerk middleware now handles protection; Clerk-signed-in users can access `/dashboard`, `/assessment`, `/follow-up` without being sent back to `/auth`.
 
-### 2. Signup and login flow
-- **Sign In** → Clerk `<SignIn />` only.  
-- **Create Account** → Clerk `<SignUp />` only.  
-- No frontend calls to `/auth/signup` or `/auth/login`.
+### 5. Local run & scripts
+- **Frontend:** port **3003** (`npm run dev` or `npm run dev:mem` for extra memory).
+- **Backend:** port **5000** (`npm run dev` in `server/`).
+- **Scripts in `web/package.json`:** `dev`, `dev:mem`, `dev:backend`, `build`, `start` (prod on port 3000).
+- **Kill stuck Node:** `Get-Process -Name node -ErrorAction SilentlyContinue | Stop-Process -Force`
+- **Doc:** `web/CLERK-AUTH-AND-RUN.md` — single reference for Clerk auth + run commands.
 
-### 3. Local run (two servers)
-- **Backend** (Express): `cd server` → `npm run dev` → http://localhost:5000  
-- **Frontend** (Next.js): `cd web` → `npm run dev` (or `npx next dev -p 3002`) → http://localhost:3002  
-- Health check: `Invoke-RestMethod -Uri "http://localhost:5000/api/health" -Method Get`
-
-### 4. Verified
-- Clerk Create Account (email/password + “Continue with Google”) works.  
-- Google 2-step verification completes.  
-- After sign-in, homepage shows “Sign Out”; session is managed by Clerk.
+### 6. Verified end-to-end
+- Sign in to HOMA MVP (Clerk UI) works.
+- Google sign-in and password step work.
+- After sign-in: header shows "Sign Out" and user name; nav shows "Hello Surendra", Sign Out.
+- Homepage and protected flows work without redirect loops.
 
 ---
 
-**Summary:** Auth is fully Clerk-based; old backend signup/login endpoints are no longer used by the app.
+**Summary:** Auth is fully Clerk-based. Clean URLs `/sign-in`, `/sign-up`, `/auth`. Middleware protects non-public routes with correct async `protect()` usage. AuthProvider no longer overrides Clerk. Frontend and backend run locally on 3003 and 5000.
