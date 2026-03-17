@@ -46,24 +46,8 @@ apiClient.interceptors.response.use(
   }
 );
 
-// API methods
+// API methods (auth is handled by Clerk; no /auth/signup or /auth/login)
 export const api = {
-  // Auth endpoints
-  async signup(userData: {
-    name: string;
-    email: string;
-    phone: string;
-    password: string;
-  }) {
-    const response = await apiClient.post('/auth/signup', userData);
-    return response.data;
-  },
-
-  async login(credentials: { email: string; password: string }) {
-    const response = await apiClient.post('/auth/login', credentials);
-    return response.data;
-  },
-
   // Assessment endpoints
   async createAssessment(assessmentData: any) {
     const response = await apiClient.post('/assessments', assessmentData);
