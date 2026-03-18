@@ -51,10 +51,22 @@ export default function MobileNav() {
 
   return (
     <>
-      {/* Hamburger Button - Only visible on mobile */}
+      {/* Hamburger Button - orange so it doesn't mix with green; safe-area for Android/notched screens */}
       <button
         onClick={toggleMenu}
-        className="fixed top-16 right-4 z-[60] p-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg shadow-lg transition-all"
+        className="fixed z-[60] p-3 rounded-lg shadow-lg transition-all text-white border-2"
+        style={{
+          top: 'calc(2.5rem + env(safe-area-inset-top, 0px))',
+          right: 'max(1rem, env(safe-area-inset-right, 1rem))',
+          backgroundColor: '#ea580c',
+          borderColor: '#f97316',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = '#c2410c';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = '#ea580c';
+        }}
         aria-label="Toggle menu"
       >
         {isOpen ? (
@@ -113,11 +125,19 @@ export default function MobileNav() {
                     </SignOutButton>
                   </div>
                 ) : (
-                  <div className="flex gap-3">
-                    <Link href="/auth" onClick={closeMenu} className="text-white hover:underline">
+                  <div className="flex flex-col gap-2">
+                    <Link
+                      href="/auth"
+                      onClick={closeMenu}
+                      className="block w-full text-center py-3 px-4 rounded-xl font-semibold bg-amber-500 hover:bg-amber-600 text-white border-2 border-amber-400/80 transition-all"
+                    >
                       Sign In
                     </Link>
-                    <Link href="/auth" onClick={closeMenu} className="text-white hover:underline">
+                    <Link
+                      href="/auth"
+                      onClick={closeMenu}
+                      className="block w-full text-center py-3 px-4 rounded-xl font-semibold bg-white/20 hover:bg-white/30 text-white border border-white/40 transition-all"
+                    >
                       Create Account
                     </Link>
                   </div>
