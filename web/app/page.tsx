@@ -4,6 +4,7 @@ import Link from 'next/link';
 import LandingPageHero from '../components/LandingPageHero';
 import MetabolicServicesHero from '../components/MetabolicServicesHero';
 import TestimonialSlider from '../components/TestimonialSlider';
+import HomepagePhotoGallery from '../components/HomepagePhotoGallery';
 
 // 🔑 Force static HTML generation for SEO & Google verification
 export const dynamic = 'force-static';
@@ -158,6 +159,7 @@ export default function Home() {
         <LandingPageHero /> {/* modern gradient + buttons */}
         <MetabolicServicesHero /> {/* 9 patient segments with service cards */}
         <TestimonialSlider /> {/* testimonials below hero */}
+        <HomepagePhotoGallery /> {/* static photos from public/photos/ */}
         
         {/* Quick Action Links */}
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 py-12 px-4">
