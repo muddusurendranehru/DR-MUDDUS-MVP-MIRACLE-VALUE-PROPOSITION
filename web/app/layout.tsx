@@ -57,14 +57,14 @@ export default function RootLayout({
         <meta property="og:url" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com" />
         <meta property="og:title" content="Dr Muddu Nehru | Diabetologist Gachibowli" />
         <meta property="og:description" content="90 Day Diabetes Remission | 85% Success" />
-        <meta property="og:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/labnotice4.jpg" />
+        <meta property="og:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/obesity-reversal-hyderabad-jpg.jpg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com" />
         <meta name="twitter:title" content="Dr Muddu Nehru | Diabetologist Gachibowli" />
         <meta name="twitter:description" content="90 Day Diabetes Remission | 85% Success" />
-        <meta name="twitter:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/labnotice4.jpg" />
+        <meta name="twitter:image" content="https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/obesity-reversal-hyderabad-jpg.jpg" />
         
         <script
           type="application/ld+json"
@@ -265,7 +265,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Dr. Muddu Surendra Nehru, MD",
               "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/about",
-              "image": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/profile.jpg",
+              "image": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/kishnblur1.jpg",
               "jobTitle": "Professor of Medicine",
               "affiliation": "HOMA Health Clinics",
               "address": {
@@ -589,23 +589,6 @@ export default function RootLayout({
               {/* Interactive Onboarding Demo */}
               <OnboardingDemo />
 
-              {/* Dr. Muddu + Chiranjeevi Section */}
-              <div className="mt-8 text-center">
-                <div className="inline-block">
-                  <img
-                    src="/images/labnotice4.jpg"
-                    alt="Dr. Muddu Surendra Nehru with Chiranjeevi"
-                    className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover mx-auto border-4 border-yellow-400 shadow-xl"
-                  />
-                  <p className="mt-3 text-sm text-gray-300 font-medium">
-                    🌟 Dr. Muddu with Megastar Chiranjeevi
-                  </p>
-                  <p className="text-xs text-gray-400 mt-1">
-                    Professor of Medicine • 30+ Years Experience • World's First AI Health App Pioneer
-                  </p>
-                </div>
-              </div>
-
               {/* GBP Widget - Above Copyright */}
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-indigo-200 mb-8 mt-8">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -852,7 +835,7 @@ export default function RootLayout({
                   <p className="text-sm font-medium text-gray-300 mb-2">Pay via UPI:</p>
                   <div className="flex justify-center mb-2">
                     <Image
-                      src="/images/gpay1.jpg"
+                      src="/images/gbp1.jpg"
                       alt="UPI payment QR code - surendra.muddu-1@okhdfcbank - Scan to pay Dr. Muddu Surendra Nehru MD via UPI"
                       width={200}
                       height={200}

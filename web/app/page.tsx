@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'HOMA Clinic',
     images: [
       {
-        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/labnotice4.jpg',
+        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/obesity-reversal-hyderabad-jpg.jpg',
         width: 1200,
         height: 630,
         alt: 'Dr. Muddu Nehru - Diabetologist Gachibowli',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dr Muddu Nehru | Diabetologist Gachibowli',
     description: '90 Day Diabetes Remission | 85% Success',
-    images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/labnotice4.jpg'],
+    images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/obesity-reversal-hyderabad-jpg.jpg'],
   },
   alternates: {
     canonical: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com',

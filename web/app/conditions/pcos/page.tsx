@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "HOMA Health Clinics",
     images: [
       {
-        url: "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/pcos-metabolic-reversal.jpg",
+        url: "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/pcos-metabolic-reversal-jpg.jpg",
         width: 1200,
         height: 630,
         alt: "PCOS Reversal Program - Dr. Muddu Nehru, MD",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PCOS Treatment & Reversal in 90 Days",
     description: "Hormonal disorder causing insulin resistance, weight gain, and infertility. Reversible with metabolic protocols.",
-    images: ["https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/pcos-metabolic-reversal.jpg"],
+    images: ["https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/pcos-metabolic-reversal-jpg.jpg"],
   },
   alternates: {
     canonical: "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/conditions/pcos",
@@ -80,7 +80,7 @@ export default function PCOSPage() {
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/30 transform hover:scale-105 transition-transform duration-300">
               <Image
-                src="/images/pcos-metabolic-reversal.jpg"
+                src="/images/pcos-metabolic-reversal-jpg.jpg"
                 alt="PCOS reversal success - metabolic remission program in Gachibowli Hyderabad with Dr. Muddu Surendra Nehru MD"
                 fill
                 className="object-cover"
@@ -187,7 +187,7 @@ export default function PCOSPage() {
             "name": "PCOS (Polycystic Ovary Syndrome)",
             "description": "Hormonal disorder causing insulin resistance, weight gain, and infertility. Reversible with metabolic protocols.",
             "url": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/conditions/pcos",
-            "image": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/pcos-metabolic-reversal.jpg",
+            "image": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/pcos-metabolic-reversal-jpg.jpg",
             "associatedAnatomy": {
               "@type": "AnatomicalStructure",
               "name": "Ovaries"

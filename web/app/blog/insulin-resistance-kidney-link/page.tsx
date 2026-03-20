@@ -104,7 +104,7 @@ export default function InsulinResistanceKidneyBlog() {
             {/* Pathways Image */}
             <div className="my-8 p-4 bg-gray-50 rounded-lg">
               <Image
-                src="/images/Metabolic Syndrome and Chronic Kidney Disease_ A Pathophysiologic Cascade.jpg"
+                src="/images/metabolic-syndrome-and-chronic-kidney-disease-a-pathophysiologic-cascade.jpg"
                 alt="Hyperinsulinemia, Insulin Resistance, and Kidney Damage"
                 width={1200}
                 height={800}

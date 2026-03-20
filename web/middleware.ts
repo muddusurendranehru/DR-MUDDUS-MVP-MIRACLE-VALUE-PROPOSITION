@@ -15,7 +15,8 @@ export default clerkMiddleware(async (auth, req) => {
 
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico).*)',
+    // Skip static assets in /public (e.g. /images/*.jpg) — Clerk must not run on them or <img> gets HTML/302.
+    '/((?!_next/static|_next/image|favicon.ico|images/).*)',
     '/(api|trpc)(.*)',
   ],
 };
