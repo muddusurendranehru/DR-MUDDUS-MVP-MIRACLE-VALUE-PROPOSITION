@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: 'HOMA Health Clinics',
     images: [
       {
-        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/hypertension-remission-gachibowli.jpg.jpg',
+        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/hypertension-remission-gachibowli-jpg.jpg',
         width: 1200,
         height: 630,
         alt: 'Hypertension Control Program - Dr. Muddu Nehru, MD',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hypertension Control & Reversal in 90 Days',
     description: 'Blood pressure normalization through metabolic remission program.',
-        images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/hypertension-remission-gachibowli.jpg'],
+        images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/hypertension-remission-gachibowli-jpg.jpg'],
   },
   alternates: {
     canonical: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/conditions/hypertension',
@@ -79,7 +79,7 @@ export default function HypertensionPage() {
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/30 transform hover:scale-105 transition-transform duration-300">
               <Image
-                src="/images/hypertension-remission-gachibowli.jpg.jpg"
+                src="/images/hypertension-remission-gachibowli-jpg.jpg"
                 alt="Hypertension reversal success - blood pressure control program in Gachibowli Hyderabad with Dr. Muddu Surendra Nehru MD"
                 fill
                 className="object-cover"
@@ -186,7 +186,7 @@ export default function HypertensionPage() {
             "name": "Hypertension",
             "description": "High blood pressure condition. Reversible through metabolic remission protocols.",
             "url": pageUrl,
-            "image": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/hypertension-remission-gachibowli.jpg",
+            "image": "https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/hypertension-remission-gachibowli-jpg.jpg",
             "associatedAnatomy": {
               "@type": "AnatomicalStructure",
               "name": "Cardiovascular System"

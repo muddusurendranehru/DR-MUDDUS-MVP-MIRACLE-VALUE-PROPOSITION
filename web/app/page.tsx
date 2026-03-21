@@ -4,6 +4,7 @@ import Link from 'next/link';
 import LandingPageHero from '../components/LandingPageHero';
 import MetabolicServicesHero from '../components/MetabolicServicesHero';
 import TestimonialSlider from '../components/TestimonialSlider';
+import HomepagePhotoGallery from '../components/HomepagePhotoGallery';
 
 // 🔑 Force static HTML generation for SEO & Google verification
 export const dynamic = 'force-static';
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'HOMA Clinic',
     images: [
       {
-        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/og-chiranjeevi.jpg',
+        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/obesity-reversal-hyderabad-jpg.jpg',
         width: 1200,
         height: 630,
         alt: 'Dr. Muddu Nehru - Diabetologist Gachibowli',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dr Muddu Nehru | Diabetologist Gachibowli',
     description: '90 Day Diabetes Remission | 85% Success',
-    images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/og-chiranjeevi.jpg'],
+    images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/obesity-reversal-hyderabad-jpg.jpg'],
   },
   alternates: {
     canonical: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com',
@@ -158,6 +159,7 @@ export default function Home() {
         <LandingPageHero /> {/* modern gradient + buttons */}
         <MetabolicServicesHero /> {/* 9 patient segments with service cards */}
         <TestimonialSlider /> {/* testimonials below hero */}
+        <HomepagePhotoGallery /> {/* static photos from public/photos/ */}
         
         {/* Quick Action Links */}
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 py-12 px-4">

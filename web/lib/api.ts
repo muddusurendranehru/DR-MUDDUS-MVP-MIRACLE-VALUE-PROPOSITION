@@ -46,12 +46,8 @@ apiClient.interceptors.response.use(
   }
 );
 
-// API methods (auth replaced by Clerk — signup/login disabled)
+// API methods (auth is handled by Clerk; no /auth/signup or /auth/login)
 export const api = {
-  // Auth endpoints — DISABLED: using Clerk at /auth
-  // async signup(...) { ... }
-  // async login(...) { ... }
-
   // Assessment endpoints
   async createAssessment(assessmentData: any) {
     const response = await apiClient.post('/assessments', assessmentData);

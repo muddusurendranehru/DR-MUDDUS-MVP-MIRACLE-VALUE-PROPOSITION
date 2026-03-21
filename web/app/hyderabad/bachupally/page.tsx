@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: 'HOMA Clinic',
     images: [
       {
-        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/og-chiranjeevi.jpg',
+        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/obesity-reversal-hyderabad-jpg.jpg',
         width: 1200,
         height: 630,
         alt: 'Dr. Muddu Nehru - Diabetologist Bachupally Hyderabad',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dr Muddu Nehru | Diabetologist Bachupally Hyderabad',
     description: '90 Day Diabetes Remission in Bachupally | 85% Success',
-    images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/og-chiranjeevi.jpg'],
+    images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/obesity-reversal-hyderabad-jpg.jpg'],
   },
 };
 

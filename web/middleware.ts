@@ -1,25 +1,22 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-const isProtectedRoute = createRouteMatcher([
-  '/dashboard(.*)',
-  '/assessment(.*)',
-  '/follow-up(.*)',
-  '/diet(.*)',
-  '/remission-program(.*)',
+const isPublic = createRouteMatcher([
+  '/',
+  '/sign-in(.*)',
+  '/sign-up(.*)',
+  '/auth(.*)',  // keeps your tabbed page public
 ]);
 
-const isAuthRoute = createRouteMatcher(['/auth(.*)']);
-
 export default clerkMiddleware(async (auth, req) => {
-  if (isAuthRoute(req)) return;
-  if (isProtectedRoute(req)) {
-    await auth.protect();
+  if (!isPublic(req)) {
+    await auth.protect();  // no destructuring, types pass
   }
 });
 
 export const config = {
   matcher: [
-    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Skip static assets in /public (e.g. /images/*.jpg) — Clerk must not run on them or <img> gets HTML/302.
+    '/((?!_next/static|_next/image|favicon.ico|images/).*)',
     '/(api|trpc)(.*)',
   ],
 };

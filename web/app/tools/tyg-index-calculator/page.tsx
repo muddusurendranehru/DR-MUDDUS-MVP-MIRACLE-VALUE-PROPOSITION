@@ -2,11 +2,40 @@
 
 import { useState } from 'react';
 
+/** TyG Index interpretation: Ln-based scale (typical range ~8–10). */
+const getTyGInterpretation = (tyg: number) => {
+  if (tyg < 8.5) {
+    return {
+      category: 'Normal',
+      color: 'text-green-600',
+      bgColor: 'bg-green-50',
+      message: 'Your TyG Index is within the normal range. Good insulin sensitivity.',
+      risk: 'Low Risk',
+    };
+  } else if (tyg >= 8.5 && tyg < 9.0) {
+    return {
+      category: 'Borderline',
+      color: 'text-yellow-600',
+      bgColor: 'bg-yellow-50',
+      message: 'Your TyG Index suggests borderline insulin resistance. Lifestyle review recommended.',
+      risk: 'Moderate Risk',
+    };
+  } else {
+    return {
+      category: 'High Risk of Insulin Resistance & Cardiovascular Disease',
+      color: 'text-red-600',
+      bgColor: 'bg-red-50',
+      message: 'Your TyG Index suggests significant insulin resistance. Medical consultation advised.',
+      risk: 'High Risk',
+    };
+  }
+};
+
 export default function TyGCalculator() {
-  const toolName = "TyG Index";
+  const toolName = 'TyG Index';
   const [triglycerides, setTriglycerides] = useState('');
   const [glucose, setGlucose] = useState('');
-  const [result, setResult] = useState<{ value: number; risk: string } | null>(null);
+  const [result, setResult] = useState<{ value: number; interpretation: ReturnType<typeof getTyGInterpretation> } | null>(null);
 
   const calculateTyG = () => {
     const t = parseFloat(triglycerides);
@@ -16,12 +45,8 @@ export default function TyGCalculator() {
       return;
     }
     const tyg = Math.log((t * g) / 2);
-    let risk = '';
-    if (tyg < 4.5) risk = 'Low Risk';
-    else if (tyg < 5.0) risk = 'Moderate Risk';
-    else risk = 'High Risk of Insulin Resistance & Cardiovascular Disease';
-
-    setResult({ value: parseFloat(tyg.toFixed(2)), risk });
+    const value = parseFloat(tyg.toFixed(2));
+    setResult({ value, interpretation: getTyGInterpretation(value) });
   };
 
   return (
@@ -65,23 +90,29 @@ export default function TyGCalculator() {
           {result && (
             <div className="mt-8 p-6 bg-white rounded-lg border-2 border-purple-300 text-center">
               <p className="text-4xl font-bold text-purple-700 mb-2">{result.value}</p>
-              <p className="text-xl font-semibold text-gray-800 mb-4">{result.risk}</p>
-              {result.value >= 5.0 && (
+              <p className={`text-xl font-semibold mb-2 ${result.interpretation.color}`}>
+                {result.interpretation.category}
+              </p>
+              <p className="text-sm text-gray-600 mb-2">{result.interpretation.risk}</p>
+              <div className={`mt-4 p-4 rounded-lg text-left ${result.interpretation.bgColor}`}>
+                <p className="text-gray-800">{result.interpretation.message}</p>
+              </div>
+              {result.value >= 9.0 && (
                 <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded text-left">
                   <p className="text-gray-800">
                     Your <strong>{toolName}</strong> result suggests elevated metabolic risk.
                   </p>
                   <p className="mt-2 text-gray-700">
-                    <strong>Next step:</strong> Get a <span className="text-green-600 font-medium">free 15-minute consultation</span>  
+                    <strong>Next step:</strong> Get a <span className="text-green-600 font-medium">free 15-minute consultation</span>{' '}
                     with <strong>Dr. Muddu Surendra Nehru, MD</strong> (32+ years) to understand your personalized remission plan.
                   </p>
-                  <a 
+                  <a
                     href="https://wa.me/919963721999?text=Assessment"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-4 bg-green-600 hover:bg-green-700 text-white font-medium px-5 py-2.5 rounded-lg transition"
                   >
-                    WhatsApp 'Assessment' Now
+                    WhatsApp &apos;Assessment&apos; Now
                   </a>
                   <p className="mt-3 text-xs text-gray-500">
                     No cost. No obligation. Available in English & Telugu.

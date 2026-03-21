@@ -309,28 +309,6 @@ export default function ConversionHero() {
               <div className="text-lg text-gray-300">Remission Rate</div>
             </div>
           </div>
-
-          {/* Chiranjeevi Photo Section */}
-          <div className="bg-gray-800 rounded-2xl p-6 md:p-8 text-center">
-            <img
-              src="/images/dr-muddu-chiranjeevi.jpg"
-              alt="Dr. Muddu Surendra Nehru with Megastar Chiranjeevi"
-              className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover mx-auto border-4 border-yellow-400 shadow-2xl mb-4"
-            />
-            <h3 className="text-xl md:text-2xl font-bold mb-2">
-              🌟 Dr. Muddu with Megastar Chiranjeevi
-            </h3>
-            <p className="text-gray-300 mb-4">
-              Professor of Medicine • 30+ Years Experience • World's First AI Health App Pioneer
-            </p>
-            <a
-              href="https://wa.me/919963721999?text=I want to consult with Dr. Muddu"
-              target="_blank"
-              className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-lg transition-transform hover:scale-105"
-            >
-              📱 WhatsApp: 09963721999
-            </a>
-          </div>
         </div>
       </section>
     </div>

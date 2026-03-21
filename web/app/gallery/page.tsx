@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Real patient transformations: Diabetes reversal, PCOS remission, weight loss - 90-day metabolic remission program in Gachibowli, Hyderabad.',
     images: [
       {
-        url: '/images/waist1.jpg',
+        url: '/images/obesity-reversal-hyderabad-jpg.jpg',
         alt: 'Patient success story - Metabolic health improvement',
       },
     ],
@@ -41,27 +41,27 @@ export default function GalleryPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <ImageCard
-            src="/images/waist1.jpg"
+            src="/images/central-obesity-4-phases-1.jpg"
             alt="Patient waist measurement showing metabolic health improvement - Dr. Muddu Surendra Nehru 90-day program Gachibowli Hyderabad"
             caption="Reversed diabetes in 90 days"
           />
           <ImageCard
-            src="/images/waist2.jpg"
+            src="/images/before-after-2.jpg"
             alt="Patient progress tracking waist circumference reduction - HOMA Clinic metabolic remission program"
             caption="Lost 20kg with metabolic plan"
           />
           <ImageCard
-            src="/images/waist4.jpg"
+            src="/images/before-after-3.jpg"
             alt="Patient health transformation before and after - Type 2 diabetes reversal Gachibowli"
             caption="HOMA-IR normalized in 90 days"
           />
           <ImageCard
-            src="/images/waist5.jpg"
+            src="/images/wc-ads-1.jpg"
             alt="Metabolic remission success story waist measurement - Dr. Muddu Surendra Nehru MD patient results"
             caption="Waist circumference reduced - Metabolic health improved"
           />
           <ImageCard
-            src="/images/pcos-reversal-anita-hyderabad.jpg.png"
+            src="/images/pcos-reversal-anita-hyderabad-jpg.jpg"
             alt="PCOS reversal success story Anita from Hyderabad - Dr. Muddu metabolic health program"
             caption="PCOS reversed - Now pregnant! Anita, 34 - Hyderabad"
           />
@@ -71,22 +71,17 @@ export default function GalleryPage() {
             caption="Insulin resistance reversed - Metabolic syndrome resolved"
           />
           <ImageCard
-            src="/images/public (1).jpg"
+            src="/images/public-1.jpg"
             alt="Patient transformation metabolic remission - Dr. Muddu Surendra Nehru MD patient results"
             caption="HbA1c normalized - Diabetes in remission"
           />
           <ImageCard
-            src="/images/public (2).jpg"
+            src="/images/public-2.jpg"
             alt="Patient success story weight loss metabolic health - HOMA Clinic Gachibowli Hyderabad"
             caption="BMI reduced - Cardiovascular risk lowered"
           />
           <ImageCard
-            src="/images/dr-muddu-chiranjeevi.jpg"
-            alt="Dr. Muddu Surendra Nehru MD with Chiranjeevi - World-renowned metabolic health expert Gachibowli Hyderabad"
-            caption="World-renowned metabolic health expert"
-          />
-          <ImageCard
-            src="/media/images/drmuddu-nehru-1-.jpg.png"
+            src="/images/kishnblur1.jpg"
             alt="Dr. Muddu Surendra Nehru MD - Metabolic health expert Gachibowli Hyderabad"
             caption="Dr. Muddu Surendra Nehru, MD - 32+ Years Experience"
           />
