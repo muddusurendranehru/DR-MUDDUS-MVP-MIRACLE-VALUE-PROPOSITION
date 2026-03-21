@@ -29,7 +29,6 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
     <html lang="en">
       <head>
         {/* Google tag (gtag.js) */}
@@ -282,6 +281,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <ClerkProvider>
         <AuthProvider>
           {/* Service Worker Registration for PWA */}
           <ServiceWorkerRegistration />
@@ -888,9 +888,9 @@ export default function RootLayout({
           {/* Welcome Bot */}
           <WelcomeBot />
         </AuthProvider>
+        </ClerkProvider>
       </body>
     </html>
-    </ClerkProvider>
   )
 }
 

@@ -26,7 +26,19 @@ export default function AuthPage() {
           Create Account
         </button>
       </div>
-      {tab === 'signin' ? <SignIn /> : <SignUp />}
+      {tab === 'signin' ? (
+        <SignIn
+          routing="hash"
+          signUpUrl="/auth"
+          forceRedirectUrl="/dashboard"
+        />
+      ) : (
+        <SignUp
+          routing="hash"
+          signInUrl="/auth"
+          forceRedirectUrl="/dashboard"
+        />
+      )}
     </div>
   )
 }
