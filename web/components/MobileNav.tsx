@@ -63,7 +63,7 @@ export default function MobileNav() {
       {/* Hamburger Button - orange so it doesn't mix with green; safe-area for Android/notched screens */}
       <button
         onClick={toggleMenu}
-        className="fixed z-[60] p-3 rounded-lg shadow-lg transition-all text-white border-2"
+        className="fixed z-[100050] p-3 rounded-lg shadow-lg transition-all text-white border-2"
         style={{
           top: 'calc(2.5rem + env(safe-area-inset-top, 0px))',
           right: 'max(1rem, env(safe-area-inset-right, 1rem))',
@@ -94,14 +94,14 @@ export default function MobileNav() {
       {/* Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-[50]"
+          className="fixed inset-0 bg-black/50 z-[100040]"
           onClick={closeMenu}
         />
       )}
 
       {/* Slide-out Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 z-[55] transform transition-transform duration-300 ease-in-out overflow-y-auto shadow-2xl ${
+        className={`fixed top-0 right-0 h-full w-80 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 z-[100045] transform transition-transform duration-300 ease-in-out overflow-y-auto shadow-2xl ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

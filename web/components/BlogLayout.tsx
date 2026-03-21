@@ -3,6 +3,7 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { useEffect } from 'react'
+import HeaderAuth from '@/components/HeaderAuth'
 
 interface BlogLayoutProps {
   children: ReactNode
@@ -21,12 +22,7 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
       style = document.createElement('style')
       style.id = styleId
       style.textContent = `
-        /* Hide root layout navigation */
-        body > div > nav,
-        body nav:not([data-blog-nav]) {
-          display: none !important;
-        }
-        /* Hide root layout header (dark blue one) */
+        /* Hide root layout header only — do NOT hide <nav> globally (breaks MobileNav drawer) */
         body > div > header:not([data-blog-header]),
         header:not([data-blog-header]) {
           display: none !important;
@@ -63,7 +59,6 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
     // Also directly hide elements via DOM manipulation as backup
     const hideRootElements = () => {
       const elementsToHide = [
-        ...document.querySelectorAll('nav:not([data-blog-nav])'),
         ...document.querySelectorAll('header:not([data-blog-header])'),
         ...document.querySelectorAll('footer:not([data-blog-footer])'),
       ]
@@ -97,11 +92,11 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
             <Link href="/" className="text-xl font-bold text-green-700 hover:text-green-800 transition">
               🏥 HOMA Clinic
             </Link>
-            <nav className="flex gap-4 items-center">
+            <nav data-blog-nav className="flex flex-wrap items-center justify-end gap-2 sm:gap-4 text-sm sm:text-base">
               <Link href="/blog" className="text-gray-600 hover:text-green-600 transition font-medium">
                 Blog
               </Link>
-              <Link href="/pricing" className="text-gray-600 hover:text-green-600 transition font-medium">
+              <Link href="/packages" className="text-gray-600 hover:text-green-600 transition font-medium">
                 Packages
               </Link>
               <Link href="/gallery" className="text-gray-600 hover:text-green-600 transition font-medium">
@@ -110,6 +105,8 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
               <Link href="/dashboard" className="text-gray-600 hover:text-green-600 transition font-medium">
                 Dashboard
               </Link>
+              <span className="text-gray-300 hidden sm:inline">|</span>
+              <HeaderAuth />
             </nav>
           </div>
         </div>
