@@ -1,9 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { neon } from '@neondatabase/serverless';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { getBlogPost, getAllBlogSlugs } from '@/lib/content';
 import BlogLayout from '@/components/BlogLayout';
+
+function getSql() {
+  const url = process.env.DATABASE_URL ?? process.env.NEON_DATABASE_URL;
+  if (!url) return null;
+  return neon(url);
+}
 
 export async function generateStaticParams() {
   return getAllBlogSlugs();
@@ -21,17 +28,25 @@ type DbPost = {
   category: string | null;
   icon: string | null;
   meta_description: string | null;
+  published: boolean;
   date: string | null;
-  created_at?: string | null;
+  created_at: Date | string | null;
 };
 
 async function getDbPost(slug: string): Promise<DbPost | null> {
+  const sql = getSql();
+  if (!sql) return null;
+
   try {
-    const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3004';
-    const url = `${base.replace(/\/$/, '')}/api/admin/blog?slug=${encodeURIComponent(slug)}`;
-    const res = await fetch(url, { cache: 'no-store' });
-    const data = (await res.json()) as { post?: DbPost | null };
-    return data.post ?? null;
+    const rows = await sql`
+      SELECT *
+      FROM blog_posts
+      WHERE slug = ${slug}
+        AND published = true
+      LIMIT 1
+    `;
+    const row = rows[0] as DbPost | undefined;
+    return row ?? null;
   } catch {
     return null;
   }
@@ -67,11 +82,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   if (dbPost) {
     const processed = await remark().use(html).process(dbPost.content);
     const htmlContent = processed.toString();
+    const created = dbPost.created_at;
     const displayDate =
       (typeof dbPost.date === 'string' && dbPost.date.trim()) ||
-      (dbPost.created_at
+      (created
         ? new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' }).format(
-            new Date(dbPost.created_at)
+            created instanceof Date ? created : new Date(created)
           )
         : '');
     const authorLine = [dbPost.author, displayDate].filter(Boolean).join(' | ');

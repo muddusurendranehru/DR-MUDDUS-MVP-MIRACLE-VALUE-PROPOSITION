@@ -1,9 +1,19 @@
+import { neon } from '@neondatabase/serverless';
 import BlogPageClient, { type BlogCardPost } from './BlogPageClient';
+
+function getSql() {
+  const url = process.env.DATABASE_URL ?? process.env.NEON_DATABASE_URL;
+  if (!url) return null;
+  return neon(url);
+}
 
 /** Display date on cards when `date` column is null (use `created_at`). */
 function pickDisplayDate(p: Record<string, unknown>): string {
   if (typeof p.date === 'string' && p.date.trim()) return p.date.trim();
   const c = p.created_at;
+  if (c instanceof Date && !Number.isNaN(c.getTime())) {
+    return new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' }).format(c);
+  }
   if (typeof c === 'string' && c) {
     const d = new Date(c);
     if (!Number.isNaN(d.getTime())) {
@@ -14,28 +24,43 @@ function pickDisplayDate(p: Record<string, unknown>): string {
 }
 
 async function getDbPosts(): Promise<BlogCardPost[]> {
+  const sql = getSql();
+  if (!sql) return [];
+
   try {
-    const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3004';
-    const res = await fetch(`${base.replace(/\/$/, '')}/api/admin/blog`, {
-      cache: 'no-store',
-    });
-    const data = (await res.json()) as { posts?: unknown[] };
-    const rows = Array.isArray(data.posts) ? data.posts : [];
-    return rows.map((row: unknown) => {
+    const rows = await sql`
+      SELECT
+        id,
+        title,
+        slug,
+        content,
+        excerpt,
+        author,
+        category,
+        icon,
+        date,
+        created_at
+      FROM blog_posts
+      WHERE published = true
+      ORDER BY created_at DESC
+    `;
+
+    return rows.map((row) => {
       const p = row as Record<string, unknown>;
       return {
-      id: typeof p.id === 'number' ? p.id : String(p.id ?? ''),
-      slug: typeof p.slug === 'string' ? p.slug : undefined,
-      title: typeof p.title === 'string' ? p.title : '',
-      excerpt: typeof p.excerpt === 'string' && p.excerpt ? p.excerpt : '',
-      date: pickDisplayDate(p),
-      author: typeof p.author === 'string' ? p.author : undefined,
-      category: typeof p.category === 'string' ? p.category : 'Nutrition and Diabetes',
-      icon: typeof p.icon === 'string' && p.icon ? p.icon : '📝',
-      readTime: '3 min read',
-    };
+        id: typeof p.id === 'number' ? p.id : String(p.id ?? ''),
+        slug: typeof p.slug === 'string' ? p.slug : undefined,
+        title: typeof p.title === 'string' ? p.title : '',
+        excerpt: typeof p.excerpt === 'string' && p.excerpt ? p.excerpt : '',
+        date: pickDisplayDate(p),
+        author: typeof p.author === 'string' ? p.author : undefined,
+        category: typeof p.category === 'string' ? p.category : 'Nutrition and Diabetes',
+        icon: typeof p.icon === 'string' && p.icon ? p.icon : '📝',
+        readTime: '3 min read',
+      };
     });
-  } catch {
+  } catch (error) {
+    console.error('DB posts error:', error);
     return [];
   }
 }
