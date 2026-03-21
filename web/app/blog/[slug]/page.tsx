@@ -1,10 +1,19 @@
+/**
+ * Achieved: Neon-backed posts render on /blog/[slug] with shared cached getDbPost for SSR.
+ * Achieved: Tab title uses DB title + description when a published row exists (no false “Post not found”).
+ * Achieved: H1 shows the full post title with wrapping (no truncation / character cap).
+ */
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { cache } from 'react';
 import { neon } from '@neondatabase/serverless';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { getBlogPost, getAllBlogSlugs } from '@/lib/content';
 import BlogLayout from '@/components/BlogLayout';
+
+/** No static shell for DB-backed slugs — avoids stale “Post not found” tab title vs live body. */
+export const dynamic = 'force-dynamic';
 
 function getSql() {
   const url = process.env.DATABASE_URL ?? process.env.NEON_DATABASE_URL;
@@ -33,7 +42,7 @@ type DbPost = {
   created_at: Date | string | null;
 };
 
-async function getDbPost(slug: string): Promise<DbPost | null> {
+const getDbPost = cache(async (slug: string): Promise<DbPost | null> => {
   const sql = getSql();
   if (!sql) return null;
 
@@ -45,12 +54,14 @@ async function getDbPost(slug: string): Promise<DbPost | null> {
         AND published = true
       LIMIT 1
     `;
-    const row = rows[0] as DbPost | undefined;
-    return row ?? null;
-  } catch {
+    const list = rows as unknown;
+    if (!Array.isArray(list) || list.length === 0) return null;
+    return list[0] as DbPost;
+  } catch (e) {
+    console.error('[blog/getDbPost]', slug, e);
     return null;
   }
-}
+});
 
 export async function generateMetadata({
   params,
@@ -62,7 +73,7 @@ export async function generateMetadata({
   if (dbPost) {
     return {
       title: `${dbPost.title} | HOMA Clinic`,
-      description: dbPost.meta_description ?? dbPost.excerpt ?? undefined,
+      description: dbPost.meta_description || dbPost.excerpt || undefined,
     };
   }
   const post = await getBlogPost(slug);
@@ -94,7 +105,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
     return (
       <BlogLayout>
-        <article className="max-w-3xl mx-auto px-4 py-8">
+        <article className="max-w-3xl mx-auto min-w-0 w-full px-4 py-8">
           <Link
             href="/blog"
             className="inline-flex items-center text-green-600 font-medium hover:text-green-700 mb-6"
@@ -106,7 +117,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             {dbPost.category ?? 'Blog'}
           </span>
 
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{dbPost.title}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 w-full min-w-0 break-words whitespace-normal overflow-visible">
+            {dbPost.title}
+          </h1>
           {authorLine ? (
             <p className="text-sm text-gray-500 mb-8">{authorLine}</p>
           ) : null}

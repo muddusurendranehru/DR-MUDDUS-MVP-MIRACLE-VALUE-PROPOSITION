@@ -6,6 +6,8 @@ const isPublic = createRouteMatcher([
   '/sign-in(.*)',
   '/sign-up(.*)',
   '/auth(.*)',  // keeps your tabbed page public
+  // Blog: public for SEO / anonymous readers (admin publish uses /admin/blog + password)
+  '/blog(.*)',
   // Blog admin: password-protected in-app, not via Clerk
   '/api/admin/blog(.*)',
   '/admin/blog(.*)',

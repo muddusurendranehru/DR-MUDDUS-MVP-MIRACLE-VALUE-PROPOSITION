@@ -3,13 +3,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-function getConnectionString(): string | null {
-  return process.env.DATABASE_URL ?? process.env.NEON_DATABASE_URL ?? null;
-}
-
 function getSql() {
-  const url = getConnectionString();
-  if (!url) return null;
+  const url = process.env.DATABASE_URL ?? process.env.NEON_DATABASE_URL;
+  if (!url) throw new Error('No DATABASE_URL');
   return neon(url);
 }
 
@@ -34,17 +30,23 @@ function getAdminPasswordFromRequest(body: Record<string, unknown>, request: Nex
   return fromBody ?? header ?? bearer ?? undefined;
 }
 
+function dbConfigErrorResponse() {
+  return NextResponse.json(
+    { success: false, error: 'Database not configured (DATABASE_URL or NEON_DATABASE_URL)' },
+    { status: 500 }
+  );
+}
+
 /**
  * GET — list published posts, or single post when ?slug= (fully public: no ADMIN_PASSWORD).
  * Only POST checks ADMIN_PASSWORD.
  */
 export async function GET(request: NextRequest) {
-  const sql = getSql();
-  if (!sql) {
-    return NextResponse.json(
-      { success: false, error: 'Database not configured (DATABASE_URL or NEON_DATABASE_URL)' },
-      { status: 500 }
-    );
+  let sql;
+  try {
+    sql = getSql();
+  } catch {
+    return dbConfigErrorResponse();
   }
 
   const slug = request.nextUrl.searchParams.get('slug');
@@ -52,25 +54,14 @@ export async function GET(request: NextRequest) {
   if (slug) {
     try {
       const rows = await sql`
-        SELECT
-          id,
-          title,
-          slug,
-          content,
-          excerpt,
-          author,
-          category,
-          icon,
-          meta_description,
-          published,
-          created_at,
-          date
+        SELECT *
         FROM blog_posts
         WHERE slug = ${slug}
           AND published = true
         LIMIT 1
       `;
-      const post = rows[0] ?? null;
+      const list = rows as Record<string, unknown>[];
+      const post = list[0] ?? null;
       return NextResponse.json({ success: true, post });
     } catch (e) {
       const message = e instanceof Error ? e.message : 'Failed to fetch post';
@@ -80,25 +71,13 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const posts = await sql`
-      SELECT
-        id,
-        title,
-        slug,
-        content,
-        excerpt,
-        author,
-        category,
-        icon,
-        meta_description,
-        published,
-        created_at,
-        date
+    const rows = await sql`
+      SELECT *
       FROM blog_posts
       WHERE published = true
       ORDER BY created_at DESC
     `;
-    return NextResponse.json({ success: true, posts });
+    return NextResponse.json({ success: true, posts: rows as Record<string, unknown>[] });
   } catch (e) {
     const message = e instanceof Error ? e.message : 'Failed to fetch posts';
     console.error('[admin/blog GET]', e);
@@ -123,12 +102,11 @@ type PostBody = {
  * POST — create blog post (requires ADMIN_PASSWORD).
  */
 export async function POST(request: NextRequest) {
-  const sql = getSql();
-  if (!sql) {
-    return NextResponse.json(
-      { success: false, error: 'Database not configured (DATABASE_URL or NEON_DATABASE_URL)' },
-      { status: 500 }
-    );
+  let sql;
+  try {
+    sql = getSql();
+  } catch {
+    return dbConfigErrorResponse();
   }
 
   const expectedRaw = process.env.ADMIN_PASSWORD;
@@ -188,10 +166,10 @@ export async function POST(request: NextRequest) {
         content,
         excerpt,
         author,
-        date,
         category,
         icon,
-        meta_description
+        meta_description,
+        date
       )
       VALUES (
         ${title},
@@ -199,10 +177,10 @@ export async function POST(request: NextRequest) {
         ${content},
         ${excerpt},
         ${author},
-        ${date},
         ${category},
         ${icon},
-        ${meta_description}
+        ${meta_description},
+        ${date}
       )
     `;
 
