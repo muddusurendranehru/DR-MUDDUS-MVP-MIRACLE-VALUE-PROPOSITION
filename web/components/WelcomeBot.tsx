@@ -56,7 +56,7 @@ export default function WelcomeBot() {
         {/* Quick Links */}
         <div className="space-y-1 text-[11px]">
           <Link
-            href="/pricing"
+            href="/packages"
             onClick={handleLinkClick}
             className="flex items-center gap-1 text-green-600 hover:text-green-700 p-1 rounded-full hover:bg-green-50 transition-colors"
           >

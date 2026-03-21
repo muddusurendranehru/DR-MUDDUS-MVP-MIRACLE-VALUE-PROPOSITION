@@ -7,7 +7,11 @@ import { useUser, SignOutButton } from '@clerk/nextjs';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: '🏠' },
-  { href: '/pricing', label: 'Packages', icon: '💰' },
+  { href: '/ddd', label: 'D·D·D Campaign', icon: '🩸' },
+  { href: '/products', label: 'Apps & tools', icon: '📱' },
+  { href: '/packages', label: 'Packages', icon: '💰' },
+  { href: '/portfolio', label: 'Portfolio', icon: '👤' },
+  { href: '/pricing', label: 'Pricing', icon: '💳' },
   { href: '/zoom', label: 'Zoom Sundays', icon: '📹' },
   { href: '/gallery', label: 'Gallery', icon: '📸' },
   { href: '/blog', label: 'Blog', icon: '📝' },

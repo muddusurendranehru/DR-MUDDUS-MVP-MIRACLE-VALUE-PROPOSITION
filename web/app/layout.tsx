@@ -755,7 +755,11 @@ export default function RootLayout({
                   <Link href="/testimonials" className="text-gray-300 hover:text-yellow-400 transition-colors text-center py-2">🏆 Stories</Link>
                   <Link href="/upgrade" className="text-gray-300 hover:text-green-400 transition-colors text-center py-2">💎 Premium</Link>
                   <Link href="/enroll" className="text-gray-300 hover:text-yellow-400 transition-colors text-center py-2">🎯 Enroll</Link>
-                  <Link href="/pricing" className="text-gray-300 hover:text-amber-400 transition-colors text-center py-2">💰 Packages</Link>
+                  <Link href="/ddd" className="text-gray-300 hover:text-teal-400 transition-colors text-center py-2">🩸 D·D·D</Link>
+                  <Link href="/products" className="text-gray-300 hover:text-cyan-400 transition-colors text-center py-2">📱 Apps</Link>
+                  <Link href="/packages" className="text-gray-300 hover:text-amber-400 transition-colors text-center py-2">💰 Packages</Link>
+                  <Link href="/portfolio" className="text-gray-300 hover:text-indigo-400 transition-colors text-center py-2">👤 Portfolio</Link>
+                  <Link href="/pricing" className="text-gray-300 hover:text-amber-300 transition-colors text-center py-2">💳 Pricing</Link>
                   <Link href="/zoom" className="text-gray-300 hover:text-purple-400 transition-colors text-center py-2">📹 Zoom</Link>
                   <Link href="/gallery" className="text-gray-300 hover:text-purple-400 transition-colors text-center py-2">📸 Gallery</Link>
                   <Link href="/blog" className="text-gray-300 hover:text-green-400 transition-colors text-center py-2">📝 Blog</Link>
@@ -884,7 +888,6 @@ export default function RootLayout({
           {/* Welcome Bot */}
           <WelcomeBot />
         </AuthProvider>
-        </ClerkProvider>
       </body>
     </html>
     </ClerkProvider>
