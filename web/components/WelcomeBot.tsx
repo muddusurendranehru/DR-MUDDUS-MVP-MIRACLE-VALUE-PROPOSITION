@@ -2,24 +2,25 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function WelcomeBot() {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
-    // Check if user dismissed in this session
+    if (pathname === '/ddd') return;
     const dismissed = sessionStorage.getItem('welcomeBotDismissed');
     if (dismissed) {
       setIsDismissed(true);
       return;
     }
-    // Show after 1.5 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 1500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [pathname]);
 
   const handleDismiss = () => {
     setIsVisible(false);
@@ -32,7 +33,7 @@ export default function WelcomeBot() {
     handleDismiss();
   };
 
-  if (isDismissed || !isVisible) return null;
+  if (pathname === '/ddd' || isDismissed || !isVisible) return null;
 
   return (
     <div className="fixed bottom-4 left-4 z-[9999] animate-bounce-in">

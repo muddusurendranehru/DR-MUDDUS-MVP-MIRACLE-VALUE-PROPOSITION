@@ -48,6 +48,11 @@ export default function MobileNav() {
     };
   }, [isOpen]);
 
+  /* Conversion landing: no floating menu clutter */
+  if (pathname === '/ddd') {
+    return null;
+  }
+
   return (
     <>
       {/* Hamburger Button - Only visible on mobile */}

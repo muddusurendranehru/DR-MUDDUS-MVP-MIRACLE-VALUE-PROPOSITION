@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
+import { ClerkProvider } from '@clerk/nextjs'
 import { AuthProvider } from '@/lib/auth-context'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -292,6 +293,10 @@ export default function RootLayout({
             gtag('config', 'G-XJQ762V2MY');
           `}
         </Script>
+        <ClerkProvider
+          signInUrl="/auth"
+          signUpUrl="/auth"
+        >
         <AuthProvider>
           {/* Service Worker Registration for PWA */}
           <ServiceWorkerRegistration />
@@ -601,7 +606,7 @@ export default function RootLayout({
               <div className="mt-8 text-center">
                 <div className="inline-block">
                   <img
-                    src="/images/dr-muddu-chiranjeevi.jpg.jpg"
+                    src="/images/dr-muddu-chiranjeevi.jpg"
                     alt="Dr. Muddu Surendra Nehru with Chiranjeevi"
                     className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover mx-auto border-4 border-yellow-400 shadow-xl"
                   />
@@ -909,6 +914,7 @@ export default function RootLayout({
           {/* Welcome Bot */}
           <WelcomeBot />
         </AuthProvider>
+        </ClerkProvider>
       </body>
     </html>
   )

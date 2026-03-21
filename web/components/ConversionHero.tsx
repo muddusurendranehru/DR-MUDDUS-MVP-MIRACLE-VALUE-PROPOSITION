@@ -313,7 +313,7 @@ export default function ConversionHero() {
           {/* Chiranjeevi Photo Section */}
           <div className="bg-gray-800 rounded-2xl p-6 md:p-8 text-center">
             <img
-              src="/images/dr-muddu-chiranjeevi.jpg.jpg"
+              src="/images/dr-muddu-chiranjeevi.jpg"
               alt="Dr. Muddu Surendra Nehru with Megastar Chiranjeevi"
               className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover mx-auto border-4 border-yellow-400 shadow-2xl mb-4"
             />

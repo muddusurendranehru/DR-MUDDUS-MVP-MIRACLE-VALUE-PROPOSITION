@@ -81,7 +81,7 @@ export default function GalleryPage() {
             caption="BMI reduced - Cardiovascular risk lowered"
           />
           <ImageCard
-            src="/images/dr-muddu-chiranjeevi.jpg.jpg"
+            src="/images/dr-muddu-chiranjeevi.jpg"
             alt="Dr. Muddu Surendra Nehru MD with Chiranjeevi - World-renowned metabolic health expert Gachibowli Hyderabad"
             caption="World-renowned metabolic health expert"
           />

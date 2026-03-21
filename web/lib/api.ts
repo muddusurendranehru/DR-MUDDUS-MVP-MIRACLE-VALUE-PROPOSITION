@@ -46,23 +46,11 @@ apiClient.interceptors.response.use(
   }
 );
 
-// API methods
+// API methods (auth replaced by Clerk — signup/login disabled)
 export const api = {
-  // Auth endpoints
-  async signup(userData: {
-    name: string;
-    email: string;
-    phone: string;
-    password: string;
-  }) {
-    const response = await apiClient.post('/auth/signup', userData);
-    return response.data;
-  },
-
-  async login(credentials: { email: string; password: string }) {
-    const response = await apiClient.post('/auth/login', credentials);
-    return response.data;
-  },
+  // Auth endpoints — DISABLED: using Clerk at /auth
+  // async signup(...) { ... }
+  // async login(...) { ... }
 
   // Assessment endpoints
   async createAssessment(assessmentData: any) {
