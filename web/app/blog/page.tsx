@@ -6,6 +6,18 @@ import BlogLayout from '@/components/BlogLayout';
 export default function BlogPage() {
   const posts = [
     {
+      id: 9,
+      slug: 'watermelon-diabetes-guide',
+      title: 'Watermelon — Diabetes Guide',
+      excerpt:
+        'Evidence-based nutrition facts for diabetic patients | Dr Muddu Surendra Nehru MD',
+      date: 'March 2026',
+      readTime: '5 min read',
+      category: 'Nutrition and Diabetes',
+      icon: '🍉',
+      author: 'Dr Muddu Surendra Nehru MD',
+    },
+    {
       id: 8,
       slug: "insulin-resistance-kidney-link",
       title: "How Insulin Resistance Silently Damages Kidneys",
@@ -132,6 +144,12 @@ export default function BlogPage() {
                       {post.category}
                     </span>
                     <span>{post.date}</span>
+                    {'author' in post && post.author ? (
+                      <>
+                        <span>•</span>
+                        <span>{post.author}</span>
+                      </>
+                    ) : null}
                     <span>•</span>
                     <span>{post.readTime}</span>
                   </div>
