@@ -5,9 +5,7 @@ import { useState } from 'react'
 export default function AuthPage() {
   const [tab, setTab] = useState('signin')
   return (
-    <div style={{minHeight:'100vh', display:'flex',
-    flexDirection:'column', alignItems:'center',
-    justifyContent:'center', background:'#111'}}>
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center">
       <div style={{display:'flex', gap:'16px', marginBottom:'24px'}}>
         <button
           onClick={() => setTab('signin')}
