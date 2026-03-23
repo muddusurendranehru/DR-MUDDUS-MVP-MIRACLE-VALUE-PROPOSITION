@@ -1,0 +1,10 @@
+Never modify middleware.ts
+Never modify .env or .env.local
+Never modify server/config/database.js
+Never modify lib/db.ts
+Never modify api/webhooks/
+Never change start script in package.json
+Never add Prisma or Drizzle without asking
+Never increase pg pool above 20
+Safe to edit: app/portfolio, app/blog, app/tools, components/ui, public/
+When in doubt — STOP and ask Dr. Muddu first.
