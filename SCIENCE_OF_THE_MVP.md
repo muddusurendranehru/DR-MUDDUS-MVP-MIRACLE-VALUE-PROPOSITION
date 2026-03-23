@@ -6,6 +6,8 @@
 
 **GitHub & Render:** **Not required** for the MVP. You can develop and test entirely on your machine (Express + Next + Neon or local DB). Pushing to GitHub and deploying to Render (or any host) is **optional** whenever you decide you want a public URL or CI — not a prerequisite for building or validating the app.
 
+**Git + Windows + Cursor issues (push failures, `.cursor` locks, PowerShell paste traps):** see `CURSOR_GIT_AND_WINDOWS.md`.
+
 ---
 
 ## 1. Stack at a glance
@@ -116,3 +118,4 @@ _Add dated one-line notes when you change architecture, auth, or deploy._
 
 - **2026-03-23** — Initial version: Next.js + Express + `pg`/Postgres, Clerk auth on web, scaling/ORM guidance consolidated from team discussion.
 - **2026-03-23** — Clarified: GitHub push and Render deploy are optional, not required for local MVP work.
+- **2026-03-23** — Added `CURSOR_GIT_AND_WINDOWS.md` (Git/Windows/Cursor troubleshooting; link from this file).
