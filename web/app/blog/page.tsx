@@ -1,11 +1,4 @@
-import { neon } from '@neondatabase/serverless';
 import BlogPageClient, { type BlogCardPost } from './BlogPageClient';
-
-function getSql() {
-  const url = process.env.DATABASE_URL ?? process.env.NEON_DATABASE_URL;
-  if (!url) return null;
-  return neon(url);
-}
 
 /** Display date on cards when `date` column is null (use `created_at`). */
 function pickDisplayDate(p: Record<string, unknown>): string {
@@ -24,29 +17,14 @@ function pickDisplayDate(p: Record<string, unknown>): string {
 }
 
 async function getDbPosts(): Promise<BlogCardPost[]> {
-  const sql = getSql();
-  if (!sql) return [];
-
   try {
-    const rows = await sql`
-      SELECT
-        id,
-        title,
-        slug,
-        content,
-        excerpt,
-        author,
-        category,
-        icon,
-        date,
-        created_at
-      FROM blog_posts
-      WHERE published = true
-      ORDER BY created_at DESC
-    `;
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3003';
+    const res = await fetch(`${baseUrl}/api/admin/blog`, { cache: 'no-store' });
+    const data = await res.json();
+    if (!data.success || !Array.isArray(data.posts)) return [];
 
-    return rows.map((row) => {
-      const p = row as Record<string, unknown>;
+    return data.posts.map((row: Record<string, unknown>) => {
+      const p = row;
       return {
         id: typeof p.id === 'number' ? p.id : String(p.id ?? ''),
         slug: typeof p.slug === 'string' ? p.slug : undefined,

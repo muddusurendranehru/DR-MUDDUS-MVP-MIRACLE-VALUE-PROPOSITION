@@ -290,7 +290,7 @@ export default function RootLayout({
           <MobileNav />
           
           {/* Global Header */}
-          <header className="bg-gradient-to-r from-blue-900 via-blue-800 to-teal-700 text-white py-2 px-4">
+          <header className="bg-teal-600 text-white py-3 px-4 shadow-md">
             <div className="max-w-7xl mx-auto">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between text-center md:text-left">
                 <div className="flex flex-col md:flex-row md:items-center md:gap-4">

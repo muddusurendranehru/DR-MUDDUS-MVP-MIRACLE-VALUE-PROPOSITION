@@ -141,22 +141,7 @@ export default function Home() {
         }}
       />
       <div className="min-h-screen">
-        {/* Promotional Banner - ABOVE Hero Section - Best Hook to Attract */}
-        <div className="bg-gradient-to-r from-red-500 to-orange-500 py-6 text-white text-center">
-          <p className="text-lg md:text-xl font-bold px-4 mb-3">
-            Struggling with belly fat or fatigue? USE OUR METABOLIC CALCULATORS FIRST IN THE WORLD FREE ONLINE
-          </p>
-          <p className="text-sm md:text-base mb-4 px-4 opacity-95">
-            🎉 New Year & Pongal Special: Free Metabolic Risk Check – No Cost, No Signup
-          </p>
-          <Link
-            href="/tools?utm_source=homepage_banner&utm_medium=cta_button&utm_campaign=metabolic_calculators"
-            className="inline-block bg-white text-red-600 px-8 py-3 rounded-full mt-2 font-bold hover:bg-gray-100 transition-colors text-lg shadow-lg transform hover:-translate-y-1"
-          >
-            Free Metabolic Heart Diabetes Risk Check – No Cost, No Signup →
-          </Link>
-        </div>
-        <LandingPageHero /> {/* modern gradient + buttons */}
+        <LandingPageHero /> {/* portfolio: orange→teal + violet Miracle Methods band */}
         <MetabolicServicesHero /> {/* 9 patient segments with service cards */}
         <TestimonialSlider /> {/* testimonials below hero */}
         <HomepagePhotoGallery /> {/* static photos from public/photos/ */}
