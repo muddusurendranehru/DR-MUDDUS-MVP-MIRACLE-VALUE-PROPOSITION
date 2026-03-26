@@ -1,222 +1,756 @@
-import { Metadata } from 'next';
-import Script from 'next/script';
-import Link from 'next/link';
-import LandingPageHero from '../components/LandingPageHero';
-import MetabolicServicesHero from '../components/MetabolicServicesHero';
-import TestimonialSlider from '../components/TestimonialSlider';
-import HomepagePhotoGallery from '../components/HomepagePhotoGallery';
+"use client";
 
-// 🔑 Force static HTML generation for SEO & Google verification
-export const dynamic = 'force-static';
+import { useState } from "react";
+import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: 'Dr. Muddu Surendra Nehru MD Best Diabetologist Gachibowli | HOMA Clinic Hyderabad - Diabetes Cardio Obesity REMISSION',
-  description: 'Dr. Muddu Surendra Nehru MD best diabetologist Gachibowli. Years struggling? We test FASTING INSULIN (not glucose) + HOMA-IR. 32yrs ethics-guided care, 35L patients, India #1 5K+ HOMA tests, pioneer cardio-obesity-metabolism. Serving Gachibowli, ISB, IIIT, Banjara Hills & IKEA.',
-  keywords: 'Dr Muddu Surendra Nehru MD best diabetologist Gachibowli, diabetes remission Gachibowli, HOMA test Hyderabad, fasting insulin test Gachibowli, diabetes reversal ISB, insulin resistance treatment Hyderabad, HOMA-IR test Gachibowli',
-  openGraph: {
-    title: 'Dr Muddu Nehru | Diabetologist Gachibowli',
-    description: '90 Day Diabetes Remission | 85% Success',
-    url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com',
-    siteName: 'HOMA Clinic',
-    images: [
-      {
-        url: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/obesity-reversal-hyderabad-jpg.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Dr. Muddu Nehru - Diabetologist Gachibowli',
-      },
-    ],
-    locale: 'en_IN',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Dr Muddu Nehru | Diabetologist Gachibowli',
-    description: '90 Day Diabetes Remission | 85% Success',
-    images: ['https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com/images/obesity-reversal-hyderabad-jpg.jpg'],
-  },
-  alternates: {
-    canonical: 'https://dr-muddus-mvp-miracle-value-proposition-2l36.onrender.com',
-  },
-};
+export default function HomePage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-// FAQ Structured Data Schema
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+  const faqs = [
     {
-      '@type': 'Question',
-      '@id': 'faq-1',
-      name: 'Can type 2 diabetes be reversed naturally?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes, at HOMA Clinic, we have successfully helped thousands of patients achieve type 2 diabetes remission through our evidence-based 90-day metabolic remission program. Our program focuses on personalized nutrition, lifestyle modifications, and metabolic optimization using advanced metrics like HOMA-IR, HbA1c, and TyG Index.',
-      },
+      q: "How much does the HOMA 90-day program cost?",
+      a: "₹13,500 for the full 90-day metabolic reversal program. This includes HOMA-IR testing, TyG Index, NutriBot AI access, D·D·D home visits, and all follow-ups. Others charge ₹20,000–₹25,000 for less.",
     },
     {
-      '@type': 'Question',
-      '@id': 'faq-2',
-      name: 'Are the metabolic calculators really free?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes! All calculators — including HOMA-IR, TyG Index, Waist-to-Height Ratio (WHtR), and Waist-to-Hip Ratio (WHR) — are 100% free. No cost, no signup, no credit card required.',
-      },
+      q: "What is D·D·D — Door to Door Diabetes Delivery?",
+      a: "India's first at-home metabolic care program. Dr. Muddu's team comes to your home in Gachibowli, Ameerpet, Bachupally, and Patancheru for assessment, monitoring, and follow-up. No need to visit the clinic every time.",
     },
     {
-      '@type': 'Question',
-      '@id': 'faq-3',
-      name: 'What is HOMA-IR?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'HOMA-IR (Homeostatic Model Assessment of Insulin Resistance) is a scientific method to estimate insulin resistance using fasting glucose and insulin levels.',
-      },
+      q: "What is HOMA-IR and why does it matter?",
+      a: "HOMA-IR (Homeostatic Model Assessment of Insulin Resistance) measures how insulin-resistant your cells are. It detects diabetes risk years before fasting glucose becomes abnormal. HOMA Healthcare is the first clinic in India to offer this free online.",
     },
     {
-      '@type': 'Question',
-      '@id': 'faq-4',
-      name: 'How do I start my free assessment?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Click "Start Your Free Assessment" on our tools page, complete the free calculators, and WhatsApp us at 09963721999 for a free 15-minute consultation.',
-      },
+      q: "Can Type 2 Diabetes really be reversed?",
+      a: "Yes — in patients with less than 10 years of diabetes and preserved beta-cell function. Our 90-day protocol using metabolic nutrition, movement, and HOMA-IR monitoring has reversed diabetes in hundreds of patients.",
     },
     {
-      '@type': 'Question',
-      '@id': 'faq-5',
-      name: 'What is the HOMA-IR test?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'HOMA-IR is a blood test that measures insulin resistance, a key indicator of metabolic health. It calculates the ratio of fasting glucose to fasting insulin. High HOMA-IR values indicate insulin resistance, which is often the underlying cause of type 2 diabetes and metabolic syndrome. At HOMA Clinic, we use HOMA-IR as a primary metric to track treatment progress and guide personalized interventions.',
-      },
+      q: "Do I need to stop my medications immediately?",
+      a: "No. Medications are reduced gradually under Dr. Muddu's supervision as your metabolic markers improve. Never stop diabetes medication without medical guidance.",
     },
     {
-      '@type': 'Question',
-      '@id': 'faq-6',
-      name: 'How is your 90-day program different from traditional diabetes care?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Traditional care manages diabetes symptoms with medications, while our program focuses on addressing the root cause—metabolic dysfunction—to achieve remission. We use AI-powered tools, personalized nutrition plans, real-time health tracking, dedicated health coaches, and evidence-based protocols to reverse insulin resistance and restore metabolic health in just 90 days. Our approach has achieved an 85% remission rate among patients.',
-      },
+      q: "Is this program suitable for PCOS?",
+      a: "Yes. PCOS is driven by insulin resistance in most cases. The same HOMA-IR protocol that reverses diabetes also corrects the hormonal imbalance causing PCOS. Many patients see improvement in 60–90 days.",
     },
     {
-      '@type': 'Question',
-      '@id': 'faq-7',
-      name: 'Do I need to be diabetic to join the program?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'No. The program is ideal for anyone with prediabetes, insulin resistance, metabolic syndrome, or those looking to optimize their metabolic health. We also serve patients with central obesity, hypertension, and cardiovascular disease risk. Early intervention can prevent the progression to full-blown diabetes and reverse metabolic dysfunction.',
-      },
+      q: "Which areas in Hyderabad do you serve?",
+      a: "Gachibowli, Ameerpet, Bachupally, Patancheru, Kondapur, Madhapur, and surrounding areas. The clinic is located in Gachibowli. D·D·D home visits cover a 20 km radius.",
     },
-    {
-      '@type': 'Question',
-      '@id': 'faq-8',
-      name: 'What tools do patients get access to?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'You receive access to the HOMA Dashboard, our AI-powered web application for tracking nutrition, health metrics, metabolic parameters (HOMA-IR, TyG Index, HbA1c), step goals, real-time feedback, and personalized treatment protocols. Patients also get dedicated health coaches, motivators, mental health caregivers, and direct access to Dr. Muddu\'s evidence-based treatment protocols.',
-      },
-    },
-    {
-      '@type': 'Question',
-      '@id': 'faq-9',
-      name: 'Is the program available in Gachibowli, Hyderabad?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes! HOMA Clinic serves patients in Gachibowli, Hyderabad, and across India. With 30+ years of clinical experience and over 5,00,000 patients treated, Dr. Muddu Surendra Nehru M.D. offers both in-person consultations and remote program access through our digital platform. Contact us at 09963721999 to learn more.',
-      },
-    },
-  ],
-};
+  ];
 
-export default function Home() {
   return (
     <>
-      {/* FAQ Structured Data for SEO */}
-      <Script
-        id="faq-structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+      {/* HERO — starts immediately, layout.tsx header sits above */}
+      <section
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "calc(100vh - 94px)",
+          minHeight: "500px",
+          maxHeight: "860px",
+          overflow: "hidden",
+          background: "#0a1824",
         }}
-      />
-      <div className="min-h-screen">
-        <LandingPageHero /> {/* portfolio: orange→teal + violet Miracle Methods band */}
-        <MetabolicServicesHero /> {/* 9 patient segments with service cards */}
-        <TestimonialSlider /> {/* testimonials below hero */}
-        <HomepagePhotoGallery /> {/* static photos from public/photos/ */}
-        
-        {/* Quick Action Links */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 py-12 px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Link
-                href="/tools"
-                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-all transform hover:scale-105 border-2 border-blue-200"
-              >
-                <div className="text-3xl mb-3">🔧</div>
-                <h3 className="font-bold text-gray-900 mb-2">Try Our Free Tools</h3>
-                <p className="text-sm text-gray-600">BMI, HOMA-IR & TyG calculators</p>
-              </Link>
-              <Link
-                href="/gallery"
-                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-all transform hover:scale-105 border-2 border-green-200"
-              >
-                <div className="text-3xl mb-3">📸</div>
-                <h3 className="font-bold text-gray-900 mb-2">See Patient Success Stories</h3>
-                <p className="text-sm text-gray-600">Real transformations & testimonials</p>
-              </Link>
+      >
+        <img
+          src="/images/dr-muddu-chiranjeevi.jpg"
+          alt="Dr. Muddu Surendra Nehru – HOMA Clinic Gachibowli Hyderabad"
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center 20%",
+            opacity: 0.72,
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(160deg, rgba(13,43,78,0.1) 0%, rgba(13,43,78,0.0) 35%, rgba(13,43,78,0.55) 65%, rgba(13,43,78,0.93) 100%)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            padding: "52px 6% 48px",
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "space-between",
+            gap: "20px",
+          }}
+        >
+          <div style={{ maxWidth: "580px" }}>
+            <div
+              style={{
+                fontSize: "11px",
+                fontWeight: 600,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "#5ed3c8",
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                marginBottom: "14px",
+              }}
+            >
+              <span
+                style={{
+                  width: "22px",
+                  height: "1px",
+                  background: "#00A896",
+                  display: "inline-block",
+                }}
+              />
+              Metabolic Medicine · Gachibowli · Hyderabad
+            </div>
+            <h1
+              style={{
+                fontFamily: "'EB Garamond', serif",
+                fontSize: "clamp(40px, 5.5vw, 76px)",
+                fontWeight: 500,
+                lineHeight: 1.05,
+                color: "#fff",
+                marginBottom: "16px",
+              }}
+            >
+              Diabetes &amp;
+              <br />
+              Obesity
+              <br />
+              Reversed.
+            </h1>
+            <p
+              style={{
+                fontSize: "16px",
+                fontWeight: 300,
+                lineHeight: 1.65,
+                color: "rgba(255,255,255,0.6)",
+                maxWidth: "460px",
+                marginBottom: "30px",
+              }}
+            >
+              Dr. Muddu Surendra Nehru MD — Professor of Medicine. Science-based metabolic reversal in 90 days. No
+              gimmicks. Real results.
+            </p>
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
               <Link
                 href="/assessment"
-                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-all transform hover:scale-105 border-2 border-purple-200"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  padding: "14px 30px",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                  background: "#F5A623",
+                  color: "#1a1a1a",
+                }}
               >
-                <div className="text-3xl mb-3">📝</div>
-                <h3 className="font-bold text-gray-900 mb-2">Start Your Free Assessment</h3>
-                <p className="text-sm text-gray-600">15-minute metabolic risk evaluation</p>
+                📋 Book An Appointment
+              </Link>
+              <a
+                href="https://wa.me/919963721999"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  padding: "14px 30px",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                  background: "#25D366",
+                  color: "#fff",
+                }}
+              >
+                💬 WhatsApp Us
+              </a>
+              <Link
+                href="/tools"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  padding: "14px 30px",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                  background: "rgba(255,255,255,0.12)",
+                  color: "#fff",
+                  border: "1px solid rgba(255,255,255,0.3)",
+                }}
+              >
+                🔬 Free Metabolic Check
               </Link>
             </div>
           </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            {[
+              ["5,000+", "Patients Treated"],
+              ["90 Days", "Reversal Program"],
+              ["32+ Yrs", "Clinical Experience"],
+              ["4 Books", "Published Author"],
+            ].map(([num, lbl]) => (
+              <div
+                key={lbl}
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.16)",
+                  backdropFilter: "blur(18px)",
+                  borderRadius: "10px",
+                  padding: "13px 20px",
+                  minWidth: "164px",
+                  textAlign: "right",
+                }}
+              >
+                <div style={{ fontSize: "26px", fontWeight: 600, color: "#fff", lineHeight: 1 }}>{num}</div>
+                <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.45)", marginTop: "3px" }}>{lbl}</div>
+              </div>
+            ))}
+          </div>
         </div>
-        
-        {/* Take Our Survey Banner */}
-        <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6 my-8 rounded-lg text-center max-w-4xl mx-auto px-4 text-white">
-          <h3 className="text-xl font-bold mb-2">🎉 Get 15% Off Your 90-Day Program</h3>
-          <p className="mb-4">Complete our 2-minute survey and unlock your discount.</p>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSc4cw6zfm3ZDC7x1aCc7nGFNMRqpd14eogHWa91gj6jRFPXXw/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-purple-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors"
+      </section>
+
+      {/* TRUST STRIP */}
+      <div
+        style={{
+          background: "#0D2B4E",
+          padding: "20px 6%",
+          display: "flex",
+          alignItems: "center",
+          overflowX: "auto",
+        }}
+      >
+        {[
+          ["5,000+", "Patients Treated"],
+          ["90", "Day Reversal Program"],
+          ["32+", "Years Clinical Experience"],
+          ["4", "Books Published"],
+        ].map(([num, lbl], i) => (
+          <div
+            key={i}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              padding: "0 32px",
+              borderRight: "1px solid rgba(255,255,255,0.1)",
+              whiteSpace: "nowrap",
+            }}
           >
-            📝 Take Survey & Save 15%
-          </a>
+            <div style={{ fontSize: "24px", fontWeight: 600, color: "#F5A623" }}>{num}</div>
+            <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.45)", lineHeight: 1.4 }}>{lbl}</div>
+          </div>
+        ))}
+        <div
+          style={{
+            marginLeft: "auto",
+            fontSize: "12px",
+            color: "rgba(255,255,255,0.3)",
+            whiteSpace: "nowrap",
+            paddingLeft: "32px",
+          }}
+        >
+          ⭐ Appreciated by Megastar Chiranjeevi &nbsp;·&nbsp; Trusted at ISB · IIIT · IKEA Gachibowli
         </div>
-        
-        {/* App Ecosystem CTA - Updated Branding */}
-        <div className="bg-gradient-to-r from-amber-100 to-orange-100 p-8 rounded-2xl text-center my-8 max-w-5xl mx-auto px-4 border-4 border-amber-400 shadow-xl">
-          <span className="inline-block bg-amber-500 text-white px-6 py-2 rounded-full text-base font-bold mb-4 shadow-lg">
-            👋 Get Hands-On Experience
-          </span>
-          <h3 className="text-3xl md:text-4xl font-extrabold mt-4 mb-3 text-gray-900">
-            🛠️ Free Metabolic Risk Check – No Cost, No Signup
-          </h3>
-          <p className="text-lg md:text-xl text-gray-700 mb-4 max-w-2xl mx-auto leading-relaxed">
-            <strong>Dr. Muddu Surendra Nehru MD Miracle Methods Gachibowli</strong> — 
-            Try our BMI, HOMA-IR, and TyG calculators. Get 70% off your full program.
-          </p>
-          <p className="text-sm text-gray-600 mb-6 italic">
-            Trusted by visitors to ISB, IIIT, and professionals near IKEA Gachibowli. Appreciated by Megastar Chiranjeevi.
-          </p>
-          <Link 
-            href="/tools" 
-            className="inline-block bg-amber-600 text-white px-10 py-4 rounded-full hover:bg-amber-700 transition-colors font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      </div>
+
+      {/* PATIENT STORIES */}
+      <section style={{ padding: "72px 6%", background: "#f8f7f3" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "space-between",
+            marginBottom: "36px",
+            flexWrap: "wrap",
+            gap: "16px",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                fontSize: "11px",
+                fontWeight: 600,
+                color: "#00A896",
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                marginBottom: "8px",
+              }}
+            >
+              Patient Stories
+            </div>
+            <h2
+              style={{
+                fontFamily: "'EB Garamond', serif",
+                fontSize: "clamp(32px, 4vw, 52px)",
+                fontWeight: 500,
+                color: "#0D2B4E",
+                lineHeight: 1.1,
+              }}
+            >
+              The HOMA
+              <br />
+              <em style={{ fontStyle: "italic", color: "#00A896" }}>Experience</em>
+            </h2>
+            <p style={{ fontSize: "14px", color: "#888", fontWeight: 300, marginTop: "8px" }}>
+              Real patients. Real results. Their words, not ours.
+            </p>
+          </div>
+          <Link
+            href="/testimonials"
+            style={{ fontSize: "14px", color: "#0D2B4E", fontWeight: 500, textDecoration: "none" }}
           >
-            🔍 Get Your Free Risk Check Now →
+            See all stories →
           </Link>
         </div>
-        
-        {/* Optional: add dashboard preview below */}
-      </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "16px",
+          }}
+        >
+          {[
+            {
+              img: "/images/before-after-south-indian-9-month.jpg",
+              name: "Sneha, 29",
+              role: "PCOS Reversed · Telangana",
+            },
+            {
+              img: "/images/obesity-reversal-hyderabad-jpg.jpg",
+              name: "Ramesh, 58",
+              role: "Diabetes Reversed · Hyderabad",
+            },
+            {
+              img: "/images/pcos-reversal-anita-hyderabad-jpg.jpg",
+              name: "Anita, 34",
+              role: "−18 kg · No Medication · Gachibowli",
+            },
+            {
+              img: "/images/before-after-south-indian-after-blue-best-1.jpg",
+              name: "Suresh, 52",
+              role: "Pre-Diabetes Reversed · Ameerpet",
+            },
+          ].map((p) => (
+            <div
+              key={p.name}
+              role="button"
+              tabIndex={0}
+              onClick={() => window.open("/testimonials", "_blank")}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  window.open("/testimonials", "_blank");
+                }
+              }}
+              style={{
+                position: "relative",
+                borderRadius: "16px",
+                overflow: "hidden",
+                aspectRatio: "3/4",
+                cursor: "pointer",
+                background: "#111",
+              }}
+            >
+              <img
+                src={p.img}
+                alt={p.name}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 55%)",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%,-50%)",
+                  width: "52px",
+                  height: "52px",
+                  background: "rgba(255,255,255,0.15)",
+                  border: "2px solid rgba(255,255,255,0.5)",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="white">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 18px" }}>
+                <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.5)", marginBottom: "4px" }}>
+                  The HOMA experience
+                </div>
+                <div style={{ fontSize: "16px", fontWeight: 600, color: "#fff" }}>{p.name}</div>
+                <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)", marginTop: "2px" }}>{p.role}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CONDITIONS */}
+      <section style={{ padding: "72px 6%", background: "#fff", textAlign: "center" }}>
+        <p
+          style={{
+            fontSize: "11px",
+            fontWeight: 600,
+            color: "#00A896",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            marginBottom: "10px",
+          }}
+        >
+          What We Treat
+        </p>
+        <h2
+          style={{
+            fontFamily: "'EB Garamond', serif",
+            fontSize: "clamp(30px, 4vw, 48px)",
+            fontWeight: 500,
+            color: "#0D2B4E",
+            marginBottom: "12px",
+          }}
+        >
+          Science-Based Reversal
+        </h2>
+        <p style={{ fontSize: "15px", color: "#888", fontWeight: 300, marginBottom: "40px" }}>
+          From PCOS to senior care — personalised metabolic protocols for every life stage
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+            gap: "12px",
+            maxWidth: "900px",
+            margin: "0 auto",
+          }}
+        >
+          {[
+            ["🔴", "Type 2 Diabetes", "Reversal in 90 days"],
+            ["💗", "PCOS", "Hormonal balance"],
+            ["⚖️", "Obesity", "Visceral fat reversal"],
+            ["❤️", "Heart Risk", "Cardio-metabolic care"],
+            ["🫘", "Diabetes + Kidney", "Nephropathy care"],
+            ["🛡️", "Pre-Diabetes", "Prevention first"],
+            ["🔋", "Fatigue & IR", "Root cause care"],
+            ["👴", "Senior Metabolic", "Age-tailored protocol"],
+          ].map(([icon, name, sub]) => (
+            <div
+              key={String(name)}
+              style={{
+                background: "#f8f7f3",
+                border: "1px solid #ece9e1",
+                borderRadius: "12px",
+                padding: "20px 14px",
+              }}
+            >
+              <div style={{ fontSize: "28px", marginBottom: "8px" }}>{icon}</div>
+              <div style={{ fontSize: "14px", fontWeight: 600, color: "#0D2B4E", marginBottom: "4px" }}>{name}</div>
+              <div style={{ fontSize: "12px", color: "#999" }}>{sub}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PACKAGES */}
+      <section style={{ padding: "72px 6%", background: "#f8f7f3" }}>
+        <div style={{ textAlign: "center", marginBottom: "40px" }}>
+          <p
+            style={{
+              fontSize: "11px",
+              fontWeight: 600,
+              color: "#00A896",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              marginBottom: "10px",
+            }}
+          >
+            Investment in Your Health
+          </p>
+          <h2
+            style={{
+              fontFamily: "'EB Garamond', serif",
+              fontSize: "clamp(30px, 4vw, 48px)",
+              fontWeight: 500,
+              color: "#0D2B4E",
+              marginBottom: "12px",
+            }}
+          >
+            The HOMA Program
+          </h2>
+          <p style={{ fontSize: "15px", color: "#888", fontWeight: 300 }}>
+            Complete 90-day metabolic reversal — everything included
+          </p>
+        </div>
+        <div
+          style={{
+            maxWidth: "520px",
+            margin: "0 auto",
+            background: "#0D2B4E",
+            borderRadius: "20px",
+            padding: "40px",
+            textAlign: "center",
+          }}
+        >
+          <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", marginBottom: "8px" }}>
+            90-Day Reversal Program
+          </div>
+          <div
+            style={{
+              fontFamily: "'EB Garamond', serif",
+              fontSize: "60px",
+              fontWeight: 500,
+              color: "#F5A623",
+              lineHeight: 1,
+            }}
+          >
+            ₹13,500
+          </div>
+          <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.4)", margin: "8px 0 28px" }}>
+            Others charge ₹20,000–₹25,000
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              marginBottom: "32px",
+              textAlign: "left",
+            }}
+          >
+            {[
+              "✅ HOMA-IR Test + TyG Index Assessment",
+              "✅ NutriBot AI — personalised Indian meal plans",
+              "✅ D·D·D — Door to Door home visits",
+              "✅ 90-day monitoring + follow-ups",
+              "✅ Free online HOMA-IR calculator access",
+              "✅ Peer-reviewed protocol — 32 years experience",
+            ].map((item) => (
+              <div key={item} style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)" }}>
+                {item}
+              </div>
+            ))}
+          </div>
+          <Link
+            href="/assessment"
+            style={{
+              display: "block",
+              background: "#F5A623",
+              color: "#1a1a1a",
+              fontWeight: 700,
+              fontSize: "16px",
+              padding: "16px",
+              borderRadius: "10px",
+              textDecoration: "none",
+              marginBottom: "10px",
+            }}
+          >
+            Book Your Assessment →
+          </Link>
+          <a
+            href="https://wa.me/919963721999"
+            style={{
+              display: "block",
+              background: "#25D366",
+              color: "#fff",
+              fontWeight: 700,
+              fontSize: "15px",
+              padding: "14px",
+              borderRadius: "10px",
+              textDecoration: "none",
+            }}
+          >
+            💬 WhatsApp for Details
+          </a>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{ padding: "72px 6%", background: "#fff" }}>
+        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+          <p
+            style={{
+              fontSize: "11px",
+              fontWeight: 600,
+              color: "#00A896",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              marginBottom: "10px",
+            }}
+          >
+            Common Questions
+          </p>
+          <h2
+            style={{
+              fontFamily: "'EB Garamond', serif",
+              fontSize: "clamp(30px, 4vw, 48px)",
+              fontWeight: 500,
+              color: "#0D2B4E",
+            }}
+          >
+            Everything You Need to Know
+          </h2>
+        </div>
+        <div
+          style={{ maxWidth: "720px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "10px" }}
+        >
+          {faqs.map((faq, i) => (
+            <div key={faq.q} style={{ border: "1px solid #ece9e1", borderRadius: "12px", overflow: "hidden" }}>
+              <button
+                type="button"
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                style={{
+                  width: "100%",
+                  background: openFaq === i ? "#0D2B4E" : "#fff",
+                  border: "none",
+                  padding: "18px 22px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  cursor: "pointer",
+                  textAlign: "left",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    color: openFaq === i ? "#fff" : "#1a1a1a",
+                    flex: 1,
+                  }}
+                >
+                  {faq.q}
+                </span>
+                <span
+                  style={{
+                    fontSize: "20px",
+                    color: openFaq === i ? "#F5A623" : "#999",
+                    marginLeft: "12px",
+                  }}
+                >
+                  {openFaq === i ? "−" : "+"}
+                </span>
+              </button>
+              {openFaq === i && (
+                <div
+                  style={{ padding: "18px 22px", background: "#f8f7f3", fontSize: "14px", color: "#555", lineHeight: 1.7 }}
+                >
+                  {faq.a}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section style={{ background: "#0D2B4E", padding: "72px 6%", textAlign: "center" }}>
+        <h2
+          style={{
+            fontFamily: "'EB Garamond', serif",
+            fontSize: "clamp(32px, 4vw, 56px)",
+            fontWeight: 500,
+            color: "#fff",
+            marginBottom: "16px",
+          }}
+        >
+          Start Your Reversal Today
+        </h2>
+        <p
+          style={{
+            fontSize: "16px",
+            color: "rgba(255,255,255,0.55)",
+            fontWeight: 300,
+            maxWidth: "480px",
+            margin: "0 auto 36px",
+          }}
+        >
+          Free 15-minute metabolic assessment. No cost, no signup. Serving Gachibowli, Ameerpet, Bachupally &amp;
+          Patancheru.
+        </p>
+        <div style={{ display: "flex", gap: "14px", justifyContent: "center", flexWrap: "wrap" }}>
+          <Link
+            href="/assessment"
+            style={{
+              background: "#F5A623",
+              color: "#1a1a1a",
+              fontWeight: 700,
+              fontSize: "16px",
+              padding: "16px 36px",
+              borderRadius: "8px",
+              textDecoration: "none",
+            }}
+          >
+            Book An Appointment →
+          </Link>
+          <a
+            href="https://wa.me/919963721999"
+            style={{
+              background: "#25D366",
+              color: "#fff",
+              fontWeight: 700,
+              fontSize: "16px",
+              padding: "16px 36px",
+              borderRadius: "8px",
+              textDecoration: "none",
+            }}
+          >
+            💬 WhatsApp Dr. Muddu
+          </a>
+          <Link
+            href="/tools"
+            style={{
+              background: "rgba(255,255,255,0.1)",
+              color: "#fff",
+              fontWeight: 600,
+              fontSize: "16px",
+              padding: "16px 36px",
+              borderRadius: "8px",
+              textDecoration: "none",
+              border: "1px solid rgba(255,255,255,0.25)",
+            }}
+          >
+            🔬 Free HOMA-IR Check
+          </Link>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer
+        style={{
+          background: "#06152b",
+          padding: "32px 6%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          gap: "12px",
+        }}
+      >
+        <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.35)" }}>
+          © 2026 HOMA Healthcare Center · Gachibowli, Hyderabad · 09963721999
+        </div>
+        <div style={{ display: "flex", gap: "20px" }}>
+          <Link href="/privacy-policy" style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)", textDecoration: "none" }}>
+            Privacy Policy
+          </Link>
+          <Link href="/blog" style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)", textDecoration: "none" }}>
+            Blog
+          </Link>
+          <Link href="/tools" style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)", textDecoration: "none" }}>
+            Free Tools
+          </Link>
+        </div>
+      </footer>
     </>
   );
 }
